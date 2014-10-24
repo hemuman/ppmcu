@@ -1,0 +1,2142 @@
+#GetAppGUI net.mk.ppmcu2D.ScreenShareClient1
+Temp file : C:\Users\PDI\AppData\Local\Temp\ppmcuScreenShareClient.array
+#GetAppGUI net.mk.ppmcuGUI.EmptyJPanel
+#GetAppGUI net.mk.ppmcu2D.ImageGridTest
+#GetAppGUI net.mk.ppmcu2D.NodePreview3DJPanel
+#GetAppGUI net.mk.ppmcu2D.MultiCore2DPanel
+
+#GetAppGUI net.mk.ppmcu2D.Curve3DJPanel
+#GetAppGUI net.mk.ppmcu2D.BeltView
+#GetAppGUI net.mk.ppmc.apps.ImageStampPanel
+#GetAppGUI net.mk.dcApps.DCGUI
+#GetAppGUI net.mk.dcApps.SolSys.SolarSysGUI
+#GetAppGUI net.mk.dcApps.UD_DCApps
+#GetAppGUI net.mk.dcApps.DevelopDCApp
+#GetAppGUI net.mk.dcApps.FSExplorer
+#AddPreviewImage Discovering...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Realtime Preview BGDots1.PNG
+#getBestVisualArrangement BlocksToDisplay=16 rows=4	 columns=4	 scale= 1/4
+#Commercial Mode -Main 1600
+SystemTray : Allowed
+#HalfScreen Mode
+Init Components: 0.084sec(s)
+--------------
+Init Profile: 1.679sec(s)
+#GetAppGUI net.mk.ppmcuGUI.FrontPage
+#GetAppGUI net.mk.ppmcuGUI.WallpaperApp
+#readJsonFromUrl JSON:{
+ "areacode": "",
+ "city": "Bangalore",
+ "country_code": "IN",
+ "country_name": "India",
+ "ip": "14.99.179.11",
+ "latitude": 12.9833,
+ "longitude": 77.5833,
+ "metro_code": "",
+ "region_code": "19",
+ "region_name": "Karnataka",
+ "zipcode": ""
+}
+Init Location: 2.693sec(s)
+#GetAppGUI net.mk.ppmcuGUI.RedirectedJPanel
+#GetAppGUI net.mk.ppmcu2D.ScreenShareClient1
+Temp file : C:\Users\PDI\AppData\Local\Temp\ppmcuScreenShareClient.array
+#GetAppGUI net.mk.ppmcuGUI.EmptyJPanel
+#GetAppGUI net.mk.ppmcu2D.ImageGridTest
+#GetAppGUI net.mk.ppmcu2D.NodePreview3DJPanel
+#GetAppGUI net.mk.ppmcu2D.MultiCore2DPanel
+
+#GetAppGUI net.mk.ppmcu2D.Curve3DJPanel
+#GetAppGUI net.mk.ppmcu2D.BeltView
+#GetAppGUI net.mk.ppmc.apps.ImageStampPanel
+#GetAppGUI net.mk.dcApps.DCGUI
+#GetAppGUI net.mk.dcApps.SolSys.SolarSysGUI
+#GetAppGUI net.mk.dcApps.UD_DCApps
+#GetAppGUI net.mk.dcApps.DevelopDCApp
+#GetAppGUI net.mk.dcApps.FSExplorer
+#AddPreviewImage Discovering...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Realtime Preview BGDots1.PNG
+#getBestVisualArrangement BlocksToDisplay=16 rows=4	 columns=4	 scale= 1/4
+#HalfScreen Mode -Main 800
+total count 294 time 1079 average time 0
+#GetAppGUI net.mk.ppmcu2D.ScreenShareClient1
+Temp file : C:\Users\PDI\AppData\Local\Temp\ppmcuScreenShareClient.array
+#GetAppGUI net.mk.ppmcuGUI.EmptyJPanel
+#GetAppGUI net.mk.ppmcu2D.ImageGridTest
+#GetAppGUI net.mk.ppmcu2D.NodePreview3DJPanel
+#GetAppGUI net.mk.ppmcu2D.MultiCore2DPanel
+Nov 24, 2013 2:23:21 PM net.mk.ppmcuGUI.FrontPage$1 run
+SEVERE: null
+java.lang.NumberFormatException: empty String
+	at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:1011)
+	at java.lang.Double.parseDouble(Double.java:540)
+	at net.mk.ppmcuGUI.FrontPage.getBoostPossibleRankRatio(FrontPage.java:649)
+	at net.mk.ppmcuGUI.FrontPage$1.run(FrontPage.java:70)
+	at java.lang.Thread.run(Thread.java:722)
+
+
+#GetAppGUI net.mk.ppmcu2D.Curve3DJPanel
+#GetAppGUI net.mk.ppmcu2D.BeltView
+#GetAppGUI net.mk.ppmc.apps.ImageStampPanel
+#GetAppGUI net.mk.dcApps.DCGUI
+#GetAppGUI net.mk.dcApps.SolSys.SolarSysGUI
+#GetAppGUI net.mk.dcApps.UD_DCApps
+#GetAppGUI net.mk.dcApps.DevelopDCApp
+#GetAppGUI net.mk.dcApps.FSExplorer
+#AddPreviewImage Discovering...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#getBestVisualArrangement BlocksToDisplay=16 rows=4	 columns=4	 scale= 1/4
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Realtime Preview BGDots1.PNG
+#Commercial Mode -Main 1600
+SystemTray : Allowed
+#HalfScreen Mode
+Init Components: 0.075sec(s)
+--------------
+Init Profile: 2.6870000000000003sec(s)
+#GetAppGUI net.mk.ppmcuGUI.FrontPage
+#GetAppGUI net.mk.ppmcuGUI.WallpaperApp
+#GetAppGUI net.mk.ppmcuGUI.RedirectedJPanel
+#GetAppGUI net.mk.ppmcu2D.ScreenShareClient1
+Temp file : C:\Users\PDI\AppData\Local\Temp\ppmcuScreenShareClient.array
+#GetAppGUI net.mk.ppmcuGUI.EmptyJPanel
+#GetAppGUI net.mk.ppmcu2D.ImageGridTest
+#GetAppGUI net.mk.ppmcu2D.NodePreview3DJPanel
+#GetAppGUI net.mk.ppmcu2D.MultiCore2DPanel
+Nov 24, 2013 2:23:34 PM net.mk.ppmcuGUI.FrontPage$1 run
+SEVERE: null
+java.lang.NumberFormatException: empty String
+	at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:1011)
+	at java.lang.Double.parseDouble(Double.java:540)
+	at net.mk.ppmcuGUI.FrontPage.getBoostPossibleRankRatio(FrontPage.java:649)
+	at net.mk.ppmcuGUI.FrontPage$1.run(FrontPage.java:70)
+	at java.lang.Thread.run(Thread.java:722)
+
+#readJsonFromUrl JSON:{
+ "areacode": "",
+ "city": "Bangalore",
+ "country_code": "IN",
+ "country_name": "India",
+ "ip": "14.99.179.11",
+ "latitude": 12.9833,
+ "longitude": 77.5833,
+ "metro_code": "",
+ "region_code": "19",
+ "region_name": "Karnataka",
+ "zipcode": ""
+}
+Init Location: 6.7860000000000005sec(s)
+
+#GetAppGUI net.mk.ppmcu2D.Curve3DJPanel
+#GetAppGUI net.mk.ppmcu2D.BeltView
+#GetAppGUI net.mk.ppmc.apps.ImageStampPanel
+#GetAppGUI net.mk.dcApps.DCGUI
+#GetAppGUI net.mk.dcApps.SolSys.SolarSysGUI
+#GetAppGUI net.mk.dcApps.UD_DCApps
+#GetAppGUI net.mk.dcApps.DevelopDCApp
+#GetAppGUI net.mk.dcApps.FSExplorer
+#AddPreviewImage Discovering...true
+#getBestVisualArrangement BlocksToDisplay=16 rows=4	 columns=4	 scale= 1/4
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Realtime Preview BGDots1.PNG
+#HalfScreen Mode -Main 800
+total count 307 time 1082 average time 0
+Exception in thread "AWT-EventQueue-0" java.lang.ArithmeticException: / by zero
+	at org.javadev.AnimatingCardLayout.next(AnimatingCardLayout.java:172)
+	at java.awt.CardLayout.removeLayoutComponent(CardLayout.java:248)
+	at org.javadev.AnimatingCardLayout.removeLayoutComponent(AnimatingCardLayout.java:154)
+	at java.awt.Container.removeAll(Container.java:1293)
+	at net.mk.ppmcuGUI.WorldSpeedTestGUI.PrepareTable(WorldSpeedTestGUI.java:438)
+	at net.mk.ppmcuGUI.WorldSpeedTestGUI.ActiveAppActionPerformed(WorldSpeedTestGUI.java:955)
+	at net.mk.ppmcuGUI.WorldSpeedTestGUI.access$900(WorldSpeedTestGUI.java:88)
+	at net.mk.ppmcuGUI.WorldSpeedTestGUI$6.actionPerformed(WorldSpeedTestGUI.java:746)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2018)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2341)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6505)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3321)
+	at java.awt.Component.processEvent(Component.java:6270)
+	at java.awt.Container.processEvent(Container.java:2229)
+	at java.awt.Component.dispatchEventImpl(Component.java:4861)
+	at java.awt.Container.dispatchEventImpl(Container.java:2287)
+	at java.awt.Component.dispatchEvent(Component.java:4687)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4832)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4492)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4422)
+	at java.awt.Container.dispatchEventImpl(Container.java:2273)
+	at java.awt.Window.dispatchEventImpl(Window.java:2719)
+	at java.awt.Component.dispatchEvent(Component.java:4687)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:729)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.awt.EventQueue$3.run(EventQueue.java:686)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.awt.EventQueue$4.run(EventQueue.java:702)
+	at java.awt.EventQueue$4.run(EventQueue.java:700)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:699)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+#GetAppGUI net.mk.ppmcu2D.ScreenShareClient1
+Temp file : C:\Users\PDI\AppData\Local\Temp\ppmcuScreenShareClient.array
+#GetAppGUI net.mk.ppmcuGUI.EmptyJPanel
+#GetAppGUI net.mk.ppmcu2D.ImageGridTest
+#GetAppGUI net.mk.ppmcu2D.NodePreview3DJPanel
+#GetAppGUI net.mk.ppmcu2D.MultiCore2DPanel
+
+#GetAppGUI net.mk.ppmcu2D.Curve3DJPanel
+#GetAppGUI net.mk.ppmcu2D.BeltView
+#GetAppGUI net.mk.ppmc.apps.ImageStampPanel
+#GetAppGUI net.mk.dcApps.DCGUI
+#GetAppGUI net.mk.dcApps.SolSys.SolarSysGUI
+#GetAppGUI net.mk.dcApps.UD_DCApps
+#GetAppGUI net.mk.dcApps.DevelopDCApp
+#GetAppGUI net.mk.dcApps.FSExplorer
+#AddPreviewImage Discovering...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Realtime Preview BGDots1.PNG
+#getBestVisualArrangement BlocksToDisplay=16 rows=4	 columns=4	 scale= 1/4
+#Commercial Mode -Main 1600
+SystemTray : Allowed
+#HalfScreen Mode
+Init Components: 0.05sec(s)
+--------------
+Init Profile: 2.598sec(s)
+#GetAppGUI net.mk.ppmcuGUI.FrontPage
+#GetAppGUI net.mk.ppmcuGUI.WallpaperApp
+#readJsonFromUrl JSON:{
+ "areacode": "",
+ "city": "Bangalore",
+ "country_code": "IN",
+ "country_name": "India",
+ "ip": "14.99.179.11",
+ "latitude": 12.9833,
+ "longitude": 77.5833,
+ "metro_code": "",
+ "region_code": "19",
+ "region_name": "Karnataka",
+ "zipcode": ""
+}
+Init Location: 3.465sec(s)
+#GetAppGUI net.mk.ppmcuGUI.RedirectedJPanel
+#GetAppGUI net.mk.ppmcu2D.ScreenShareClient1
+Temp file : C:\Users\PDI\AppData\Local\Temp\ppmcuScreenShareClient.array
+#GetAppGUI net.mk.ppmcuGUI.EmptyJPanel
+#GetAppGUI net.mk.ppmcu2D.ImageGridTest
+#GetAppGUI net.mk.ppmcu2D.NodePreview3DJPanel
+#GetAppGUI net.mk.ppmcu2D.MultiCore2DPanel
+
+#GetAppGUI net.mk.ppmcu2D.Curve3DJPanel
+#GetAppGUI net.mk.ppmcu2D.BeltView
+#GetAppGUI net.mk.ppmc.apps.ImageStampPanel
+#GetAppGUI net.mk.dcApps.DCGUI
+#GetAppGUI net.mk.dcApps.SolSys.SolarSysGUI
+#GetAppGUI net.mk.dcApps.UD_DCApps
+#GetAppGUI net.mk.dcApps.DevelopDCApp
+#GetAppGUI net.mk.dcApps.FSExplorer
+#AddPreviewImage Discovering...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Realtime Preview BGDots1.PNG
+#getBestVisualArrangement BlocksToDisplay=16 rows=4	 columns=4	 scale= 1/4
+#HalfScreen Mode -Main 800
+total count 303 time 1082 average time 0
+total count 306 time 1079 average time 0
+total count 303 time 1080 average time 0
+total count 319 time 1080 average time 0
+Your machine info:
+PROCESSOR_IDENTIFIER :Intel64 Family 6 Model 30 Stepping 5, GenuineIntel
+PROCESSOR_ARCHITECTURE :AMD64
+PROCESSOR_ARCHITEW6432 :null
+NUMBER_OF_PROCESSORS :8
+PCBRAND :Pavilion
+PROCESSOR_LEVEL :6
+PROCESSOR_REVISION :1e05
+OPERATING SYSTEM: Windows 7
+
+------------------Sotrage Info--------------------
+C:\:	T: 442.69 GB	A: 95.89 GB	U: 79%	V: NTFS/local
+D:\:	T: 465.76 GB	A: 70.9 GB	U: 85%	V: NTFS/local
+E:\:	T: 22.78 GB	A: 3.32 GB	U: 86%	V: NTFS/local
+F:\:	T: 0.1 GB	A: 0.09 GB	U: 9%	V: FAT32/local
+G:\:	T: 0 GB	A: 0 GB	U: -	V: cdrom/cdrom
+
+------------------Processing Hardware Info------------------
+MAC_ID                        	:
+CPU_Usage                     	:{"User_Time":"0.08","Idle_Time":"0.89","Sys_Time":"0.03","Usage":"0.11"}
+Model                         	:Core(TM) i7 CPU       Q 720  @ 1.60GHz
+Cores_per_CPU                 	:16
+Total_CPUs                    	:8
+RAM_GB                        	:5.94
+SWAPFREE_GB                   	:6.63
+Vendor                        	:Intel
+Speed_(GHz)                   	:1.596
+CPU_UPTime                    	:  2:27 PM  up 3:31, (...)
+SWAP_GB                       	:11.93
+Physical_CPUs                 	:8
+RAMFREE_GB                    	:1.5
+
+------------------OS Info------------------
+PATCH                         	:Service Pack 1
+NAME                          	:Win32
+MACHINE                       	:
+CODE_NAME                     	:Vienna
+VENDOR_VER                    	:7
+DATA_MODEL                    	:64
+PC_NAME                       	:Eight-Pack
+USER                          	:PDI
+ARCH                          	:x64
+VERSION                       	:6.1
+DESC                          	:Microsoft Windows 7
+CPU_ENDIAN                    	:little
+IP_ADDRESS                    	:14.99.179.11
+VENDOR                        	:Microsoft
+
+------------------Network Hardware--------------------
+eth0:	WAN Miniport (IPv6)
+	MAC: 1C:D9:20:52:41:53	IP: 0.0.0.0	Type: Ethernet
+eth1:	WAN Miniport (Network Monitor)
+	MAC: 1C:D9:20:52:41:53	IP: 0.0.0.0	Type: Ethernet
+eth10:	Juniper Network Connect Virtual Adapter-QoS Packet Scheduler-0000
+	MAC: 00:FF:B0:5B:37:06	IP: 0.0.0.0	Type: Ethernet
+eth11:	Juniper Network Connect Virtual Adapter-WFP LightWeight Filter-0000
+	MAC: 00:FF:B0:5B:37:06	IP: 0.0.0.0	Type: Ethernet
+eth12:	Juniper Network Connect Virtual Adapter-AVG Network Filter Driver-0000
+	MAC: 00:FF:B0:5B:37:06	IP: 0.0.0.0	Type: Ethernet
+eth13:	WAN Miniport (IPv6)-QoS Packet Scheduler-0000
+	MAC: 1C:D9:20:52:41:53	IP: 0.0.0.0	Type: Ethernet
+eth14:	WAN Miniport (IPv6)-AVG Network Filter Driver-0000
+	MAC: 1C:D9:20:52:41:53	IP: 0.0.0.0	Type: Ethernet
+eth15:	WAN Miniport (IP)-QoS Packet Scheduler-0000
+	MAC: 1C:D9:20:52:41:53	IP: 0.0.0.0	Type: Ethernet
+eth16:	WAN Miniport (IP)-AVG Network Filter Driver-0000
+	MAC: 1C:D9:20:52:41:53	IP: 0.0.0.0	Type: Ethernet
+eth17:	WAN Miniport (Network Monitor)-QoS Packet Scheduler-0000
+	MAC: 1C:D9:20:52:41:53	IP: 0.0.0.0	Type: Ethernet
+eth18:	WAN Miniport (Network Monitor)-AVG Network Filter Driver-0000
+	MAC: 1C:D9:20:52:41:53	IP: 0.0.0.0	Type: Ethernet
+eth19:	Remote NDIS based Internet Sharing Device
+	MAC: 02:1D:88:24:8B:86	IP: 0.0.0.0	Type: Ethernet
+eth2:	Realtek PCIe GBE Family Controller
+	MAC: C8:0A:A9:F9:D1:65	IP: 0.0.0.0	Type: Ethernet
+eth20:	SAMSUNG Mobile USB Remote NDIS Network Device
+	MAC: CE:8B:F8:16:CB:0B	IP: 0.0.0.0	Type: Ethernet
+eth21:	Intel(R) WiFi Link 1000 BGN
+	MAC: 00:26:C7:6E:9F:D8	IP: 0.0.0.0	Type: Ethernet
+eth22:	Intel(R) WiFi Link 1000 BGN-Native WiFi Filter Driver-0000
+	MAC: 00:26:C7:6E:9F:D8	IP: 0.0.0.0	Type: Ethernet
+eth23:	Intel(R) WiFi Link 1000 BGN-AVG Network Filter Driver-0000
+	MAC: 00:26:C7:6E:9F:D8	IP: 0.0.0.0	Type: Ethernet
+eth24:	Intel(R) WiFi Link 1000 BGN-QoS Packet Scheduler-0000
+	MAC: 00:26:C7:6E:9F:D8	IP: 0.0.0.0	Type: Ethernet
+eth25:	Intel(R) WiFi Link 1000 BGN-WFP LightWeight Filter-0000
+	MAC: 00:26:C7:6E:9F:D8	IP: 0.0.0.0	Type: Ethernet
+eth26:	Microsoft Virtual WiFi Miniport Adapter
+	MAC: 00:26:C7:6E:9F:D9	IP: 0.0.0.0	Type: Ethernet
+eth27:	Intel(R) WiFi Link 1000 BGN-Virtual WiFi Filter Driver-0000
+	MAC: 00:26:C7:6E:9F:D8	IP: 0.0.0.0	Type: Ethernet
+eth3:	Juniper Network Connect Virtual Adapter
+	MAC: 00:FF:B0:5B:37:06	IP: 0.0.0.0	Type: Ethernet
+eth4:	WAN Miniport (IP)
+	MAC: 1C:D9:20:52:41:53	IP: 0.0.0.0	Type: Ethernet
+eth5:	Realtek PCIe GBE Family Controller-QoS Packet Scheduler-0000
+	MAC: C8:0A:A9:F9:D1:65	IP: 0.0.0.0	Type: Ethernet
+eth6:	Realtek PCIe GBE Family Controller
+	MAC: C8:0A:A9:F9:D1:65	IP: 0.0.0.0	Type: Ethernet
+eth7:	Remote NDIS based Internet Sharing Device #2
+	MAC: 42:97:6E:93:0B:22	IP: 0.0.0.0	Type: Ethernet
+eth8:	Realtek PCIe GBE Family Controller-WFP LightWeight Filter-0000
+	MAC: C8:0A:A9:F9:D1:65	IP: 0.0.0.0	Type: Ethernet
+eth9:	Realtek PCIe GBE Family Controller-AVG Network Filter Driver-0000
+	MAC: C8:0A:A9:F9:D1:65	IP: 0.0.0.0	Type: Ethernet
+lo0:	Software Loopback Interface 1
+	MAC: NULL_HWADDR	IP: 127.0.0.1	Type: Local Loopback
+Current IP address : 14.99.179.11
+PC_NAME:Eight-Pack
+Current MAC address : 
+------------
+[TEST START]=====getPrimeNumbers Single Task Time======
+#PrimeNumbersFinder.getPrimeNumbers NumberOf Prcessors= 8
+Number of task=1
+#PrimeNumbersFinder.getPrimeNumbers Start collecting results
+total count 334 time 1079 average time 0
+#PrimeNumbersFinder.getPrimeNumbers  run time 9.475 secs
+[TEST]                   =====END======
+[Using Single Core] Prime Number calculation done in : 9.517sec(s)
+[TEST START]=====getPrimeNumbers Multiple Task Time======
+#PrimeNumbersFinder.getPrimeNumbers NumberOf Prcessors= 8
+Number of task=1499
+#PrimeNumbersFinder.getPrimeNumbers Start collecting results
+#PrimeNumbersFinder.getPrimeNumbers  run time 3.365 secs
+[TEST]                   =====END======
+[Using Multiple Cores] Prime Number calculation done in : 3.422sec(s)
+----------------
+Result: 
+Single CPU, processing time: 9.517secs
+Multiple CPU, processing time: 3.422secs
+
+Performance Boost Possible by switching to ppmcu API: 2.78 times
+----------------
+#MeshCreater3D Single core paint time 0.308 secs
+[Using Single Core] Random Number generation done in : 0.324sec(s)
+#MeshCreater3D Multi core paint time 0.009000000000000001 secs
+[Using Multiple Cores] Random Number generation done in : 0.022sec(s)
+Waiting for result from new Web()...
+#GetAppGUI net.mk.ppmcu2D.ScreenShareClient1
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.ScreenShareClient1
+#UDAPP Constructor getParameterTypes	5
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	[Ljava.lang.String;
+#UDAPP getParameterTypes getSimpleName	String[]
+#UDAPP getParameterTypes name	int
+#UDAPP getParameterTypes getSimpleName	int
+#UDAPP getParameterTypes name	int
+#UDAPP getParameterTypes getSimpleName	int
+#UDAPP Constructor [1] name	net.mk.ppmcu2D.ScreenShareClient1
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+Temp file : C:\Users\PDI\AppData\Local\Temp\ppmcuScreenShareClient.array
+#GetAppGUI net.mk.ppmcuGUI.EmptyJPanel
+#UDAPP Constructor [0] name	net.mk.ppmcuGUI.EmptyJPanel
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.ppmcuGUI.EmptyJPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmcu2D.ImageGridTest
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.ImageGridTest
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmcu2D.NodePreview3DJPanel
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.NodePreview3DJPanel
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.ppmcu2D.NodePreview3DJPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmcu2D.MultiCore2DPanel
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.MultiCore2DPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+
+#GetAppGUI net.mk.ppmcu2D.Curve3DJPanel
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.Curve3DJPanel
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.ppmcu2D.Curve3DJPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmcu2D.BeltView
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.BeltView
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.ppmcu2D.BeltView
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmc.apps.ImageStampPanel
+#UDAPP Constructor [0] name	net.mk.ppmc.apps.ImageStampPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.dcApps.DCGUI
+#UDAPP Constructor [0] name	net.mk.dcApps.DCGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP Constructor [1] name	net.mk.dcApps.DCGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	[Ljson.JSONObject;
+#UDAPP getParameterTypes getSimpleName	JSONObject[]
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#GetAppGUI net.mk.dcApps.SolSys.SolarSysGUI
+#UDAPP Constructor [0] name	net.mk.dcApps.SolSys.SolarSysGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP Constructor [1] name	net.mk.dcApps.SolSys.SolarSysGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	[Ljson.JSONObject;
+#UDAPP getParameterTypes getSimpleName	JSONObject[]
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#UDAPP Constructor [2] name	net.mk.dcApps.SolSys.SolarSysGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#GetAppGUI net.mk.dcApps.UD_DCApps
+#UDAPP Constructor [0] name	net.mk.dcApps.UD_DCApps
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	[Ljson.JSONObject;
+#UDAPP getParameterTypes getSimpleName	JSONObject[]
+#UDAPP Constructor [1] name	net.mk.dcApps.UD_DCApps
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.dcApps.DevelopDCApp
+#UDAPP Constructor [0] name	net.mk.dcApps.DevelopDCApp
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.dcApps.FSExplorer
+#UDAPP Constructor [0] name	net.mk.dcApps.FSExplorer
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.dcApps.FSExplorer
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#AddPreviewImage Discovering...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#getBestVisualArrangement BlocksToDisplay=16 rows=4	 columns=4	 scale= 1/4
+#AddPreviewImage Looping...true
+#AddPreviewImage Realtime Preview BGDots1.PNG
+#Commercial Mode -Main 1600
+SystemTray : Allowed
+#HalfScreen Mode
+Init Components: 0.065sec(s)
+--------------
+Init Profile: 2.652sec(s)
+#GetAppGUI net.mk.ppmcuGUI.FrontPage
+#UDAPP Constructor [0] name	net.mk.ppmcuGUI.FrontPage
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP Constructor [1] name	net.mk.ppmcuGUI.FrontPage
+#UDAPP Constructor getParameterTypes	4
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#GetAppGUI net.mk.ppmcuGUI.WallpaperApp
+#UDAPP Constructor [0] name	net.mk.ppmcuGUI.WallpaperApp
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#readJsonFromUrl JSON:{
+ "areacode": "",
+ "city": "Bangalore",
+ "country_code": "IN",
+ "country_name": "India",
+ "ip": "14.99.179.11",
+ "latitude": 12.9833,
+ "longitude": 77.5833,
+ "metro_code": "",
+ "region_code": "19",
+ "region_name": "Karnataka",
+ "zipcode": ""
+}
+Init Location: 3.588sec(s)
+#GetAppGUI net.mk.ppmcuGUI.RedirectedJPanel
+#UDAPP Constructor [0] name	net.mk.ppmcuGUI.RedirectedJPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP Constructor [1] name	net.mk.ppmcuGUI.RedirectedJPanel
+#UDAPP Constructor getParameterTypes	6
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	int
+#UDAPP getParameterTypes getSimpleName	int
+#UDAPP getParameterTypes name	int
+#UDAPP getParameterTypes getSimpleName	int
+#UDAPP getParameterTypes name	int
+#UDAPP getParameterTypes getSimpleName	int
+#GetAppGUI net.mk.ppmcu2D.ScreenShareClient1
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.ScreenShareClient1
+#UDAPP Constructor getParameterTypes	5
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	[Ljava.lang.String;
+#UDAPP getParameterTypes getSimpleName	String[]
+#UDAPP getParameterTypes name	int
+#UDAPP getParameterTypes getSimpleName	int
+#UDAPP getParameterTypes name	int
+#UDAPP getParameterTypes getSimpleName	int
+#UDAPP Constructor [1] name	net.mk.ppmcu2D.ScreenShareClient1
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+Temp file : C:\Users\PDI\AppData\Local\Temp\ppmcuScreenShareClient.array
+#GetAppGUI net.mk.ppmcuGUI.EmptyJPanel
+#UDAPP Constructor [0] name	net.mk.ppmcuGUI.EmptyJPanel
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.ppmcuGUI.EmptyJPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmcu2D.ImageGridTest
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.ImageGridTest
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmcu2D.NodePreview3DJPanel
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.NodePreview3DJPanel
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.ppmcu2D.NodePreview3DJPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmcu2D.MultiCore2DPanel
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.MultiCore2DPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+
+#GetAppGUI net.mk.ppmcu2D.Curve3DJPanel
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.Curve3DJPanel
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.ppmcu2D.Curve3DJPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmcu2D.BeltView
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.BeltView
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.ppmcu2D.BeltView
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmc.apps.ImageStampPanel
+#UDAPP Constructor [0] name	net.mk.ppmc.apps.ImageStampPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.dcApps.DCGUI
+#UDAPP Constructor [0] name	net.mk.dcApps.DCGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP Constructor [1] name	net.mk.dcApps.DCGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	[Ljson.JSONObject;
+#UDAPP getParameterTypes getSimpleName	JSONObject[]
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#GetAppGUI net.mk.dcApps.SolSys.SolarSysGUI
+#UDAPP Constructor [0] name	net.mk.dcApps.SolSys.SolarSysGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP Constructor [1] name	net.mk.dcApps.SolSys.SolarSysGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	[Ljson.JSONObject;
+#UDAPP getParameterTypes getSimpleName	JSONObject[]
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#UDAPP Constructor [2] name	net.mk.dcApps.SolSys.SolarSysGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#GetAppGUI net.mk.dcApps.UD_DCApps
+#UDAPP Constructor [0] name	net.mk.dcApps.UD_DCApps
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	[Ljson.JSONObject;
+#UDAPP getParameterTypes getSimpleName	JSONObject[]
+#UDAPP Constructor [1] name	net.mk.dcApps.UD_DCApps
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.dcApps.DevelopDCApp
+#UDAPP Constructor [0] name	net.mk.dcApps.DevelopDCApp
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.dcApps.FSExplorer
+#UDAPP Constructor [0] name	net.mk.dcApps.FSExplorer
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.dcApps.FSExplorer
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#AddPreviewImage Discovering...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Realtime Preview BGDots1.PNG
+#getBestVisualArrangement BlocksToDisplay=16 rows=4	 columns=4	 scale= 1/4
+#HalfScreen Mode -Main 800
+#GetAppGUI net.mk.ppmcu2D.ScreenShareClient1
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.ScreenShareClient1
+#UDAPP Constructor getParameterTypes	5
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	[Ljava.lang.String;
+#UDAPP getParameterTypes getSimpleName	String[]
+#UDAPP getParameterTypes name	int
+#UDAPP getParameterTypes getSimpleName	int
+#UDAPP getParameterTypes name	int
+#UDAPP getParameterTypes getSimpleName	int
+#UDAPP Constructor [1] name	net.mk.ppmcu2D.ScreenShareClient1
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+Temp file : C:\Users\PDI\AppData\Local\Temp\ppmcuScreenShareClient.array
+#GetAppGUI net.mk.ppmcuGUI.EmptyJPanel
+#UDAPP Constructor [0] name	net.mk.ppmcuGUI.EmptyJPanel
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.ppmcuGUI.EmptyJPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmcu2D.ImageGridTest
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.ImageGridTest
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmcu2D.NodePreview3DJPanel
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.NodePreview3DJPanel
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.ppmcu2D.NodePreview3DJPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmcu2D.MultiCore2DPanel
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.MultiCore2DPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+
+#GetAppGUI net.mk.ppmcu2D.Curve3DJPanel
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.Curve3DJPanel
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.ppmcu2D.Curve3DJPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmcu2D.BeltView
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.BeltView
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.ppmcu2D.BeltView
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmc.apps.ImageStampPanel
+#UDAPP Constructor [0] name	net.mk.ppmc.apps.ImageStampPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.dcApps.DCGUI
+#UDAPP Constructor [0] name	net.mk.dcApps.DCGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP Constructor [1] name	net.mk.dcApps.DCGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	[Ljson.JSONObject;
+#UDAPP getParameterTypes getSimpleName	JSONObject[]
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#GetAppGUI net.mk.dcApps.SolSys.SolarSysGUI
+#UDAPP Constructor [0] name	net.mk.dcApps.SolSys.SolarSysGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP Constructor [1] name	net.mk.dcApps.SolSys.SolarSysGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	[Ljson.JSONObject;
+#UDAPP getParameterTypes getSimpleName	JSONObject[]
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#UDAPP Constructor [2] name	net.mk.dcApps.SolSys.SolarSysGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#GetAppGUI net.mk.dcApps.UD_DCApps
+#UDAPP Constructor [0] name	net.mk.dcApps.UD_DCApps
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	[Ljson.JSONObject;
+#UDAPP getParameterTypes getSimpleName	JSONObject[]
+#UDAPP Constructor [1] name	net.mk.dcApps.UD_DCApps
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.dcApps.DevelopDCApp
+#UDAPP Constructor [0] name	net.mk.dcApps.DevelopDCApp
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.dcApps.FSExplorer
+#UDAPP Constructor [0] name	net.mk.dcApps.FSExplorer
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.dcApps.FSExplorer
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#AddPreviewImage Discovering...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Realtime Preview BGDots1.PNG
+#getBestVisualArrangement BlocksToDisplay=16 rows=4	 columns=4	 scale= 1/4
+#Commercial Mode -Main 1600
+SystemTray : Allowed
+#HalfScreen Mode
+Init Components: 0.053sec(s)
+--------------
+Init Profile: 1.651sec(s)
+#GetAppGUI net.mk.ppmcuGUI.FrontPage
+#UDAPP Constructor [0] name	net.mk.ppmcuGUI.FrontPage
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP Constructor [1] name	net.mk.ppmcuGUI.FrontPage
+#UDAPP Constructor getParameterTypes	4
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#GetAppGUI net.mk.ppmcuGUI.WallpaperApp
+#UDAPP Constructor [0] name	net.mk.ppmcuGUI.WallpaperApp
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#readJsonFromUrl JSON:{
+ "areacode": "",
+ "city": "Bangalore",
+ "country_code": "IN",
+ "country_name": "India",
+ "ip": "14.99.179.11",
+ "latitude": 12.9833,
+ "longitude": 77.5833,
+ "metro_code": "",
+ "region_code": "19",
+ "region_name": "Karnataka",
+ "zipcode": ""
+}
+Init Location: 2.367sec(s)
+#GetAppGUI net.mk.ppmcuGUI.RedirectedJPanel
+#UDAPP Constructor [0] name	net.mk.ppmcuGUI.RedirectedJPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP Constructor [1] name	net.mk.ppmcuGUI.RedirectedJPanel
+#UDAPP Constructor getParameterTypes	6
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	int
+#UDAPP getParameterTypes getSimpleName	int
+#UDAPP getParameterTypes name	int
+#UDAPP getParameterTypes getSimpleName	int
+#UDAPP getParameterTypes name	int
+#UDAPP getParameterTypes getSimpleName	int
+#GetAppGUI net.mk.ppmcu2D.ScreenShareClient1
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.ScreenShareClient1
+#UDAPP Constructor getParameterTypes	5
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	[Ljava.lang.String;
+#UDAPP getParameterTypes getSimpleName	String[]
+#UDAPP getParameterTypes name	int
+#UDAPP getParameterTypes getSimpleName	int
+#UDAPP getParameterTypes name	int
+#UDAPP getParameterTypes getSimpleName	int
+#UDAPP Constructor [1] name	net.mk.ppmcu2D.ScreenShareClient1
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+Temp file : C:\Users\PDI\AppData\Local\Temp\ppmcuScreenShareClient.array
+#GetAppGUI net.mk.ppmcuGUI.EmptyJPanel
+#UDAPP Constructor [0] name	net.mk.ppmcuGUI.EmptyJPanel
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.ppmcuGUI.EmptyJPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmcu2D.ImageGridTest
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.ImageGridTest
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmcu2D.NodePreview3DJPanel
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.NodePreview3DJPanel
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.ppmcu2D.NodePreview3DJPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmcu2D.MultiCore2DPanel
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.MultiCore2DPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+
+#GetAppGUI net.mk.ppmcu2D.Curve3DJPanel
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.Curve3DJPanel
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.ppmcu2D.Curve3DJPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmcu2D.BeltView
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.BeltView
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.ppmcu2D.BeltView
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmc.apps.ImageStampPanel
+#UDAPP Constructor [0] name	net.mk.ppmc.apps.ImageStampPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.dcApps.DCGUI
+#UDAPP Constructor [0] name	net.mk.dcApps.DCGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP Constructor [1] name	net.mk.dcApps.DCGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	[Ljson.JSONObject;
+#UDAPP getParameterTypes getSimpleName	JSONObject[]
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#GetAppGUI net.mk.dcApps.SolSys.SolarSysGUI
+#UDAPP Constructor [0] name	net.mk.dcApps.SolSys.SolarSysGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP Constructor [1] name	net.mk.dcApps.SolSys.SolarSysGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	[Ljson.JSONObject;
+#UDAPP getParameterTypes getSimpleName	JSONObject[]
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#UDAPP Constructor [2] name	net.mk.dcApps.SolSys.SolarSysGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#GetAppGUI net.mk.dcApps.UD_DCApps
+#UDAPP Constructor [0] name	net.mk.dcApps.UD_DCApps
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	[Ljson.JSONObject;
+#UDAPP getParameterTypes getSimpleName	JSONObject[]
+#UDAPP Constructor [1] name	net.mk.dcApps.UD_DCApps
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.dcApps.DevelopDCApp
+#UDAPP Constructor [0] name	net.mk.dcApps.DevelopDCApp
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.dcApps.FSExplorer
+#UDAPP Constructor [0] name	net.mk.dcApps.FSExplorer
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.dcApps.FSExplorer
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#AddPreviewImage Discovering...true
+#getBestVisualArrangement BlocksToDisplay=16 rows=4	 columns=4	 scale= 1/4
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Realtime Preview BGDots1.PNG
+#HalfScreen Mode -Main 800
+Exception in thread "AWT-EventQueue-0" java.awt.IllegalComponentStateException: The frame is decorated
+	at java.awt.Frame.setShape(Frame.java:973)
+	at net.mk.ppmcuGUI.WSTFrame2$1.componentResized(WSTFrame2.java:88)
+	at java.awt.Component.processComponentEvent(Component.java:6331)
+	at java.awt.Component.processEvent(Component.java:6285)
+	at java.awt.Container.processEvent(Container.java:2229)
+	at java.awt.Window.processEvent(Window.java:2022)
+	at java.awt.Component.dispatchEventImpl(Component.java:4861)
+	at java.awt.Container.dispatchEventImpl(Container.java:2287)
+	at java.awt.Window.dispatchEventImpl(Window.java:2719)
+	at java.awt.Component.dispatchEvent(Component.java:4687)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:729)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.awt.EventQueue$3.run(EventQueue.java:686)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.awt.EventQueue$4.run(EventQueue.java:702)
+	at java.awt.EventQueue$4.run(EventQueue.java:700)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:699)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+Exception in thread "AWT-EventQueue-0" java.awt.IllegalComponentStateException: The frame is decorated
+	at java.awt.Frame.setShape(Frame.java:973)
+	at net.mk.ppmcuGUI.WSTFrame2$1.componentResized(WSTFrame2.java:88)
+	at java.awt.Component.processComponentEvent(Component.java:6331)
+	at java.awt.Component.processEvent(Component.java:6285)
+	at java.awt.Container.processEvent(Container.java:2229)
+	at java.awt.Window.processEvent(Window.java:2022)
+	at java.awt.Component.dispatchEventImpl(Component.java:4861)
+	at java.awt.Container.dispatchEventImpl(Container.java:2287)
+	at java.awt.Window.dispatchEventImpl(Window.java:2719)
+	at java.awt.Component.dispatchEvent(Component.java:4687)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:729)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.awt.EventQueue$3.run(EventQueue.java:686)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.awt.EventQueue$4.run(EventQueue.java:702)
+	at java.awt.EventQueue$4.run(EventQueue.java:700)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:699)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+Exception in thread "AWT-EventQueue-0" java.awt.IllegalComponentStateException: The frame is decorated
+	at java.awt.Frame.setShape(Frame.java:973)
+	at net.mk.ppmcuGUI.WSTFrame2$1.componentResized(WSTFrame2.java:88)
+	at java.awt.Component.processComponentEvent(Component.java:6331)
+	at java.awt.Component.processEvent(Component.java:6285)
+	at java.awt.Container.processEvent(Container.java:2229)
+	at java.awt.Window.processEvent(Window.java:2022)
+	at java.awt.Component.dispatchEventImpl(Component.java:4861)
+	at java.awt.Container.dispatchEventImpl(Container.java:2287)
+	at java.awt.Window.dispatchEventImpl(Window.java:2719)
+	at java.awt.Component.dispatchEvent(Component.java:4687)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:729)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.awt.EventQueue$3.run(EventQueue.java:686)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.awt.EventQueue$4.run(EventQueue.java:702)
+	at java.awt.EventQueue$4.run(EventQueue.java:700)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:699)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+Exception in thread "AWT-EventQueue-0" java.awt.IllegalComponentStateException: The frame is decorated
+	at java.awt.Frame.setShape(Frame.java:973)
+	at net.mk.ppmcuGUI.WSTFrame2$1.componentResized(WSTFrame2.java:88)
+	at java.awt.Component.processComponentEvent(Component.java:6331)
+	at java.awt.Component.processEvent(Component.java:6285)
+	at java.awt.Container.processEvent(Container.java:2229)
+	at java.awt.Window.processEvent(Window.java:2022)
+	at java.awt.Component.dispatchEventImpl(Component.java:4861)
+	at java.awt.Container.dispatchEventImpl(Container.java:2287)
+	at java.awt.Window.dispatchEventImpl(Window.java:2719)
+	at java.awt.Component.dispatchEvent(Component.java:4687)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:729)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.awt.EventQueue$3.run(EventQueue.java:686)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.awt.EventQueue$4.run(EventQueue.java:702)
+	at java.awt.EventQueue$4.run(EventQueue.java:700)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:699)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+Exception in thread "AWT-EventQueue-0" java.awt.IllegalComponentStateException: The frame is decorated
+	at java.awt.Frame.setShape(Frame.java:973)
+	at net.mk.ppmcuGUI.WSTFrame2$1.componentResized(WSTFrame2.java:88)
+	at java.awt.Component.processComponentEvent(Component.java:6331)
+	at java.awt.Component.processEvent(Component.java:6285)
+	at java.awt.Container.processEvent(Container.java:2229)
+	at java.awt.Window.processEvent(Window.java:2022)
+	at java.awt.Component.dispatchEventImpl(Component.java:4861)
+	at java.awt.Container.dispatchEventImpl(Container.java:2287)
+	at java.awt.Window.dispatchEventImpl(Window.java:2719)
+	at java.awt.Component.dispatchEvent(Component.java:4687)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:729)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.awt.EventQueue$3.run(EventQueue.java:686)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.awt.EventQueue$4.run(EventQueue.java:702)
+	at java.awt.EventQueue$4.run(EventQueue.java:700)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:699)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+Exception in thread "AWT-EventQueue-0" java.awt.IllegalComponentStateException: The frame is decorated
+	at java.awt.Frame.setShape(Frame.java:973)
+	at net.mk.ppmcuGUI.WSTFrame2$1.componentResized(WSTFrame2.java:88)
+	at java.awt.Component.processComponentEvent(Component.java:6331)
+	at java.awt.Component.processEvent(Component.java:6285)
+	at java.awt.Container.processEvent(Container.java:2229)
+	at java.awt.Window.processEvent(Window.java:2022)
+	at java.awt.Component.dispatchEventImpl(Component.java:4861)
+	at java.awt.Container.dispatchEventImpl(Container.java:2287)
+	at java.awt.Window.dispatchEventImpl(Window.java:2719)
+	at java.awt.Component.dispatchEvent(Component.java:4687)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:729)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.awt.EventQueue$3.run(EventQueue.java:686)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.awt.EventQueue$4.run(EventQueue.java:702)
+	at java.awt.EventQueue$4.run(EventQueue.java:700)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:699)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+Exception in thread "AWT-EventQueue-0" java.awt.IllegalComponentStateException: The frame is decorated
+	at java.awt.Frame.setShape(Frame.java:973)
+	at net.mk.ppmcuGUI.WSTFrame2$1.componentResized(WSTFrame2.java:88)
+	at java.awt.Component.processComponentEvent(Component.java:6331)
+	at java.awt.Component.processEvent(Component.java:6285)
+	at java.awt.Container.processEvent(Container.java:2229)
+	at java.awt.Window.processEvent(Window.java:2022)
+	at java.awt.Component.dispatchEventImpl(Component.java:4861)
+	at java.awt.Container.dispatchEventImpl(Container.java:2287)
+	at java.awt.Window.dispatchEventImpl(Window.java:2719)
+	at java.awt.Component.dispatchEvent(Component.java:4687)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:729)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.awt.EventQueue$3.run(EventQueue.java:686)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.awt.EventQueue$4.run(EventQueue.java:702)
+	at java.awt.EventQueue$4.run(EventQueue.java:700)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:699)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+Exception in thread "AWT-EventQueue-0" java.awt.IllegalComponentStateException: The frame is decorated
+	at java.awt.Frame.setShape(Frame.java:973)
+	at net.mk.ppmcuGUI.WSTFrame2$1.componentResized(WSTFrame2.java:88)
+	at java.awt.Component.processComponentEvent(Component.java:6331)
+	at java.awt.Component.processEvent(Component.java:6285)
+	at java.awt.Container.processEvent(Container.java:2229)
+	at java.awt.Window.processEvent(Window.java:2022)
+	at java.awt.Component.dispatchEventImpl(Component.java:4861)
+	at java.awt.Container.dispatchEventImpl(Container.java:2287)
+	at java.awt.Window.dispatchEventImpl(Window.java:2719)
+	at java.awt.Component.dispatchEvent(Component.java:4687)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:729)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.awt.EventQueue$3.run(EventQueue.java:686)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.awt.EventQueue$4.run(EventQueue.java:702)
+	at java.awt.EventQueue$4.run(EventQueue.java:700)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:699)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+Exception in thread "AWT-EventQueue-0" java.awt.IllegalComponentStateException: The frame is decorated
+	at java.awt.Frame.setShape(Frame.java:973)
+	at net.mk.ppmcuGUI.WSTFrame2$1.componentResized(WSTFrame2.java:88)
+	at java.awt.Component.processComponentEvent(Component.java:6331)
+	at java.awt.Component.processEvent(Component.java:6285)
+	at java.awt.Container.processEvent(Container.java:2229)
+	at java.awt.Window.processEvent(Window.java:2022)
+	at java.awt.Component.dispatchEventImpl(Component.java:4861)
+	at java.awt.Container.dispatchEventImpl(Container.java:2287)
+	at java.awt.Window.dispatchEventImpl(Window.java:2719)
+	at java.awt.Component.dispatchEvent(Component.java:4687)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:729)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.awt.EventQueue$3.run(EventQueue.java:686)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.awt.EventQueue$4.run(EventQueue.java:702)
+	at java.awt.EventQueue$4.run(EventQueue.java:700)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:699)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+total count 274 time 1081 average time 0
+#GetAppGUI net.mk.ppmcu2D.ScreenShareClient1
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.ScreenShareClient1
+#UDAPP Constructor getParameterTypes	5
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	[Ljava.lang.String;
+#UDAPP getParameterTypes getSimpleName	String[]
+#UDAPP getParameterTypes name	int
+#UDAPP getParameterTypes getSimpleName	int
+#UDAPP getParameterTypes name	int
+#UDAPP getParameterTypes getSimpleName	int
+#UDAPP Constructor [1] name	net.mk.ppmcu2D.ScreenShareClient1
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#readJsonFromUrl JSON:{
+ "areacode": "",
+ "city": "New Delhi",
+ "country_code": "IN",
+ "country_name": "India",
+ "ip": "14.96.217.22",
+ "latitude": 28.6,
+ "longitude": 77.2,
+ "metro_code": "",
+ "region_code": "07",
+ "region_name": "Delhi",
+ "zipcode": ""
+}
+Dec 02, 2013 4:40:37 PM net.mk.ppmcuGUI.FrontPage$1 run
+SEVERE: null
+java.lang.NumberFormatException: empty String
+	at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:1011)
+	at java.lang.Double.parseDouble(Double.java:540)
+	at net.mk.ppmcuGUI.FrontPage.getBoostPossibleRankRatio(FrontPage.java:649)
+	at net.mk.ppmcuGUI.FrontPage$1.run(FrontPage.java:70)
+	at java.lang.Thread.run(Thread.java:722)
+
+Init Location: 10.774000000000001sec(s)
+Temp file : C:\Users\PDI\AppData\Local\Temp\ppmcuScreenShareClient.array
+#GetAppGUI net.mk.ppmcuGUI.EmptyJPanel
+#UDAPP Constructor [0] name	net.mk.ppmcuGUI.EmptyJPanel
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.ppmcuGUI.EmptyJPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmcu2D.ImageGridTest
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.ImageGridTest
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmcu2D.NodePreview3DJPanel
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.NodePreview3DJPanel
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.ppmcu2D.NodePreview3DJPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmcu2D.MultiCore2DPanel
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.MultiCore2DPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+
+#GetAppGUI net.mk.ppmcu2D.Curve3DJPanel
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.Curve3DJPanel
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.ppmcu2D.Curve3DJPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmcu2D.BeltView
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.BeltView
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.ppmcu2D.BeltView
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmc.apps.ImageStampPanel
+#UDAPP Constructor [0] name	net.mk.ppmc.apps.ImageStampPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.dcApps.DCGUI
+#UDAPP Constructor [0] name	net.mk.dcApps.DCGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP Constructor [1] name	net.mk.dcApps.DCGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	[Ljson.JSONObject;
+#UDAPP getParameterTypes getSimpleName	JSONObject[]
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#GetAppGUI net.mk.dcApps.SolSys.SolarSysGUI
+#UDAPP Constructor [0] name	net.mk.dcApps.SolSys.SolarSysGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP Constructor [1] name	net.mk.dcApps.SolSys.SolarSysGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	[Ljson.JSONObject;
+#UDAPP getParameterTypes getSimpleName	JSONObject[]
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#UDAPP Constructor [2] name	net.mk.dcApps.SolSys.SolarSysGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#GetAppGUI net.mk.dcApps.UD_DCApps
+#UDAPP Constructor [0] name	net.mk.dcApps.UD_DCApps
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	[Ljson.JSONObject;
+#UDAPP getParameterTypes getSimpleName	JSONObject[]
+#UDAPP Constructor [1] name	net.mk.dcApps.UD_DCApps
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.dcApps.DevelopDCApp
+#UDAPP Constructor [0] name	net.mk.dcApps.DevelopDCApp
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.dcApps.FSExplorer
+#UDAPP Constructor [0] name	net.mk.dcApps.FSExplorer
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.dcApps.FSExplorer
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#AddPreviewImage Discovering...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Realtime Preview BGDots1.PNG
+#getBestVisualArrangement BlocksToDisplay=16 rows=4	 columns=4	 scale= 1/4
+#Commercial Mode -Main 1600
+SystemTray : Allowed
+#HalfScreen Mode
+Init Components: 0.055sec(s)
+--------------
+Init Profile: 2.66sec(s)
+#GetAppGUI net.mk.ppmcuGUI.FrontPage
+#UDAPP Constructor [0] name	net.mk.ppmcuGUI.FrontPage
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP Constructor [1] name	net.mk.ppmcuGUI.FrontPage
+#UDAPP Constructor getParameterTypes	4
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#GetAppGUI net.mk.ppmcuGUI.WallpaperApp
+#UDAPP Constructor [0] name	net.mk.ppmcuGUI.WallpaperApp
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmcuGUI.RedirectedJPanel
+#UDAPP Constructor [0] name	net.mk.ppmcuGUI.RedirectedJPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP Constructor [1] name	net.mk.ppmcuGUI.RedirectedJPanel
+#UDAPP Constructor getParameterTypes	6
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	int
+#UDAPP getParameterTypes getSimpleName	int
+#UDAPP getParameterTypes name	int
+#UDAPP getParameterTypes getSimpleName	int
+#UDAPP getParameterTypes name	int
+#UDAPP getParameterTypes getSimpleName	int
+#GetAppGUI net.mk.ppmcu2D.ScreenShareClient1
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.ScreenShareClient1
+#UDAPP Constructor getParameterTypes	5
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	[Ljava.lang.String;
+#UDAPP getParameterTypes getSimpleName	String[]
+#UDAPP getParameterTypes name	int
+#UDAPP getParameterTypes getSimpleName	int
+#UDAPP getParameterTypes name	int
+#UDAPP getParameterTypes getSimpleName	int
+#UDAPP Constructor [1] name	net.mk.ppmcu2D.ScreenShareClient1
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+Temp file : C:\Users\PDI\AppData\Local\Temp\ppmcuScreenShareClient.array
+#GetAppGUI net.mk.ppmcuGUI.EmptyJPanel
+#UDAPP Constructor [0] name	net.mk.ppmcuGUI.EmptyJPanel
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.ppmcuGUI.EmptyJPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmcu2D.ImageGridTest
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.ImageGridTest
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmcu2D.NodePreview3DJPanel
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.NodePreview3DJPanel
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.ppmcu2D.NodePreview3DJPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmcu2D.MultiCore2DPanel
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.MultiCore2DPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#readJsonFromUrl JSON:{
+ "areacode": "",
+ "city": "New Delhi",
+ "country_code": "IN",
+ "country_name": "India",
+ "ip": "14.96.217.22",
+ "latitude": 28.6,
+ "longitude": 77.2,
+ "metro_code": "",
+ "region_code": "07",
+ "region_name": "Delhi",
+ "zipcode": ""
+}
+Init Location: 5.296sec(s)
+Dec 02, 2013 4:41:09 PM net.mk.ppmcuGUI.FrontPage$1 run
+SEVERE: null
+java.lang.NumberFormatException: empty String
+	at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:1011)
+	at java.lang.Double.parseDouble(Double.java:540)
+	at net.mk.ppmcuGUI.FrontPage.getBoostPossibleRankRatio(FrontPage.java:649)
+	at net.mk.ppmcuGUI.FrontPage$1.run(FrontPage.java:70)
+	at java.lang.Thread.run(Thread.java:722)
+
+
+#GetAppGUI net.mk.ppmcu2D.Curve3DJPanel
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.Curve3DJPanel
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.ppmcu2D.Curve3DJPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmcu2D.BeltView
+#UDAPP Constructor [0] name	net.mk.ppmcu2D.BeltView
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.ppmcu2D.BeltView
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.ppmc.apps.ImageStampPanel
+#UDAPP Constructor [0] name	net.mk.ppmc.apps.ImageStampPanel
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.dcApps.DCGUI
+#UDAPP Constructor [0] name	net.mk.dcApps.DCGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP Constructor [1] name	net.mk.dcApps.DCGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	[Ljson.JSONObject;
+#UDAPP getParameterTypes getSimpleName	JSONObject[]
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#GetAppGUI net.mk.dcApps.SolSys.SolarSysGUI
+#UDAPP Constructor [0] name	net.mk.dcApps.SolSys.SolarSysGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP Constructor [1] name	net.mk.dcApps.SolSys.SolarSysGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	[Ljson.JSONObject;
+#UDAPP getParameterTypes getSimpleName	JSONObject[]
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#UDAPP Constructor [2] name	net.mk.dcApps.SolSys.SolarSysGUI
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#UDAPP getParameterTypes name	boolean
+#UDAPP getParameterTypes getSimpleName	boolean
+#GetAppGUI net.mk.dcApps.UD_DCApps
+#UDAPP Constructor [0] name	net.mk.dcApps.UD_DCApps
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	[Ljson.JSONObject;
+#UDAPP getParameterTypes getSimpleName	JSONObject[]
+#UDAPP Constructor [1] name	net.mk.dcApps.UD_DCApps
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.dcApps.DevelopDCApp
+#UDAPP Constructor [0] name	net.mk.dcApps.DevelopDCApp
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#GetAppGUI net.mk.dcApps.FSExplorer
+#UDAPP Constructor [0] name	net.mk.dcApps.FSExplorer
+#UDAPP Constructor getParameterTypes	0
+#UDAPP Constructor [1] name	net.mk.dcApps.FSExplorer
+#UDAPP Constructor getParameterTypes	3
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	java.lang.String
+#UDAPP getParameterTypes getSimpleName	String
+#UDAPP getParameterTypes name	json.JSONObject
+#UDAPP getParameterTypes getSimpleName	JSONObject
+#AddPreviewImage Discovering...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Looping...true
+#AddPreviewImage Realtime Preview BGDots1.PNG
+#getBestVisualArrangement BlocksToDisplay=16 rows=4	 columns=4	 scale= 1/4
+#HalfScreen Mode -Main 800
+Exception in thread "AWT-EventQueue-0" java.awt.IllegalComponentStateException: The frame is decorated
+	at java.awt.Frame.setShape(Frame.java:973)
+	at net.mk.ppmcuGUI.WSTFrame2$1.componentResized(WSTFrame2.java:88)
+	at java.awt.Component.processComponentEvent(Component.java:6331)
+	at java.awt.Component.processEvent(Component.java:6285)
+	at java.awt.Container.processEvent(Container.java:2229)
+	at java.awt.Window.processEvent(Window.java:2022)
+	at java.awt.Component.dispatchEventImpl(Component.java:4861)
+	at java.awt.Container.dispatchEventImpl(Container.java:2287)
+	at java.awt.Window.dispatchEventImpl(Window.java:2719)
+	at java.awt.Component.dispatchEvent(Component.java:4687)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:729)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.awt.EventQueue$3.run(EventQueue.java:686)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.awt.EventQueue$4.run(EventQueue.java:702)
+	at java.awt.EventQueue$4.run(EventQueue.java:700)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:699)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+Exception in thread "AWT-EventQueue-0" java.awt.IllegalComponentStateException: The frame is decorated
+	at java.awt.Frame.setShape(Frame.java:973)
+	at net.mk.ppmcuGUI.WSTFrame2$1.componentResized(WSTFrame2.java:88)
+	at java.awt.Component.processComponentEvent(Component.java:6331)
+	at java.awt.Component.processEvent(Component.java:6285)
+	at java.awt.Container.processEvent(Container.java:2229)
+	at java.awt.Window.processEvent(Window.java:2022)
+	at java.awt.Component.dispatchEventImpl(Component.java:4861)
+	at java.awt.Container.dispatchEventImpl(Container.java:2287)
+	at java.awt.Window.dispatchEventImpl(Window.java:2719)
+	at java.awt.Component.dispatchEvent(Component.java:4687)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:729)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.awt.EventQueue$3.run(EventQueue.java:686)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.awt.EventQueue$4.run(EventQueue.java:702)
+	at java.awt.EventQueue$4.run(EventQueue.java:700)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:699)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+Exception in thread "AWT-EventQueue-0" java.awt.IllegalComponentStateException: The frame is decorated
+	at java.awt.Frame.setShape(Frame.java:973)
+	at net.mk.ppmcuGUI.WSTFrame2$1.componentResized(WSTFrame2.java:88)
+	at java.awt.Component.processComponentEvent(Component.java:6331)
+	at java.awt.Component.processEvent(Component.java:6285)
+	at java.awt.Container.processEvent(Container.java:2229)
+	at java.awt.Window.processEvent(Window.java:2022)
+	at java.awt.Component.dispatchEventImpl(Component.java:4861)
+	at java.awt.Container.dispatchEventImpl(Container.java:2287)
+	at java.awt.Window.dispatchEventImpl(Window.java:2719)
+	at java.awt.Component.dispatchEvent(Component.java:4687)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:729)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.awt.EventQueue$3.run(EventQueue.java:686)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.awt.EventQueue$4.run(EventQueue.java:702)
+	at java.awt.EventQueue$4.run(EventQueue.java:700)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:699)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+Exception in thread "AWT-EventQueue-0" java.awt.IllegalComponentStateException: The frame is decorated
+	at java.awt.Frame.setShape(Frame.java:973)
+	at net.mk.ppmcuGUI.WSTFrame2$1.componentResized(WSTFrame2.java:88)
+	at java.awt.Component.processComponentEvent(Component.java:6331)
+	at java.awt.Component.processEvent(Component.java:6285)
+	at java.awt.Container.processEvent(Container.java:2229)
+	at java.awt.Window.processEvent(Window.java:2022)
+	at java.awt.Component.dispatchEventImpl(Component.java:4861)
+	at java.awt.Container.dispatchEventImpl(Container.java:2287)
+	at java.awt.Window.dispatchEventImpl(Window.java:2719)
+	at java.awt.Component.dispatchEvent(Component.java:4687)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:729)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:688)
+	at java.awt.EventQueue$3.run(EventQueue.java:686)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.awt.EventQueue$4.run(EventQueue.java:702)
+	at java.awt.EventQueue$4.run(EventQueue.java:700)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:699)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+total count 282 time 1079 average time 0

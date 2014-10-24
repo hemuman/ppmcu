@@ -1,0 +1,794 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package net.mk.ppmcuGUI;
+
+import java.awt.AWTException;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GradientPaint;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Paint;
+import java.awt.RadialGradientPaint;
+import java.awt.RenderingHints;
+import java.awt.geom.Point2D;
+import java.awt.geom.Rectangle2D;
+import java.awt.geom.RoundRectangle2D;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.text.DecimalFormat;
+import java.util.Arrays;
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CyclicBarrier;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import json.JSONArray;
+import json.JSONException;
+import json.JSONObject;
+import json.mkJSON;
+import net.mk.DTasks.DTaskTest;
+import net.mk.dc.DistributedTaskProcessor;
+import net.mk.dc.DistributedTaskService;
+import net.mk.dc.SisServerPanel;
+import net.mk.dc.sisclient;
+import net.mk.DTasks.OSAppAsDCTask;
+import net.mk.os.OSAppGraphics;
+import net.mk.ppmcu.GlobalMCUTest;
+import net.mk.ppmcu2D.ScreenServer;
+import net.mk.ppmcu2D.UIToolKit;
+
+/**
+ *
+ * @author PDI
+ */
+public class FrontPage extends javax.swing.JPanel {
+JSONObject SysSpec;
+public String brRankRatio="Getting..";
+public String sctRankRatio="Getting..";
+public  String mctRankRatio="Getting..";
+String LICENSE_KEY;
+boolean MINI_VERSION=false;
+String WebServerName;
+Thread GetSysInfoService;
+
+    /**
+     * Creates new form FrontPage
+     */
+
+public FrontPage(String _WebServerName,String LICENSE_KEY,JSONObject _SysSpec) {
+        this.LICENSE_KEY=LICENSE_KEY;
+        this.WebServerName=_WebServerName;
+        initComponents();
+        this.SysSpec=_SysSpec;
+        this.MINI_VERSION=MINI_VERSION;
+        
+       GetSysInfoService = new Thread(new Runnable() {
+            public void run() {
+                try {
+                     brRankRatio= getBoostPossibleRankRatio(WebServerName,SysSpec.getString("MAC_ADDRESS"));
+                     sctRankRatio= getSCTPossibleRatio(WebServerName,SysSpec.getString("MAC_ADDRESS"));
+                     mctRankRatio= getMCTPossibleRatio(WebServerName,SysSpec.getString("MAC_ADDRESS"));
+                  
+                  //  while (true) {              
+                        Thread.sleep(100);
+                        SysSpec = new GlobalMCUTest().printMachineInfo(false, true);
+                        repaint();
+                   /// }
+                } catch (Exception ex) {
+                    Logger.getLogger(FrontPage.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+       
+       GetSysInfoService.start();
+        
+        if(MINI_VERSION) {
+            jToolBar1.setVisible(false);
+            jToolBar1.removeAll();
+            this.removeAll();
+           GetSysInfoService.start();
+            
+        
+        } else {
+            jButton1.setVisible(MINI_VERSION);
+            
+            if(!MCWConfClass.isACTIVATE_DISTRIBUTED_COMPUTING_NODE())
+            GetSysInfoService.start();
+        
+        }
+        
+        
+    }
+
+
+    public FrontPage(String LICENSE_KEY,String _WebServerName,JSONObject _SysSpec,boolean MINI_VERSION) {
+        this.LICENSE_KEY=LICENSE_KEY;
+        this.WebServerName=_WebServerName;
+        initComponents();
+        this.SysSpec=_SysSpec;
+        this.MINI_VERSION=MINI_VERSION;
+        
+       GetSysInfoService = new Thread(new Runnable() {
+            public void run() {
+                try {
+                     brRankRatio= getBoostPossibleRankRatio(WebServerName,SysSpec.getString("MAC_ADDRESS"));
+                sctRankRatio= getSCTPossibleRatio(WebServerName,SysSpec.getString("MAC_ADDRESS"));
+                mctRankRatio= getMCTPossibleRatio(WebServerName,SysSpec.getString("MAC_ADDRESS"));
+                  
+                    while (true) {              
+                        Thread.sleep(100);
+                        SysSpec = new GlobalMCUTest().printMachineInfo(false, true);
+                        repaint();
+                    }
+                } catch (Exception ex) {
+                    Logger.getLogger(FrontPage.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+        
+        if(MINI_VERSION) {
+            jToolBar1.setVisible(false);
+            jToolBar1.removeAll();
+            this.removeAll();
+           GetSysInfoService.start();
+            
+        
+        } else {
+            jButton1.setVisible(MINI_VERSION);
+            
+            if(!MCWConfClass.isACTIVATE_DISTRIBUTED_COMPUTING_NODE())
+            GetSysInfoService.start();
+        
+        }
+        
+        
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form. WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jToolBar1 = new javax.swing.JToolBar();
+        jButton2 = new javax.swing.JButton();
+        SHARE_SCREEN = new javax.swing.JCheckBox();
+        MouseControl = new javax.swing.JCheckBox();
+        SHARE_COMPUTING = new javax.swing.JCheckBox();
+        jButton1 = new javax.swing.JButton();
+
+        jToolBar1.setBorder(null);
+        jToolBar1.setFloatable(false);
+        jToolBar1.setRollover(true);
+        jToolBar1.setOpaque(false);
+
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(153, 153, 255));
+        jButton2.setText("Click SHARE ");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.setFocusable(false);
+        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(jButton2);
+
+        SHARE_SCREEN.setForeground(new java.awt.Color(6, 112, 154));
+        SHARE_SCREEN.setSelected(true);
+        SHARE_SCREEN.setText(" Screen");
+        SHARE_SCREEN.setFocusable(false);
+        SHARE_SCREEN.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        SHARE_SCREEN.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(SHARE_SCREEN);
+
+        MouseControl.setForeground(new java.awt.Color(6, 112, 154));
+        MouseControl.setSelected(true);
+        MouseControl.setText(" Mouse control");
+        MouseControl.setFocusable(false);
+        MouseControl.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        MouseControl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MouseControlActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(MouseControl);
+
+        SHARE_COMPUTING.setForeground(new java.awt.Color(6, 112, 154));
+        SHARE_COMPUTING.setSelected(true);
+        SHARE_COMPUTING.setText(" Computing");
+        SHARE_COMPUTING.setFocusable(false);
+        SHARE_COMPUTING.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(SHARE_COMPUTING);
+
+        jButton1.setText("Run Test>>");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 435, Short.MAX_VALUE)
+                .addComponent(jButton1))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 236, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    
+        //Interrupt the thread fetching System data
+       // if(GetSysInfoService.isAlive())   
+            GetSysInfoService=new Thread();
+   
+        
+        //We want to start just 2 threads at the same time, but let's control that 
+//timing from the main thread. That's why we have 3 "parties" instead of 2.
+//final CyclicBarrier gate = new CyclicBarrier(3);
+
+        //Screen Share
+        Thread t = new Thread(new Runnable() {
+
+            public void run() {
+                try {
+                   // gate.await();
+                    while(SHARE_SCREEN.isSelected()) // Do not shut down
+                    {
+                       // ScreenServer.KEEP_ALIVE=true;
+                        ScreenServer.run(brRankRatio, MCWConfClass.ScreenServerPort,1.0,MouseControl.isSelected());
+                        //ScreenServer.KEEP_ALIVE=false;
+                    
+                    }
+                    
+                } catch (IOException ex) {
+                    Logger.getLogger(FrontPage.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (AWTException ex) {
+                    Logger.getLogger(FrontPage.class.getName()).log(Level.SEVERE, null, ex);
+                }
+               
+            }
+        });
+
+       //Share Computing
+        Thread t2 = new Thread(new Runnable() {
+
+            public void run() {
+                
+                try {
+                   // gate.await();
+                    System.out.println("#DistributedTaskProcessor..");
+                    JSONObject ThisSysSpec=new GlobalMCUTest().printMachineInfo(false, true);
+			new DistributedTaskProcessor(LICENSE_KEY,ThisSysSpec,5559).startServer(); 
+                        
+                        System.out.println("#DistributedTaskProcessor..Ended");
+                
+                } catch (Exception ex) {
+                    Logger.getLogger(FrontPage.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                        
+               
+            }
+        });
+
+          if(SHARE_SCREEN.isSelected())
+          t.start();
+          if(SHARE_COMPUTING.isSelected())
+          t2.start();
+          
+ 
+
+System.out.println("all threads started");
+          
+          MouseControl.setEnabled(false); // Disable this to make sure user is not confused.
+          jButton2.setEnabled(false);//Disable to make sure user is not confused
+          SHARE_COMPUTING.setEnabled(false);
+          SHARE_SCREEN.setEnabled(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void MouseControlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MouseControlActionPerformed
+       
+//        if(MouseControl.isSelected()) MouseControl.setText("with  mouse control");
+//        else MouseControl.setText("without mouse control");
+        
+    }//GEN-LAST:event_MouseControlActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+      
+        Thread t2 = new Thread(new Runnable() {
+            public void run() {
+                
+           brRankRatio= "Testing...";
+           sctRankRatio="Testing...";
+           mctRankRatio="Testing...";
+                   
+        JSONObject datatoPost=new GlobalMCUTest().getPrimeNumberTestData();
+        new GlobalMCUTest().getRandomNumTimeSingleCore();
+        new GlobalMCUTest().getRandomNumTimeMultiCore();
+        System.out.println("Waiting for result from new Web()...");
+             //new Web().SendPOST("http://multicoreworld.manojky.net/mcst/mcst.php", new String []{"VerificationKey","data","filename"}, new String[] {"wKdfL665Mkdfg54ksd",datatoPost.toString(),datatoPost.getString("MAC_ADDRESS")});
+        try {
+           // String USER_ADDRESS=new Web().SendPOST("http://"+WebServerName+"/mcst/GetAddress.php", new String []{"data"}, new String[] {datatoPost.toString()});
+           // System.out.println(USER_ADDRESS);
+           // JSONObject address=new JSONObject(USER_ADDRESS);
+            
+            
+            datatoPost.put("USER_ADDRESS", getUserLocation());
+            
+            new Web().SendPOST("http://"+WebServerName+"/mcst/mcst.php", new String []{"data","LICENSE_KEY"}, new String[] {datatoPost.toString(),LICENSE_KEY}, true);
+            
+            JSONArray allRatio=new JSONArray(new Web().SendPOST("http://"+WebServerName+"/mcst/GetAllRatio.php", new String []{"LICENSE_KEY"}, new String[] {LICENSE_KEY}, false));
+            
+            double[] result=mkJSON.getDoubleArrayFromJSONArray(allRatio);
+            
+            //System.out.println("Your machine stands at rank "+getRank(datatoPost.getDouble("BOOST_RATIO"),result)+" among all "+result.length+" machines tested so far.");
+           brRankRatio= getBoostPossibleRankRatio(WebServerName,SysSpec.getString("MAC_ADDRESS"));
+           sctRankRatio= getSCTPossibleRatio(WebServerName,SysSpec.getString("MAC_ADDRESS"));
+           mctRankRatio= getMCTPossibleRatio(WebServerName,SysSpec.getString("MAC_ADDRESS"));
+           jButton1.setText("Test Again");
+
+        } catch (JSONException ex) {
+            Logger.getLogger(WorldSpeedTestGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.gc();
+       
+              
+        }});
+        t2.start();
+        
+       
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox MouseControl;
+    private javax.swing.JCheckBox SHARE_COMPUTING;
+    private javax.swing.JCheckBox SHARE_SCREEN;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JToolBar jToolBar1;
+    // End of variables declaration//GEN-END:variables
+private JSONObject getUserLocation()
+{
+        
+          
+  
+                
+                return new Web().readJsonFromUrl("http://freegeoip.net/json/",false);
+                        
+                        //System.out.println(address);
+           
+            
+            //System.out.println("#getUserLocation()..Problem");
+            //return new JSONObject(new Web().SendGET("http://freegeoip.net/json/", new String []{}, new String[] {}, true));
+           // return null;
+        
+}
+
+
+    protected void paintComponent( Graphics g ) 
+{
+    try {
+        if ( !isOpaque( ) )
+        {
+            super.paintComponent( g );
+            return;
+        }
+        
+        
+     
+      Graphics2D g2 = (Graphics2D) g;
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+            RenderingHints.VALUE_ANTIALIAS_ON);
+
+        g2.setPaint(Color.gray);
+        int x = 0;
+        int y = 0;
+        // fill RoundRectangle2D.Double
+        GradientPaint redtowhite = new GradientPaint(x, y, Color.LIGHT_GRAY, x, this.getHeight()/2,
+            Color.DARK_GRAY);
+        g2.setPaint(redtowhite);
+        //g2.fill(new RoundRectangle2D.Double(x, y, this.getWidth(), this.getHeight(), 10, 10));
+        g2.fill(new Rectangle2D.Double(x, y, this.getWidth(), this.getHeight()));
+        
+        g2.setPaint(Color.GRAY);
+        
+        Paint p;
+        p = new RadialGradientPaint(new Point2D.Double(getWidth() / 2.0,
+                getHeight() / 2.0), getWidth() / 2.0f,
+                new float[] { 0.0f, 1.0f },
+                new Color[] { new Color(6, 76, 160, 127),
+                    new Color(0.0f, 0.0f, 0.0f, 0.8f) });
+        g2.setPaint(p);
+        
+        g.setColor(new Color(242,242,192)); // News Paper Color/ Khakee
+        g2.fill(new Rectangle2D.Double(x, y, this.getWidth(), this.getHeight()));
+        g2.drawImage(UIToolKit.getParametricCurve(getWidth(), getHeight(),0.01f, false), null, this);
+        
+    //    for(int i=0;i<this.getWidth();i=i+10){
+    //        g2.drawLine(i, 0, i, this.getHeight());
+    //    }
+    //     for(int i=0;i<this.getHeight();i=i+10){
+    //        g2.drawLine(0,i, this.getWidth(), i);
+    //    }
+        
+        Font font = new Font("League-Gothic", Font.BOLD, 40);
+        //g.setFont(font);
+        //g2.setPaint(Color.WHITE);
+        //g2.drawString("Filled RoundRectangle2D", x, 250);
+     
+        //Create Core
+        int core=Runtime.getRuntime().availableProcessors();
+        int Size=15;
+        int StartX=this.getWidth()-core*(Size+2);
+        int StartY=5;
+        g2.setPaint(Color.DARK_GRAY);
+        g2.fill(new Rectangle2D.Double(StartX-10, StartY, core*(Size+2)+5,Size+5));
+        g2.setPaint(Color.WHITE);
+        g2.fill(new Rectangle2D.Double(StartX-9,StartY+1, core*(Size+2)+3,Size+3));
+        
+        g2.setPaint(Color.DARK_GRAY);
+
+        for(int i=0;i<core;i++){
+            g2.setPaint(Color.DARK_GRAY);
+            int thisStart=StartX+(Size+2)*i-7;
+            g2.fill(new Rectangle2D.Double( thisStart, StartY+3,Size,Size));
+            font = new Font("League-Gothic", Font.ROMAN_BASELINE, 12);
+            g.setFont(font);
+            g2.setPaint(Color.GREEN);
+            g2.drawString(""+(i+1), thisStart+3, StartY+15);
+        }
+        
+        if(MINI_VERSION){//FOR APPLET VERSION
+               font = new Font("League-Gothic", Font.BOLD, 60);
+       // font.getStringBounds(brRankRatio, null);
+            g.setFont(font);
+            g2.setPaint(Color.GREEN);
+            g2.drawString(""+core, this.getWidth()-130, StartY+80);
+            g2.setPaint(Color.DARK_GRAY);
+            g2.drawString(""+core, this.getWidth()-133, StartY+80+3);
+            
+  
+            StartX=10;
+            StartY=30;
+                 font = new Font("League-Gothic", Font.BOLD, 15);
+                 g.setFont(font);
+                 g.setColor(Color.LIGHT_GRAY);
+                 g.setColor(new Color(14,16,93));
+                 g.drawString("Boost Rank :", StartX+11,StartY);
+                 g.drawString("Single-Core Rank :", StartX+150,StartY);
+                 g.drawString("Multi-Core Rank :", StartX+300,StartY);
+                 g.drawString("Single Core Speed :", StartX+450,StartY);
+                 g.drawString("CPU tilization:", StartX+600,StartY);
+                 
+                  JSONObject OS=SysSpec.getJSONObject("RAM");
+                  //CPU_Usage                     	:{"User_Time":"0.01","Idle_Time":"0.98","Sys_Time":"0.01","Usage":"0.02"}
+                  
+                 
+                 font = new Font("League-Gothic", Font.BOLD, 25);
+                 g.setFont(font);
+                 g.setColor(Color.GREEN);
+                 g.drawString(brRankRatio, StartX+20,StartY+40);
+                 g.drawString(sctRankRatio,StartX+150,StartY+40);
+                 g.drawString(mctRankRatio, StartX+300,StartY+40);
+                 g.drawString(OS.getString("Speed_(GHz)")+" GHz", StartX+450,StartY+40);
+                 DecimalFormat df = new DecimalFormat("#.##");
+        //System.out.print(df.format(d));
+                 g.drawString(df.format(100*OS.getJSONObject("CPU_Usage").getDouble("Usage"))+" %", StartX+600,StartY+40);
+                 font = new Font("League-Gothic", Font.BOLD, 25);
+                 g.setFont(font);
+                 g.setColor(Color.LIGHT_GRAY);
+                 g.setColor(new Color(14,16,93));
+                 g.drawString(brRankRatio, StartX+21,StartY+41);
+                 g.drawString(sctRankRatio,StartX+151,StartY+41);
+                 g.drawString(mctRankRatio, StartX+301,StartY+41);
+                 g.drawString(OS.getString("Speed_(GHz)")+" GHz", StartX+451,StartY+41);
+                 
+                 //Speed_(GHz)                   	:1.596
+                 
+        
+        }else{
+        
+            font = new Font("League-Gothic", Font.BOLD, 120);
+            // font.getStringBounds(brRankRatio, null);
+            g.setFont(font);
+            g2.setPaint(Color.GREEN);
+            g.setColor(new Color(14,16,93));
+            g2.drawString("" + core, this.getWidth() - 130, StartY + 120);
+            g2.setPaint(Color.DARK_GRAY);
+            g2.drawString("" + core, this.getWidth() - 133, StartY + 120 + 3);
+
+
+            StartX = StartX - 180;
+            StartY = 120;
+            font = new Font("League-Gothic", Font.BOLD, 15);
+            g.setFont(font);
+            g.setColor(Color.LIGHT_GRAY);
+            g.drawString("Boost Rank :", StartX + 11, StartY + 50);
+            g.drawString("Single-Core Rank :", StartX + 11, StartY + 85);
+            g.drawString("Multi-Core Rank :", StartX + 11, StartY + 125);
+
+
+            font = new Font("League-Gothic", Font.BOLD, 30);
+            g.setFont(font);
+            g.setColor(Color.GREEN);
+            g.setColor(new Color(14,16,93));
+            g.drawString(brRankRatio, StartX + 170, StartY + 50);
+            g.drawString(sctRankRatio, StartX + 170, StartY + 85);
+            g.drawString(mctRankRatio, StartX + 170, StartY + 125);
+            font = new Font("League-Gothic", Font.BOLD, 30);
+            g.setFont(font);
+            g.setColor(Color.LIGHT_GRAY);
+            g.drawString(brRankRatio, StartX + 172, StartY + 50);
+            g.drawString(sctRankRatio, StartX + 172, StartY + 85);
+            g.drawString(mctRankRatio, StartX + 172, StartY + 125);
+
+            font = new Font("League-Gothic", Font.BOLD, 10);
+            g.setFont(font);
+            g.setColor(Color.LIGHT_GRAY);
+            g.setColor(new Color(6, 112, 154)); //News Papaer Ink
+            //Print information
+            if (System.getProperty("os.name").toLowerCase().contains("win") | (!MCWConfClass.WEB_EXECUTION)&& SysSpec.has("OS")) {
+                JSONObject OS = SysSpec.getJSONObject("OS");
+                JSONArray names = OS.names();
+                names = OS.names();
+                g2.drawImage(OSAppGraphics.getJSONDataKhakee(185, OS, "Operating System", false), 5, getHeight() - 28 - 12 * names.length(), this);
+
+                font = new Font("League-Gothic", Font.BOLD, 10);
+                g.setFont(font);
+                g.setColor(Color.LIGHT_GRAY);
+                g.setColor(new Color(6, 112, 154)); //News Papaer Ink
+                int OS_ENDPOS = getHeight() - 35 - 12 * names.length();
+                //Print Info
+                OS = SysSpec.getJSONObject("RAM");
+                names = OS.names();
+                names = OS.names();
+                g2.drawImage(OSAppGraphics.getJSONDataKhakee(185, OS, "Processing Hardware", false), 5, OS_ENDPOS - 28 - 12 * names.length(), this);
+
+                //  START
+
+                OS = SysSpec.getJSONObject("ROM");
+                names = OS.names();
+                g2.drawImage(OSAppGraphics.getROMDataKhakee(500 - 195, OS, false), 195, getHeight() - 28 - 12 * names.length(), this);
+                //SysInfo-End
+            } else {
+                font = new Font("League-Gothic", Font.BOLD, 10);
+                g.setFont(font);
+                g.setColor(Color.LIGHT_GRAY);
+                g.setColor(new Color(6, 112, 154)); //News Papaer Ink
+                //JSONObject OS=SysSpec.getJSONObject("OS");
+                JSONArray names = SysSpec.names();
+                mkJSON.sortJSONArray(names);
+                for (int i = 0; i < names.length(); i++) {
+
+                    g.drawString(names.getString(i), 10, getHeight() - 10 - 12 * i);
+                    g.drawString(" : " + SysSpec.getString(names.getString(i)), 80, getHeight() - 10 - 12 * i);
+
+                }
+                //Print Header
+                font = new Font("League-Gothic", Font.BOLD, 13);
+                g.setFont(font);
+                g.setColor(Color.DARK_GRAY);
+                g.setColor(new Color(6, 112, 154));
+                g.drawString("Operating System", 5, getHeight() - 13 - 12 * names.length());
+                g.drawLine(5, getHeight() - 10 - 12 * names.length(), 120, getHeight() - 10 - 12 * names.length());
+
+            }
+        }
+        
+        setOpaque( false );
+        super.paintComponent( g );
+        setOpaque( true );
+    } catch (JSONException ex) {
+        Logger.getLogger(FrontPage.class.getName()).log(Level.SEVERE, null, ex);
+    }
+}
+    
+     private static String getRepeats(String chars, int Qty){
+         String result="";
+         for(int i=0;i<Qty;i++){
+         result=result+chars;
+         }
+         return result;
+     }
+
+     /***
+     * Copied from WSTGUI
+     * @param g 
+     */
+   protected int getBoostPossibleRank(String WebServerName,String MAC_ADDRESS){
+        try {
+            //JSONObject datatoPost=new GlobalMCUTest().printMachineInfo(false);
+            //JSONArray allRatio=new JSONArray(new Web().SendPOST("http://"+WebServerName+"/mcst/GetAllRatio.php", new String []{"LICENSE_KEY"}, new String[] {LICENSE_KEY}, false));
+            JSONArray allRatio=new Web().readJsonArrayFromUrl("http://"+WebServerName+"/mcst/mcstAllBOOST", false);
+            double BoostRatio=Double.parseDouble(new Web().SendPOST("http://"+WebServerName+"/mcst/GetBoostRatio.php", new String []{"LICENSE_KEY","USER_KEY","BOOST_RATIO"}, new String[] {LICENSE_KEY,MAC_ADDRESS,""}, false));
+            double[] BoostRatioList=mkJSON.getDoubleArrayFromJSONArray(allRatio);
+               
+                Arrays.sort(BoostRatioList);
+                    for(int i=0;i<BoostRatioList.length;i++){
+                        if(BoostRatioList[i]>=BoostRatio)
+                        { //System.out.println("Your machine stands at rank "+(BoostRatioList.length-i)+" among all "+BoostRatioList.length+" machines tested so far.");
+                        return     BoostRatioList.length-i;
+                        
+                        } else if(BoostRatioList[BoostRatioList.length-1]<=BoostRatio){
+                             System.out.println("#getBoostPossibleRank: Your machine stands at TOP in Boost Possible");
+                            return 1;
+                        }
+                    }
+                    return BoostRatioList.length;
+        } catch (JSONException ex) {
+            Logger.getLogger(WorldSpeedTestGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
+   }
+   protected String getBoostPossibleRankRatio(String WebServerName,String MAC_ADDRESS){
+        try {
+           // JSONObject datatoPost=new GlobalMCUTest().printMachineInfo(false);
+            
+            
+            //JSONArray allRatio=new JSONArray(new Web().SendPOST("http://"+WebServerName+"/mcst/GetAllRatio.php", new String []{"LICENSE_KEY"}, new String[] {LICENSE_KEY}, false));
+            JSONArray allRatio=new Web().readJsonArrayFromUrl("http://"+WebServerName+"/mcst/mcstAllBOOST", false);
+            double BoostRatio=Double.parseDouble(new Web().SendPOST("http://"+WebServerName+"/mcst/GetBoostRatio.php", new String []{"LICENSE_KEY","USER_KEY","BOOST_RATIO"}, new String[] {LICENSE_KEY,MAC_ADDRESS,""}, false));
+            double[] BoostRatioList=mkJSON.getDoubleArrayFromJSONArray(allRatio);
+            double WorldAvg= new JSONObject(new Web().SendPOST("http://"+WebServerName+"/mcst/mcst", new String []{"LICENSE_KEY"}, new String[] {LICENSE_KEY}, false)).getDouble("WA_BOOST_POSSIBLE");
+                Arrays.sort(BoostRatioList);
+                    for(int i=0;i<BoostRatioList.length;i++){
+                        if(BoostRatioList[i]>BoostRatio)
+                        { 
+                            //System.out.println("Your machine stands at rank "+(BoostRatioList.length-i)+" among all "+BoostRatioList.length+" machines tested so far.");
+//                            if(BoostRatio>WorldAvg){System.out.println("\n Machine rating:___ABOVE AVERAGE___, it can give you__BitCoins__ :)\n ");}
+//                            else{System.out.println("\n Machine rating:___BELOW AVERAGE___.Time to upgrade :) \n DO NOT THINK ABOUT __BitCoins__!");}
+//                      
+                            return     BoostRatioList.length-i+"/"+BoostRatioList.length;
+                        
+                        }else if(BoostRatioList[BoostRatioList.length-1]<=BoostRatio){
+                             System.out.println("#getBoostPossibleRankRatio: Your machine stands at TOP in Boost Possible");
+                            return 1+"/"+BoostRatioList.length;
+                        }
+                    }
+                    return BoostRatioList.length+"/"+BoostRatioList.length;
+        } catch (JSONException ex) {
+            Logger.getLogger(WorldSpeedTestGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return "NA";
+   }
+
+   /**
+    * Single Core Timing Ranks
+    * @param WebServerName
+    * @return 
+    */
+   protected int getSCTPossibleRank(String WebServerName,String MAC_ADDRESS){
+        try {
+           // JSONObject datatoPost=new GlobalMCUTest().printMachineInfo(false);
+            //JSONArray allRatio=new JSONArray(new Web().SendPOST("http://"+WebServerName+"/mcst/GetAllSCT.php", new String []{"LICENSE_KEY"}, new String[] {LICENSE_KEY}, false));
+            JSONArray allRatio=new Web().readJsonArrayFromUrl("http://"+WebServerName+"/mcst/mcstAllSCT", false);
+            double BoostRatio=Double.parseDouble(new Web().SendPOST("http://"+WebServerName+"/mcst/GetBoostRatio.php", new String []{"LICENSE_KEY","USER_KEY","SINGLE_CORE_TIME"}, new String[] {LICENSE_KEY,MAC_ADDRESS,""}, false));
+            double[] BoostRatioList=mkJSON.getDoubleArrayFromJSONArray(allRatio);
+                Arrays.sort(BoostRatioList);
+                    for(int i=0;i<BoostRatioList.length;i++){
+                        if(BoostRatioList[i]>=BoostRatio)
+                        { //System.out.println("Your machine stands at rank "+(BoostRatioList.length-i)+" among all "+BoostRatioList.length+" machines tested so far.");
+                        return    i;
+                        
+                        } else if(BoostRatioList[0]>BoostRatio){
+                             System.out.println("#getSCTPossibleRank: Your machine stands at TOP in Single Core Timing");
+                            return 1;
+                        }
+                    }
+                    return BoostRatioList.length;
+        } catch (JSONException ex) {
+            Logger.getLogger(WorldSpeedTestGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
+   }
+   protected String getSCTPossibleRatio(String WebServerName,String MAC_ADDRESS){
+        try {
+          //  JSONObject datatoPost=new GlobalMCUTest().printMachineInfo(false);
+            
+            
+            //JSONArray allRatio=new JSONArray(new Web().SendPOST("http://"+WebServerName+"/mcst/GetAllSCT.php", new String []{"LICENSE_KEY"}, new String[] {LICENSE_KEY}, false));
+            JSONArray allRatio=new Web().readJsonArrayFromUrl("http://"+WebServerName+"/mcst/mcstAllSCT", false);
+            double BoostRatio=Double.parseDouble(new Web().SendPOST("http://"+WebServerName+"/mcst/GetBoostRatio.php", new String []{"LICENSE_KEY","USER_KEY","SINGLE_CORE_TIME"}, new String[] {LICENSE_KEY,MAC_ADDRESS,""}, false));
+            double[] BoostRatioList=mkJSON.getDoubleArrayFromJSONArray(allRatio);
+            double WorldAvg= new JSONObject(new Web().SendPOST("http://"+WebServerName+"/mcst/mcst", new String []{"LICENSE_KEY"}, new String[] {LICENSE_KEY}, false)).getDouble("WA_SINGLE_CORE_TIME_POSSIBLE");
+                Arrays.sort(BoostRatioList);
+                    for(int i=0;i<BoostRatioList.length;i++){
+                        if(BoostRatioList[i]>BoostRatio)
+                        { 
+                            //System.out.println("Your machine stands at rank "+(BoostRatioList.length-i)+" among all "+BoostRatioList.length+" machines tested so far.");
+//                            if(BoostRatio>WorldAvg){System.out.println("\n Machine rating:___ABOVE AVERAGE___, it can give you__BitCoins__ :)\n ");}
+//                            else{System.out.println("\n Machine rating:___BELOW AVERAGE___.Time to upgrade :) \n DO NOT THINK ABOUT __BitCoins__!");}
+//                      
+                            return     i+"/"+BoostRatioList.length;
+                        
+                        }else if(BoostRatioList[0]>BoostRatio){//Minimum is top
+                             System.out.println("#getSCTPossibleRatio: Your machine stands at TOP in Single Core Timing");
+                            return 1+"/"+BoostRatioList.length;
+                        }
+                    }
+                    return BoostRatioList.length+"/"+BoostRatioList.length;
+        } catch (JSONException ex) {
+            Logger.getLogger(WorldSpeedTestGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return "NA";
+   }
+
+   /**
+    * Multi Core Timing Ranks
+    * @param WebServerName
+    * @return 
+    */
+   protected int getMCTPossibleRank(String WebServerName,String MAC_ADDRESS){
+        try {
+           // JSONObject datatoPost=new GlobalMCUTest().printMachineInfo(false);
+            //JSONArray allRatio=new JSONArray(new Web().SendPOST("http://"+WebServerName+"/mcst/GetAllMCT.php", new String []{"LICENSE_KEY"}, new String[] {LICENSE_KEY}, false));
+            JSONArray allRatio=new Web().readJsonArrayFromUrl("http://"+WebServerName+"/mcst/mcstAllMCT", false);
+            double BoostRatio=Double.parseDouble(new Web().SendPOST("http://"+WebServerName+"/mcst/GetBoostRatio.php", new String []{"LICENSE_KEY","USER_KEY","MULTI_CORE_TIME"}, new String[] {LICENSE_KEY,MAC_ADDRESS,""}, false));
+            double[] BoostRatioList=mkJSON.getDoubleArrayFromJSONArray(allRatio);
+                Arrays.sort(BoostRatioList);
+                    for(int i=0;i<BoostRatioList.length;i++){
+                        if(BoostRatioList[i]>=BoostRatio)
+                        { //System.out.println("Your machine stands at rank "+(BoostRatioList.length-i)+" among all "+BoostRatioList.length+" machines tested so far.");
+                        return    i;
+                        
+                        } else if(BoostRatioList[0]>BoostRatio){
+                             System.out.println("#getMCTPossibleRank: Your machine stands at TOP in Multi Core Timing");
+                            return 1;
+                        }
+                    }
+                    return BoostRatioList.length;
+        } catch (JSONException ex) {
+            Logger.getLogger(WorldSpeedTestGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
+   }
+   protected String getMCTPossibleRatio(String WebServerName,String MAC_ADDRESS){
+        try {
+      
+            //JSONArray allRatio=new JSONArray(new Web().SendPOST("http://"+WebServerName+"/mcst/GetAllMCT.php", new String []{"LICENSE_KEY"}, new String[] {LICENSE_KEY}, false));
+            JSONArray allRatio=new Web().readJsonArrayFromUrl("http://"+WebServerName+"/mcst/mcstAllMCT", false);
+            double BoostRatio=Double.parseDouble(new Web().SendPOST("http://"+WebServerName+"/mcst/GetBoostRatio.php", new String []{"LICENSE_KEY","USER_KEY","MULTI_CORE_TIME"}, new String[] {LICENSE_KEY,MAC_ADDRESS,""}, false));
+            double[] BoostRatioList=mkJSON.getDoubleArrayFromJSONArray(allRatio);
+            double WorldAvg= new JSONObject(new Web().SendPOST("http://"+WebServerName+"/mcst/mcst", new String []{"LICENSE_KEY"}, new String[] {LICENSE_KEY}, false)).getDouble("WA_MULTI_CORE_TIME_POSSIBLE");
+                Arrays.sort(BoostRatioList);
+                    for(int i=0;i<BoostRatioList.length;i++){
+                        if(BoostRatioList[i]>BoostRatio)
+                        { 
+                            //System.out.println("Your machine stands at rank "+(BoostRatioList.length-i)+" among all "+BoostRatioList.length+" machines tested so far.");
+//                            if(BoostRatio>WorldAvg){System.out.println("\n Machine rating:___ABOVE AVERAGE___, it can give you__BitCoins__ :)\n ");}
+//                            else{System.out.println("\n Machine rating:___BELOW AVERAGE___.Time to upgrade :) \n DO NOT THINK ABOUT __BitCoins__!");}
+//                      
+                            return     i+"/"+BoostRatioList.length;
+                        
+                        }else if(BoostRatioList[0]>BoostRatio){
+                             System.out.println("#getMCTPossibleRatio: Your machine stands at TOP in Multi Core Timing");
+                            return 1+"/"+BoostRatioList.length;
+                        }
+                    }
+                    return BoostRatioList.length+"/"+BoostRatioList.length;
+        } catch (JSONException ex) {
+            Logger.getLogger(WorldSpeedTestGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return "NA";
+   }
+
+}
