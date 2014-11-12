@@ -61,13 +61,13 @@ public class BoundingCurvesFinderDTask extends DistributedTask {
             if (!new ProximityOperations().isScatteredCluster((double[][]) boundary.get(0), CLUSETR_SCATTER_MAX)) {
                 //System.out.println(Pinion.getStrings(tempIntesectionData));
                 //N Boundary points
-                result.add((double[][])GO.getNBoundaryPoints((double[][]) boundary.get(0), NumberOfPointsOnRack).get(0));
+                result.add((double[][])GO.getNBoundaryPoints((double[][]) boundary.get(0), NumberOfPointsOnRack, RackDimensions[1][1], RackDimensions[0][1]).get(0));
                 //All Boundary points
                //Sections1.add((double[][]) boundary.get(0));
             }
             if (!new ProximityOperations().isScatteredCluster((double[][]) boundary.get(1), CLUSETR_SCATTER_MAX)) {
                 //N Boundary points
-                result.add((double[][]) GO.getNBoundaryPoints((double[][]) boundary.get(1), NumberOfPointsOnRack).get(0));
+                result.add((double[][]) GO.getNBoundaryPoints((double[][]) boundary.get(1), NumberOfPointsOnRack, RackDimensions[1][1], RackDimensions[0][1]).get(0));
                 //All Boundary points
                //Sections2.add((double[][]) boundary.get(1));
             }

@@ -10,7 +10,10 @@ import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.Vector;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ForkJoinPool;
@@ -566,7 +569,7 @@ public class GeometryOperations {
      * @param bb_corner2
      * @return
      */
-    public double[][] getBoundedPoints(double[][] Pinionpoints, double bb_corner1[], double[] bb_corner2) {
+    public static double[][] getBoundedPoints(double[][] Pinionpoints, double bb_corner1[], double[] bb_corner2) {
 
         Vector Points_3D = new Vector();
         for (int i = 0; i < Pinionpoints.length; i++) {
@@ -597,6 +600,26 @@ public class GeometryOperations {
         return result;
     }
 
+    public static double[][] getBoundedPoints(double[][] Pinionpoints, Set<double[][]> BoundingBoxes) {
+        double[][] Points_3D = new double[1][3];
+        int pointCount = 0;
+        for (double[][] bbx : BoundingBoxes) {
+            double tempResult[][] = getBoundedPoints(Pinionpoints, bbx[0], bbx[1]);
+            if (tempResult != null) {
+                System.out.println("#getBoundedPoints::" + tempResult.length);
+                for (int i = 0; i < tempResult.length; i++) {
+                    if (Points_3D.length == pointCount) {
+                        // expand list
+                        Points_3D = Arrays.copyOf(Points_3D, Points_3D.length + 1);
+                    }
+                    Points_3D[pointCount] = tempResult[i];
+                    pointCount++;
+                }
+            }
+        }
+        return Points_3D;
+    }
+    
     public double getArea(double[] point1, double point2[]) {
 
         return Math.abs((point1[0] - point2[0]) * (point1[1] - point2[1]));
@@ -670,16 +693,35 @@ public class GeometryOperations {
      * @param nPoints
      * @return
      */
-    public Vector getNBoundaryPoints(double[][] BoundaryPoints, int nPoints) {
+    public Vector getNBoundaryPoints(double[][] BoundaryPoints, int nPoints,double YMax,double YMin) {
         Vector result = new Vector();
         double[][] newData = new double[nPoints][BoundaryPoints[0].length];
-        //newData[0] = BoundaryPoints[0];//First Point
-        newData[newData.length - 1] = BoundaryPoints[BoundaryPoints.length - 1];//Last Point
-        for (int pointsCount = 0; pointsCount < nPoints - 1; pointsCount++) {
-            newData[pointsCount] = BoundaryPoints[pointsCount * (BoundaryPoints.length / nPoints)];
+        newData[0] = BoundaryPoints[0];//First Point
+        newData[0][1]=YMin;
+        //ExtrapolateCurveByY(BoundaryPoints, YMin, BoundaryPoints.length - 2,0, false);
+       // ExtrapolateCurveByY(BoundaryPoints, YMax, 3,BoundaryPoints.length - 2, false);
+        
+        newData[newData.length - 1]=BoundaryPoints[BoundaryPoints.length - 1];
+        newData[newData.length - 1][1]=YMax;//ExtrapolateCurveByY(BoundaryPoints, YMax, 3,BoundaryPoints.length - 2, false);// BoundaryPoints[BoundaryPoints.length - 1];//Last Point
+//        for (int pointsCount = 0; pointsCount < nPoints - 1; pointsCount++) {
+//            newData[pointsCount] = BoundaryPoints[pointsCount * (BoundaryPoints.length / nPoints)];
+//        }
+//        result.add(newData);
+        
+        //Get Max y
+        //Get Min y
+        //Divide in n equal parts
+        double MaxY=BoundaryPoints[BoundaryPoints.length - 1][1];
+        double MinY=BoundaryPoints[0][1];
+        double delta=Math.abs(MaxY-MinY)/nPoints;
+        for (int pointsCount = 1; pointsCount < nPoints-1; pointsCount++) {
+           newData[pointsCount][1] = delta*pointsCount;
+           newData[pointsCount][0] = getXOnCurve(BoundaryPoints, delta*pointsCount);
+           newData[pointsCount][2] = BoundaryPoints[0][2];//Constant Value
+        
         }
+        
         result.add(newData);
-
         return result;
     }
 
@@ -694,15 +736,9 @@ public class GeometryOperations {
         for (int i = 0; i < yi.length; i++) {
             xy[i][1] = yi[i];
             xy[i][0] = getXOnCurve(CurveData, yi[i]);
-
             xy[i][2] = CurveData[0][2];//Constant Value
-            System.out.println("X Y Z:" + xy[i][0] + "\t" + xy[i][1] + "\t" + xy[i][2]);
+            //System.out.println("X Y Z:" + xy[i][0] + "\t" + xy[i][1] + "\t" + xy[i][2]);
         }
-
-
-
-
-
         return xy;
     }
 
@@ -962,10 +998,37 @@ public class GeometryOperations {
 
             // dlg.update(dlg.getGraphics());
             begTest = new java.util.Date().getTime();
-            double[][] tempCluster = getBoundedPoints(PointsCluster,
-                    new double[]{bbx[1][0], Ymin + YAccuracy * (regionCount - 1)},
-                    new double[]{bbx[0][0], Ymin + YAccuracy * regionCount});
+            // This shape is needed for BBX
+            //  
+            //  _______________
+            // |    _______    |
+            // |___|       |___|
+            //
+            //
+            //Create XMinBBX
+            double XMinBBX[][]={{bbx[1][0], (Ymin + YAccuracy * (regionCount - 1))-YAccuracy},
+                                {bbx[1][0]-YAccuracy, Ymin + YAccuracy * (regionCount)}};
+            //Create XMaxBBX
+            double XMaxBBX[][]={{bbx[0][0], (Ymin + YAccuracy * (regionCount - 1))-YAccuracy},
+                                {bbx[0][0]+YAccuracy, Ymin + YAccuracy * (regionCount)}};
+            //Create Usual BBX
+            double UsualBBX[][]={{bbx[1][0], Ymin + YAccuracy * (regionCount - 1)},
+                                 {bbx[0][0], Ymin + YAccuracy * regionCount}};
+            
+            Set<double[][]> BBXSet= new HashSet();
+            BBXSet.add(XMinBBX);
+            BBXSet.add(XMaxBBX);
+            BBXSet.add(UsualBBX);
+            double[][] tempCluster = getBoundedPoints(PointsCluster,BBXSet);
+            
+//            double[][] tempCluster = getBoundedPoints(PointsCluster,
+//                    new double[]{bbx[1][0], Ymin + YAccuracy * (regionCount - 1)},
+//                    new double[]{bbx[0][0], Ymin + YAccuracy * regionCount});
+            
+            
             secs = new Double((new java.util.Date().getTime() - begTest) * 0.001);
+            
+            
             System.out.println("getBoundedPoints run time " + secs + " secs");
             begTest = new java.util.Date().getTime();
             //System.out.print(bbx[1][0]+"\t"+ (Ymin + YAccuracy * (regionCount - 1)));
@@ -1730,6 +1793,10 @@ public class GeometryOperations {
 
     /**
      * Get Bounding box of points
+     * result[0][0] = PointsCluster[PointsCluster.length - 1][0];//Minima
+     * result[1][0] = PointsCluster[0][0];//Maxima
+     * result[0][1] = PointsCluster[PointsCluster.length - 1][1];//Minima
+     * result[1][1] = PointsCluster[0][1];//Maxima
      *
      * @param PointsCluster
      * @return
@@ -2249,7 +2316,9 @@ public class GeometryOperations {
      */
     public double ExtrapolateCurveByY(double[][] XYZs, double Y_value, int refPoints, int StartPos, boolean debug) {
         /**
-         * 1. Get Average slope of neighbouring points 2. Create line from last point and slope 3. Get value of X by substituting Y_value.
+         * 1. Get Average slope of neighbouring points 
+         * 2. Create line from last point and slope 
+         * 3. Get value of X by substituting Y_value.
          */
         // double[][] result=new double[XYZs.length+1][XYZs[0].length];
         // System.arraycopy(XYZs, 0, result, 0, XYZs.length);
