@@ -597,15 +597,15 @@ public class DCGUI extends javax.swing.JPanel {
                             SpecCount++;
 
                             if (LogTheHealth.isSelected()) {
-                                try {
-                                    //Logging option
-                                    ReadWriteTextFile.appendContents(MCWConfClass.DCGUILogFile, sb.toString());
-
-                                } catch (FileNotFoundException ex) {
-                                    Logger.getLogger(DCGUI.class.getName()).log(Level.SEVERE, null, ex);
-                                } catch (IOException ex) {
-                                    Logger.getLogger(DCGUI.class.getName()).log(Level.SEVERE, null, ex);
-                                }
+//                                try {
+//                                    //Logging option
+//                                   // ReadWriteTextFile.appendContents(MCWConfClass.DCGUILogFile, sb.toString());
+//
+//                                } catch (FileNotFoundException ex) {
+//                                    Logger.getLogger(DCGUI.class.getName()).log(Level.SEVERE, null, ex);
+//                                } catch (IOException ex) {
+//                                    Logger.getLogger(DCGUI.class.getName()).log(Level.SEVERE, null, ex);
+//                                }
                             }
 
                         }

@@ -11,7 +11,7 @@ import net.mk.ppmcu2D.EqnSolver;
  *
  * @author PDI
  */
-public class Line {
+public class Line implements Cloneable{
 //slope intercept form: y=mx+c
     public double y;
     public double m;
@@ -27,6 +27,11 @@ public class Line {
     public boolean m_infinite=false;
     public static Double NaN = new Double(Double.NaN);
     public boolean debug=false;
+    
+    @Override
+protected Object clone() throws CloneNotSupportedException {
+return super.clone();
+}
 /**
  *
  * @param x1
@@ -65,6 +70,8 @@ public void setMC(double x1,double y1,double m){
     eqnSet=true;
     System.out.println("# y= "+this.m+" x + "+c);
 }
+
+public void setM(double m){this.m=m;}
 
 public void setMC(double[] x1y1,double m){
     setMC(x1y1[0],x1y1[1], m);
@@ -237,7 +244,13 @@ public boolean pointInBoundingBox2D(double corner1[],double corner2[],double poi
     return false;
 }
 
-
+/**
+ * 
+ * @param corner1
+ * @param corner2
+ * @param point
+ * @return 
+ */
 public boolean pointInBoundingBox(double corner1[],double corner2[],double point[]){
     if(corner1.length==2){
         double xi=point[0];
@@ -296,9 +309,40 @@ public int getQuadrant(double x,double y){
     return 0;
 }
 
+/**
+ * 
+ * @return 
+ */
 public double getSlopeAngle(){
     return Math.toDegrees(Math.atan(m));
 }
+
+/**
+ * 
+ * @param toLine
+ * @return
+ * @throws CloneNotSupportedException 
+ */
+public static Line getPerpendicularLine(Line toLine) throws CloneNotSupportedException{
+   Line result=(Line) toLine.clone();
+   result.setM(Math.tan(Math.PI*0.5+Math.atan(toLine.m)));
+   return result;
+}
+/**
+ * 
+ * @param toLine
+ * @param passingThrough_x
+ * @param passingThrough_y
+ * @return
+ * @throws CloneNotSupportedException 
+ */
+public static Line getParallelLine(Line toLine,double passingThrough_x,double passingThrough_y) throws CloneNotSupportedException{
+   Line result=new Line();
+   result.setMC(passingThrough_x,passingThrough_y,toLine.m);
+   return result;
+}
+
+
 public static double angleBeteenLines(Line line1,Line line2){
     /**
      * if m1=NaN, theta1=PI/2, return Math.atan(slope 2)-PI/2
@@ -313,7 +357,7 @@ public static double angleBeteenLines(Line line1,Line line2){
 
 }
 
-public double[] intersectionPointBeteenLines(Line line1,Line line2){
+public static double[] intersectionPointBeteenLines(Line line1,Line line2){
     double x,y;
     if(line1.parallelToY){ x=line1.getX(0); y=line2.getY(x);}else
     if(line2.parallelToY){x=line2.getX(0); y=line1.getY(x);}else{
