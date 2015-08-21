@@ -68,7 +68,7 @@ public class GeneriUploadHandler extends CustomHandler {
                 inputStream = he.getRequestBody();
 
                 // br = new BufferedReader(new InputStreamReader(inputStream));
-                String tempFileName = "c:/delete_" + queryMap.get("commKey") + "." + fileExt;
+                String tempFileName = "delete/" + queryMap.get("commKey") + "." + fileExt;
                 //65533
                 //PNG First 8 Byte : 137 80 78 71 13 10 10 10
                 //int seqPNG[]={ 137, 80 ,78, 71 ,13 ,10 ,10, 10};
@@ -94,7 +94,7 @@ public class GeneriUploadHandler extends CustomHandler {
                 }
 
                 //Finally send email. Try to submit it to a FJP Pool.
-                SendEmail.sendAsyncEmail("KhiChik | " + queryMap.get("commKey"), email, SendEmail.getHTMLEmbdEmail("Hello Manoj!", "MCW_RANK_1_.png"));
+                SendEmail.sendAsyncEmail("QiChik | " + queryMap.get("commKey"), email, SendEmail.getHTMLEmbdEmail("Hello There!", tempFileName));
                 result = "Submitted".getBytes();
 
             } catch (Exception e) {

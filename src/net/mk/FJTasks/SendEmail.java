@@ -46,9 +46,9 @@ public class SendEmail extends RecursiveTask {
         String to = "destinationemail@gmail.com";
 
         // Sender's email ID needs to be mentioned
-        String from = "azmechatech@gmail.com";
-        final String username = "azmechatech@gmail.com";//change accordingly
-        final String password = "hemuman@gmail";//change accordingly
+        String from = "noreply.azmechatech@gmail.com";
+        final String username = "";//change accordingly
+        final String password = "";//change accordingly
 
         // Assuming you are sending email through relay.jangosmtp.net
         String host = "localhost";
