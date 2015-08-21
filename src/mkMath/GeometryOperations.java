@@ -786,7 +786,7 @@ public class GeometryOperations {
             double tempx = 0, tempz = 0;
 
             if (yi > CurveData[i + 1][ 1]) {
-                System.out.print("[EscLift" + i + " for Yi=" + yi + " Curvedata Y=" + CurveData[i + 1][ 1] + "]");
+                //System.out.print("[EscLift" + i + " for Yi=" + yi + " Curvedata Y=" + CurveData[i + 1][ 1] + "]");
                 continue;
             }
 //& zi > Double.parseDouble(CurveData.getValueAt(i, 2).toString())
@@ -798,13 +798,13 @@ public class GeometryOperations {
                 line1.setMXpC(CurveData[i][0],
                         CurveData[i][1],
                         CurveData[i + 1][0],
-                        CurveData[i + 1][1], true);
+                        CurveData[i + 1][1], false);
                 updateLine1 = false;
                 /**
                  * Step 2: Find xi for given zi
                  */
                 xi = line1.getX(yi);
-                System.out.println("#Finalized>>" + i + "\t [Xi=" + xi + ",Yi=" + yi + "]");
+                //System.out.println("#Finalized>>" + i + "\t [Xi=" + xi + ",Yi=" + yi + "]");
 
                 updateLine2 = true;
                 tempx = xi;
@@ -949,8 +949,8 @@ public class GeometryOperations {
     }
 
     /**
-     * Boundary points based on X minimum and Maximum. Bounding Box Method: This returns vector with size two containing 2D array of left and right curves
-     *
+     * Boundary points based on X minimum and Maximum. Bounding Box Method: 
+     * This returns vector with size two containing 2D array of left and right curves
      * @param PointsCluster
      * @param YAccuracy
      * @return
@@ -988,10 +988,10 @@ public class GeometryOperations {
         //double[][] bbx = getBoundingBox_Strings(PointsCluster);
         double[][] bbx = getBoundingBox_bubbleSort(PointsCluster);
         //double[][] bbx = getBoundingBox_QuickSort(PointsCluster);
-        System.out.print("Bbx Found.");
+        //System.out.print("Bbx Found.");
 
         Double secs = new Double((new java.util.Date().getTime() - begTest) * 0.001);
-        System.out.println("getBoundingBox_bubbleSort run time " + secs + " secs");
+        //System.out.println("getBoundingBox_bubbleSort run time " + secs + " secs");
         for (int regionCount = 1; regionCount < (YMax - Ymin) / YAccuracy; regionCount++) {
 
             //dpb.setValue(regionCount);
@@ -1029,7 +1029,7 @@ public class GeometryOperations {
             secs = new Double((new java.util.Date().getTime() - begTest) * 0.001);
             
             
-            System.out.println("getBoundedPoints run time " + secs + " secs");
+           // System.out.println("getBoundedPoints run time " + secs + " secs");
             begTest = new java.util.Date().getTime();
             //System.out.print(bbx[1][0]+"\t"+ (Ymin + YAccuracy * (regionCount - 1)));
             //System.out.println("\t"+ bbx[0][0]+"\t"+ (Ymin + YAccuracy * (regionCount)));
@@ -1053,14 +1053,14 @@ public class GeometryOperations {
                  * /
                  */
                 secs = new Double((new java.util.Date().getTime() - begTest) * 0.001);
-                System.out.println(" Arrays.sort run time " + secs + " secs");
+                //System.out.println(" Arrays.sort run time " + secs + " secs");
                 Points_2Dmin.add(tempCluster[tempCluster.length - 1]);//Minimum Point
                 Points_2Dmax.add(tempCluster[0]);//Maximum Point
 
 
             }
 
-            System.out.print("~");
+            //System.out.print("~");
 
         }
 

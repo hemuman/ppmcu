@@ -68,7 +68,7 @@ public void setMC(double x1,double y1,double m){
     if(Math.atan(m)==Math.PI/2){System.out.println("#parallelToY x= "+x1);parallelToY=true; X_const=x1;}
     c=y1-m*x1;
     eqnSet=true;
-    System.out.println("# y= "+this.m+" x + "+c);
+    //System.out.println("# y= "+this.m+" x + "+c);
 }
 
 public void setM(double m){this.m=m;}
@@ -77,16 +77,22 @@ public void setMC(double[] x1y1,double m){
     setMC(x1y1[0],x1y1[1], m);
 }
 
+/**
+ * 
+ * @param x1
+ * @param y1
+ * @param Theta  in rad
+ */
 public void setThetaC(double x1,double y1,double Theta){
     //this.m=m;
-    System.out.println("The Slope Angle"+Theta);
+    //System.out.println("The Slope Angle"+Theta);
     if(Theta==0){ System.out.println("#parallelToX y= "+y1);parallelToX=true; Y_const=y1;  m=0;}else
     if(Theta==Math.PI/2){System.out.println("#parallelToY x= "+x1);parallelToY=true; X_const=x1;}else
         m=Math.tan(Theta);
     
     c=y1-m*x1;
     eqnSet=true;
-    System.out.println("# y= "+this.m+" x + "+c);
+    //System.out.println("# y= "+this.m+" x + "+c);
 }
 
 public void setThetaC(double[] x1y1,double m){
@@ -214,6 +220,26 @@ public double[] getPointsOnLineBetween(double[] x1y1,double atDistance,double[] 
     if(pointInBoundingBox2D(x1y1,x2y2,points[0])) return points[0]; //SPX Specific. Recheck. 
     else return points[1];
         
+}
+/**
+ * if(parallelToX)
+        return Math.abs(Y_const-y);
+    else if(parallelToX)
+        return Math.abs(X_const-x);
+        else
+    return Math.abs(y-m*x-c)/Math.sqrt(1+m*m);
+ * @param x
+ * @param y
+ * @return 
+ */
+public double getShortestDistance(double x, double y){
+    
+    if(parallelToX)
+        return Math.abs(Y_const-y);
+    else if(parallelToX)
+        return Math.abs(X_const-x);
+        else
+    return Math.abs(y-m*x-c)/Math.sqrt(1+m*m);
 }
 
 /**

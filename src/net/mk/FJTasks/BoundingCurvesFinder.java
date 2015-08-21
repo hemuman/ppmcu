@@ -26,7 +26,7 @@ public class BoundingCurvesFinder extends RecursiveTask {
     public double CLUSETR_SCATTER_MAX = 10;//mm
 
     public BoundingCurvesFinder(double[][] RackDimensions, double[][] IntesectionData, double PinionSectionAccuracy, int NumberOfPointsOnRack, double YAccuracy, double ScatterThreshold) {
-        System.out.println("#BoundingCurvesFinder Set.. ");
+        //System.out.println("#BoundingCurvesFinder Set.. ");
         this.RackDimensions=RackDimensions;
         this.IntesectionData=IntesectionData;
         this.PinionSectionAccuracy=PinionSectionAccuracy;
@@ -43,7 +43,7 @@ public class BoundingCurvesFinder extends RecursiveTask {
     public Vector compute() {
        Vector result=new Vector();
         long begTest = new java.util.Date().getTime();
-        System.out.println("BoundingCurvesFinder Start");
+        //System.out.println("BoundingCurvesFinder Start");
         double[][] tempIntesectionData = GO.getPointsOnZPlane(IntesectionData, PinionSectionAccuracy);
             //if(tempIntesectionData==null){continue;}
             /**
@@ -73,7 +73,7 @@ public class BoundingCurvesFinder extends RecursiveTask {
                //Sections2.add((double[][]) boundary.get(1));
             }
         Double secs = new Double((new java.util.Date().getTime() - begTest) * 0.001);
-        System.out.println("BoundingCurvesFinder run time " + secs + " secs");
+        //System.out.println("BoundingCurvesFinder run time " + secs + " secs");
         return result;
     }
 
