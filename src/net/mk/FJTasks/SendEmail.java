@@ -130,7 +130,8 @@ public class SendEmail extends RecursiveTask {
 
         messageBodyPart.setDataHandler(new DataHandler(fds));
         messageBodyPart.setHeader("Content-ID", "<image>");
-
+        messageBodyPart.setFileName(imageURL.contains(System.getProperty("file.separator"))?imageURL.substring(imageURL.lastIndexOf(System.getProperty("file.separator"))+1):imageURL);
+        messageBodyPart.setDescription("Photo from mobile device.");
         //   add image to the multipart
         multipart.addBodyPart(messageBodyPart);
 
