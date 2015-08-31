@@ -112,6 +112,37 @@ public class SendEmail extends RecursiveTask {
         return "";
     }
 
+     public static MimeMultipart getHTMLEmbdEmail(String H1, String[] imageURLs) throws MessagingException {
+        //   This mail has 2 part, the BODY and the embedded image
+        MimeMultipart multipart = new MimeMultipart("related");
+
+        //   first part (the html)
+        BodyPart messageBodyPart = new MimeBodyPart();
+        String htmlText = "<H1>" + H1 + "</H1><img src=\"cid:image\">";
+        messageBodyPart.setContent(htmlText, "text/html");
+        //   add it
+        multipart.addBodyPart(messageBodyPart);
+        
+        for(String imageURL : imageURLs)
+        { 
+
+        //   second part (the images)
+        messageBodyPart = new MimeBodyPart();
+        DataSource fds = new FileDataSource(
+                imageURL);
+
+        messageBodyPart.setDataHandler(new DataHandler(fds));
+        messageBodyPart.setHeader("Content-ID", "<image>");
+        messageBodyPart.setFileName(imageURL.contains(System.getProperty("file.separator"))?imageURL.substring(imageURL.lastIndexOf(System.getProperty("file.separator"))+1):imageURL);
+        messageBodyPart.setDescription("Photo from mobile device.");
+        //   add image to the multipart
+        multipart.addBodyPart(messageBodyPart);
+        }
+        
+        return multipart;
+    }
+
+     
     public static MimeMultipart getHTMLEmbdEmail(String H1, String imageURL) throws MessagingException {
         //   This mail has 2 part, the BODY and the embedded image
         MimeMultipart multipart = new MimeMultipart("related");
@@ -140,6 +171,8 @@ public class SendEmail extends RecursiveTask {
 
     public static void main(String... args) throws MessagingException {
        SendEmail.sendAsyncEmail("Hello", "hemuman@gmail.com", SendEmail.getHTMLEmbdEmail("Hello Manoj!", "MCW_RANK_1_.png"));
+       
+       SendEmail.sendAsyncEmail("Hello", "hemuman@gmail.com", SendEmail.getHTMLEmbdEmail("Hello Multi Manoj!", new String[]{"MCW_RANK_1_.png", "MCW_RANK_1_.png", "MCW_RANK_1_.png"}));
        
        
         try {

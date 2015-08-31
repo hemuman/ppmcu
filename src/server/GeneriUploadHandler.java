@@ -25,10 +25,13 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 import java.util.logging.FileHandler;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 import javax.imageio.ImageIO;
+import javax.mail.MessagingException;
 import json.JSONArray;
+import json.JSONException;
 import net.mk.FJTasks.SendEmail;
 import sun.misc.BASE64Decoder;
 
@@ -40,6 +43,8 @@ public class GeneriUploadHandler extends CustomHandler {
 
     public static Map<String, String> _uuids = new HashMap();
     String fileExt = "";
+    //String defaultSave="c:/delete_"; //Change here for local testing
+    String defaultSave="delete/";
     static Logger logger = Logger.getLogger("GeneriUploadHandler");  
     FileHandler fh;  
 
@@ -89,7 +94,29 @@ public class GeneriUploadHandler extends CustomHandler {
                 ex.printStackTrace();
             }
 
-        } else if (!queryMap.containsKey("commKey")) {//Check if UUID exists
+        } else if (queryMap.containsKey("multi-Send")) {
+            
+            try {
+                JSONArray imageUUIDs=new JSONArray(java.net.URLDecoder.decode(queryMap.get("multi-Send").toString(), "UTF-8"));
+                String[] imageURLs=new String[imageUUIDs.length()];
+                String email ="azmechatech@gmail.com";//= _uuids.get(queryMap.get("commKey"));
+                for(int i=0;i<imageUUIDs.length();i++){
+                    imageURLs[i]=defaultSave+ imageUUIDs.getString(i) + "." + fileExt;
+                    email= _uuids.get(imageUUIDs.getString(i));
+                    _uuids.remove(imageUUIDs.getString(i));//Also purge Key.
+                }
+                //logger.info(email+"");  
+                //Send array of images.
+                SendEmail.sendAsyncEmail("QiChik | " + (imageURLs.length)+" Attachments.", email, SendEmail.getHTMLEmbdEmail("Hello There!", imageURLs));
+                
+            } catch (JSONException ex) {
+                Logger.getLogger(GeneriUploadHandler.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (MessagingException ex) {
+                Logger.getLogger(GeneriUploadHandler.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        } else
+            if (!queryMap.containsKey("commKey")) {//Check if UUID exists
             try {
                 String response = UUID.randomUUID().toString();//.fromString((queryMap.get("deviceId").toString()+queryMap.get("email").toString())).toString();
                 _uuids.put(response, queryMap.get("email").toString());
@@ -102,7 +129,7 @@ public class GeneriUploadHandler extends CustomHandler {
 
         } else { //If UUID exists then read the data from stream.
             String email = _uuids.get(queryMap.get("commKey"));
-            _uuids.remove(queryMap.get("commKey"));//Also purge Key.
+            
             System.out.print(email);
 
             InputStream inputStream = null;
@@ -111,7 +138,7 @@ public class GeneriUploadHandler extends CustomHandler {
                 inputStream = he.getRequestBody();
 
                 // br = new BufferedReader(new InputStreamReader(inputStream));
-                String tempFileName = "c:/delete_" + queryMap.get("commKey") + "." + fileExt;
+                String tempFileName = defaultSave + queryMap.get("commKey") + "." + fileExt;
                 //65533
                 //PNG First 8 Byte : 137 80 78 71 13 10 10 10
                 //int seqPNG[]={ 137, 80 ,78, 71 ,13 ,10 ,10, 10};
@@ -134,7 +161,7 @@ public class GeneriUploadHandler extends CustomHandler {
                 BufferedImage image = decodeToImage(seqMatch.toString());
 
                 try {
-    // retrieve image
+                    // retrieve image and save.
 
                     File outputfile = new File(tempFileName);
                     ImageIO.write(image, "png", outputfile);
@@ -142,12 +169,19 @@ public class GeneriUploadHandler extends CustomHandler {
                 } catch (IOException e) {
 
                 }
-
-                //Finally send email. Try to submit it to a FJP Pool.
-                SendEmail.sendAsyncEmail("QiChik | " + queryMap.get("commKey"), email, SendEmail.getHTMLEmbdEmail("Hello There!", tempFileName));
-                //Copy to the admin.
-                SendEmail.sendAsyncEmail("QiChik | " + queryMap.get("commKey"), "azmechatech@gmail.com", SendEmail.getHTMLEmbdEmail("To: "+email, tempFileName));
-                result = "Submitted".getBytes();
+                
+                boolean sendEmailFlag=true;
+                if(queryMap.containsKey("doSendEmail")) 
+                    sendEmailFlag=Boolean.parseBoolean(queryMap.get("doSendEmail").toString());
+                
+                
+                if (sendEmailFlag) { //Finally send email. Try to submit it to a FJP Pool.
+                    _uuids.remove(queryMap.get("commKey"));//Also purge Key if email sent allowed.
+                    SendEmail.sendAsyncEmail("QiChik | " + queryMap.get("commKey"), email, SendEmail.getHTMLEmbdEmail("Hello There!", tempFileName));
+                    //Copy to the admin.
+                    SendEmail.sendAsyncEmail("QiChik | " + queryMap.get("commKey"), "azmechatech@gmail.com", SendEmail.getHTMLEmbdEmail("To: " + email, tempFileName));
+                    result = "Submitted".getBytes();
+                }
 
             } catch (Exception e) {
                 result = e.getMessage().getBytes();
