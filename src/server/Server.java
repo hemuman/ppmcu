@@ -19,8 +19,8 @@ public class Server {
         HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
         
         server.createContext("/", new HealthCheck());
-        server.createContext("/GetCommKey/", new GeneriUploadHandler(""));
-        server.createContext("/SendEmail/", new GeneriUploadHandler("png"));
+        server.createContext("/GetCommKey/", new GenericUploadHandler(""));
+        server.createContext("/SendEmail/", new GenericUploadHandler("png"));
         server.setExecutor(null); // creates a default executor
         server.start();
         

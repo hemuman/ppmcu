@@ -8,28 +8,19 @@ package server;
 import com.sun.net.httpserver.HttpExchange;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.UUID;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 import javax.imageio.ImageIO;
-import javax.mail.MessagingException;
 import json.JSONArray;
 import json.JSONException;
 import net.mk.FJTasks.SendEmail;
@@ -39,16 +30,16 @@ import sun.misc.BASE64Decoder;
  *
  * @author Manoj
  */
-public class GeneriUploadHandler extends CustomHandler {
+public class GenericUploadHandler extends CustomHandler {
 
     public static Map<String, String> _uuids = new HashMap();
     String fileExt = "";
     //String defaultSave="c:/delete_"; //Change here for local testing
     String defaultSave="delete/";
-    static Logger logger = Logger.getLogger("GeneriUploadHandler");  
+    public static Logger logger = Logger.getLogger("GeneriUploadHandler");  
     FileHandler fh;  
 
-    public GeneriUploadHandler(String fileExt) {
+    public GenericUploadHandler(String fileExt) {
         this.fileExt = fileExt;
         
          try {  
@@ -105,15 +96,18 @@ public class GeneriUploadHandler extends CustomHandler {
                     email= _uuids.get(imageUUIDs.getString(i));
                     _uuids.remove(imageUUIDs.getString(i));//Also purge Key.
                 }
+                
+                String[] emails;
+                if(email.contains(",")){
+                emails=email.split(",");
+                }else{ emails=new String[]{email};}
                 //logger.info(email+"");  
                 //Send array of images.
-                SendEmail.sendAsyncEmail("QiChik | " + (imageURLs.length)+" Attachments.", email, SendEmail.getHTMLEmbdEmail("Hello There!", imageURLs));
+                SendEmail.sendAsyncEmail("QiChik | " + (imageURLs.length)+" Attachments.", emails, "Hello There!", imageURLs);
                 
             } catch (JSONException ex) {
-                Logger.getLogger(GeneriUploadHandler.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (MessagingException ex) {
-                Logger.getLogger(GeneriUploadHandler.class.getName()).log(Level.SEVERE, null, ex);
-            }
+                Logger.getLogger(GenericUploadHandler.class.getName()).log(Level.SEVERE, null, ex);
+            } 
             
         } else
             if (!queryMap.containsKey("commKey")) {//Check if UUID exists
@@ -177,9 +171,13 @@ public class GeneriUploadHandler extends CustomHandler {
                 
                 if (sendEmailFlag) { //Finally send email. Try to submit it to a FJP Pool.
                     _uuids.remove(queryMap.get("commKey"));//Also purge Key if email sent allowed.
-                    SendEmail.sendAsyncEmail("QiChik | " + queryMap.get("commKey"), email, SendEmail.getHTMLEmbdEmail("Hello There!", tempFileName));
-                    //Copy to the admin.
-                    SendEmail.sendAsyncEmail("QiChik | " + queryMap.get("commKey"), "azmechatech@gmail.com", SendEmail.getHTMLEmbdEmail("To: " + email, tempFileName));
+                    String[] emails;
+                if(email.contains(",")){
+                emails=email.split(",");
+                }else{ emails=new String[]{email};}
+                    SendEmail.sendAsyncEmail("QiChik | " + queryMap.get("commKey"), emails, "Hello There!", tempFileName);
+                    //Copy to the admin if debugging needed.
+                    //SendEmail.sendAsyncEmail("QiChik | " + queryMap.get("commKey"), "azmechatech@gmail.com", SendEmail.getHTMLEmbdEmail("To: " + email, tempFileName));
                     result = "Submitted".getBytes();
                 }
 
