@@ -12,6 +12,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.zip.GZIPInputStream;
 import net.mk.dc.DistributedTask;
 import net.mk.ppmcu.GlobalMCUTest;
 
@@ -49,9 +50,17 @@ public class DCTaskURLHit extends DistributedTask {
             for (int i = 0; i < counter; i++) {
                 URL oracle = new URL(URLs[i]);
                 URLConnection yc = oracle.openConnection();
+                System.out.println("Print#"+yc.getContentEncoding()); //gzip
                 System.out.println("#DCTaskURLHit Counter=" + counter);
-                BufferedReader in = new BufferedReader(new InputStreamReader(
+                
+                BufferedReader in ;
+                
+                if(yc.getContentEncoding().equalsIgnoreCase("gzip")){
+                in = new BufferedReader(new InputStreamReader(
+                        new GZIPInputStream(yc.getInputStream())));}else{
+                in = new BufferedReader(new InputStreamReader(
                         yc.getInputStream()));
+                }
                 String inputLine;
                 sb = new StringBuilder();
                 while ((inputLine = in.readLine()) != null) {

@@ -9,6 +9,7 @@ import com.sun.net.httpserver.HttpExchange;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,8 +24,11 @@ import java.util.logging.SimpleFormatter;
 import javax.imageio.ImageIO;
 import json.JSONArray;
 import json.JSONException;
+import json.JSONObject;
 import net.mk.FJTasks.SendEmail;
+import net.mk.ppmcu2D.UIToolKit;
 import sun.misc.BASE64Decoder;
+import sun.misc.BASE64Encoder;
 
 /**
  *
@@ -159,11 +163,14 @@ public class GenericUploadHandler extends CustomHandler {
 
                     File outputfile = new File(tempFileName);
                     ImageIO.write(image, "png", outputfile);
+                    
                     System.out.println("File written to disk!");
                 } catch (IOException e) {
 
                 }
-                
+                //Prepare to send thumbnail
+                image =UIToolKit.scaleImage(image, 100, 100);
+                String bas64Thumbnail=encodeToString(image, "png");
                 boolean sendEmailFlag=true;
                 if(queryMap.containsKey("doSendEmail")) 
                     sendEmailFlag=Boolean.parseBoolean(queryMap.get("doSendEmail").toString());
@@ -175,10 +182,14 @@ public class GenericUploadHandler extends CustomHandler {
                 if(email.contains(",")){
                 emails=email.split(",");
                 }else{ emails=new String[]{email};}
-                    SendEmail.sendAsyncEmail("QiChik | " + queryMap.get("commKey"), emails, "Hello There!", tempFileName);
+                    SendEmail.sendAsyncEmail("QiChik | Photo is here." , emails, "Hello There!", tempFileName);
                     //Copy to the admin if debugging needed.
                     //SendEmail.sendAsyncEmail("QiChik | " + queryMap.get("commKey"), "azmechatech@gmail.com", SendEmail.getHTMLEmbdEmail("To: " + email, tempFileName));
-                    result = "Submitted".getBytes();
+                    JSONObject jsob=new JSONObject();
+                    jsob.put("result", "success");
+                    jsob.put("thumbnail", bas64Thumbnail);
+                    jsob.put("thumbnailSize",240);
+                    result = jsob.toString().getBytes();
                 }
 
             } catch (Exception e) {
@@ -223,6 +234,30 @@ public class GenericUploadHandler extends CustomHandler {
             e.printStackTrace();
         }
         return image;
+    }
+    
+     /**
+     * Encode image to string
+     * @param image The image to encode
+     * @param type jpeg, bmp, ...
+     * @return encoded string
+     */
+    public static String encodeToString(BufferedImage image, String type) {
+        String imageString = null;
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+
+        try {
+            ImageIO.write(image, type, bos);
+            byte[] imageBytes = bos.toByteArray();
+
+            BASE64Encoder encoder = new BASE64Encoder();
+            imageString = encoder.encode(imageBytes);
+
+            bos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return imageString;
     }
 
 }
