@@ -169,7 +169,7 @@ public class GenericUploadHandler extends CustomHandler {
 
                 }
                 //Prepare to send thumbnail
-                image =UIToolKit.scaleImage(image, 100, 100);
+                image =UIToolKit.scaleImage(image, 500, 500);
                 String bas64Thumbnail=encodeToString(image, "png");
                 boolean sendEmailFlag=true;
                 if(queryMap.containsKey("doSendEmail")) 
@@ -187,8 +187,12 @@ public class GenericUploadHandler extends CustomHandler {
                     //SendEmail.sendAsyncEmail("QiChik | " + queryMap.get("commKey"), "azmechatech@gmail.com", SendEmail.getHTMLEmbdEmail("To: " + email, tempFileName));
                     JSONObject jsob=new JSONObject();
                     jsob.put("result", "success");
+                    jsob.put("imgURL", "qichik/preview");
+                    jsob.put("colorTheme", "#FFF");
                     jsob.put("thumbnail", bas64Thumbnail);
-                    jsob.put("thumbnailSize",240);
+                    jsob.put("fileName", queryMap.get("commKey") + "." + fileExt);
+                    jsob.put("comment", "Real nice QiChik!");
+                    jsob.put("thumbnailSize",500);
                     result = jsob.toString().getBytes();
                 }
 
