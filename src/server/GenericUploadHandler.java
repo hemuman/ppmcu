@@ -42,20 +42,24 @@ public class GenericUploadHandler extends CustomHandler {
     String defaultSave="delete/";
     public static Logger logger = Logger.getLogger("GeneriUploadHandler");  
     FileHandler fh;  
+    ImageProcessingHelper imageProcessingHelper;
 
     public GenericUploadHandler(String fileExt) {
         this.fileExt = fileExt;
         
          try {  
+             imageProcessingHelper = new ImageProcessingHelper("resource/QiChikPhotoFrame.png"); //Prod
+             //imageProcessingHelper=new ImageProcessingHelper("c:/QiChikPhotoFrame.png");//Test
 
-        // This block configure the logger with handler and formatter  
-        fh = new FileHandler("log/GUH"+System.currentTimeMillis()+".log");  
-        logger.addHandler(fh);
-        SimpleFormatter formatter = new SimpleFormatter();  
-        fh.setFormatter(formatter);  
+             // This block configure the logger with handler and formatter  
+             fh = new FileHandler("log/GUH" + System.currentTimeMillis() + ".log");
+
+             logger.addHandler(fh);
+             SimpleFormatter formatter = new SimpleFormatter();
+             fh.setFormatter(formatter);
 
         // the following statement is used to log any messages  
-        //logger.info("My first log");  
+             //logger.info("My first log");  
 
     } catch (SecurityException e) {  
         e.printStackTrace();  
@@ -169,7 +173,7 @@ public class GenericUploadHandler extends CustomHandler {
 
                 }
                 //Prepare to send thumbnail
-                image =UIToolKit.scaleImage(image, 500, 500);
+                image =imageProcessingHelper.getStampedImage(UIToolKit.scaleImage(image, 600, 600),0,0);
                 String bas64Thumbnail=encodeToString(image, "png");
                 boolean sendEmailFlag=true;
                 if(queryMap.containsKey("doSendEmail")) 

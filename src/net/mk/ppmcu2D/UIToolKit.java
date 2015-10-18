@@ -758,6 +758,12 @@ public class UIToolKit {
             
       }
       
+      /**
+       * 
+       * @param imgSize
+       * @param boundary
+       * @return 
+       */
       public static Dimension getScaledDimension(Dimension imgSize, Dimension boundary) {
 
     int original_width = imgSize.width;
