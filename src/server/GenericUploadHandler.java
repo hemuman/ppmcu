@@ -38,8 +38,8 @@ public class GenericUploadHandler extends CustomHandler {
 
     public static Map<String, String> _uuids = new HashMap();
     String fileExt = "";
-    //String defaultSave="c:/delete_"; //Change here for local testing
-    String defaultSave="delete/";
+     public static String defaultSave="c:/delete_"; //Change here for local testing
+    //String defaultSave="delete/";
     public static Logger logger = Logger.getLogger("GeneriUploadHandler");  
     FileHandler fh;  
     ImageProcessingHelper imageProcessingHelper;
@@ -48,8 +48,8 @@ public class GenericUploadHandler extends CustomHandler {
         this.fileExt = fileExt;
         
          try {  
-             imageProcessingHelper = new ImageProcessingHelper("resource/QiChikPhotoFrame.png"); //Prod
-             //imageProcessingHelper=new ImageProcessingHelper("c:/QiChikPhotoFrame.png");//Test
+             //imageProcessingHelper = new ImageProcessingHelper("resource/QiChikPhotoFrame.png"); //Prod
+             imageProcessingHelper=new ImageProcessingHelper("c:/QiChikPhotoFrame.png");//Test
 
              // This block configure the logger with handler and formatter  
              fh = new FileHandler("log/GUH" + System.currentTimeMillis() + ".log");

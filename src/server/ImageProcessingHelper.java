@@ -44,4 +44,29 @@ public class ImageProcessingHelper {
         return StampImageBG;
         
     }
+    
+    
+    /**
+     * Generate GIF on demand.
+     * @param imageURLs
+     * @param fileNameWithLocation
+     * @param delay 
+     */
+    public static void generateGIF(String[] imageURLs, String fileNameWithLocation, int delay) {
+
+        AnimatedGifEncoder e = new AnimatedGifEncoder();
+        e.start(fileNameWithLocation);
+        e.setDelay(delay);   // 1000=1 frame per sec
+        e.setRepeat(0);
+        
+        for (String imageURL : imageURLs) {
+            try {
+                e.addFrame(ImageIO.read(new File(imageURL)));
+            } catch (IOException ex) {
+                Logger.getLogger(ImageProcessingHelper.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        e.finish();
+    }
 }
