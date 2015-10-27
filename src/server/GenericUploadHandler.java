@@ -38,18 +38,17 @@ public class GenericUploadHandler extends CustomHandler {
 
     public static Map<String, String> _uuids = new HashMap();
     String fileExt = "";
-     public static String defaultSave="c:/delete_"; //Change here for local testing
-    //String defaultSave="delete/";
+    //public static String defaultSave="c:/delete_"; //Change here for local testing
+    public static String defaultSave="delete/";
     public static Logger logger = Logger.getLogger("GeneriUploadHandler");  
     FileHandler fh;  
     ImageProcessingHelper imageProcessingHelper;
 
     public GenericUploadHandler(String fileExt) {
         this.fileExt = fileExt;
-        
          try {  
-             //imageProcessingHelper = new ImageProcessingHelper("resource/QiChikPhotoFrame.png"); //Prod
-             imageProcessingHelper=new ImageProcessingHelper("c:/QiChikPhotoFrame.png");//Test
+             imageProcessingHelper = new ImageProcessingHelper("resource/QiChikPhotoFrame.png"); //Prod
+             //imageProcessingHelper=new ImageProcessingHelper("c:/QiChikPhotoFrame.png");//Test
 
              // This block configure the logger with handler and formatter  
              fh = new FileHandler("log/GUH" + System.currentTimeMillis() + ".log");
@@ -160,7 +159,7 @@ public class GenericUploadHandler extends CustomHandler {
                     seqMatch.delete(0, cordovaDefaultString.length());
                 
                 }
-                BufferedImage image = decodeToImage(seqMatch.toString());
+                BufferedImage image = ImageProcessingHelper.decodeToImage(seqMatch.toString());
 
                 try {
                     // retrieve image and save.
@@ -174,7 +173,7 @@ public class GenericUploadHandler extends CustomHandler {
                 }
                 //Prepare to send thumbnail
                 image =imageProcessingHelper.getStampedImage(UIToolKit.scaleImage(image, 600, 600),0,0);
-                String bas64Thumbnail=encodeToString(image, "png");
+                String bas64Thumbnail=ImageProcessingHelper.encodeToString(image, "png");
                 boolean sendEmailFlag=true;
                 if(queryMap.containsKey("doSendEmail")) 
                     sendEmailFlag=Boolean.parseBoolean(queryMap.get("doSendEmail").toString());
@@ -227,45 +226,6 @@ public class GenericUploadHandler extends CustomHandler {
         oshe.write(result);
         oshe.close();
 
-    }
-
-    public static BufferedImage decodeToImage(String imageString) {
-        BufferedImage image = null;
-        byte[] imageByte;
-        try {
-            BASE64Decoder decoder = new BASE64Decoder();
-            imageByte = decoder.decodeBuffer(imageString);
-            ByteArrayInputStream bis = new ByteArrayInputStream(imageByte);
-            image = ImageIO.read(bis);
-            bis.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return image;
-    }
-    
-     /**
-     * Encode image to string
-     * @param image The image to encode
-     * @param type jpeg, bmp, ...
-     * @return encoded string
-     */
-    public static String encodeToString(BufferedImage image, String type) {
-        String imageString = null;
-        ByteArrayOutputStream bos = new ByteArrayOutputStream();
-
-        try {
-            ImageIO.write(image, type, bos);
-            byte[] imageBytes = bos.toByteArray();
-
-            BASE64Encoder encoder = new BASE64Encoder();
-            imageString = encoder.encode(imageBytes);
-
-            bos.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return imageString;
     }
 
 }

@@ -6,6 +6,7 @@
 package server;
 
 import com.sun.net.httpserver.HttpExchange;
+import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.HashMap;
@@ -14,8 +15,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import json.JSONArray;
 import json.JSONException;
+import json.JSONObject;
 import net.mk.FJTasks.SendEmail;
 import static server.GenericUploadHandler._uuids;
+
 
 /**
  *
@@ -23,7 +26,7 @@ import static server.GenericUploadHandler._uuids;
  */
 public class GeneralInageProcessingHandler  extends CustomHandler {
     
-    static String baseDir="delete/";
+    //static String baseDir="delete/";
     String fileExt = "";
     
     public GeneralInageProcessingHandler(String fileExt) {
@@ -56,6 +59,16 @@ public class GeneralInageProcessingHandler  extends CustomHandler {
                 //logger.info(email+"");  
                 //Send array of images.
                 SendEmail.sendAsyncEmail("QiChik | Mofie" , emails, "Hello There!", new String[]{gifName});
+                String bas64Thumbnail=ImageProcessingHelper.encodeToString(ReadFileIntoByteArray.getBytesFromFile(new File(gifName)), "gif");
+                 JSONObject jsob=new JSONObject();
+                    jsob.put("result", "success");
+                    jsob.put("imgURL", "qichik/preview");
+                    jsob.put("colorTheme", "#FFF");
+                    jsob.put("thumbnail", bas64Thumbnail);
+                    jsob.put("fileName", gifName);
+                    jsob.put("comment", "Real nice QiChik!");
+                    jsob.put("thumbnailSize",500);
+                    result = jsob.toString().getBytes();
                 
             } catch (JSONException ex) {
                 Logger.getLogger(GeneralInageProcessingHandler.class.getName()).log(Level.SEVERE, null, ex);
