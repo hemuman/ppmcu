@@ -8,8 +8,6 @@ package server;
 import com.sun.net.httpserver.HttpExchange;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,8 +25,6 @@ import json.JSONException;
 import json.JSONObject;
 import net.mk.FJTasks.SendEmail;
 import net.mk.ppmcu2D.UIToolKit;
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
 
 /**
  *
