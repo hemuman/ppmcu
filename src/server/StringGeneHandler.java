@@ -89,6 +89,11 @@ public class StringGeneHandler  extends CustomHandler  {
         oshe.close();
     }
     
+    /**
+     * More needs to be done here. Take help of redis and see performance.
+     * @param word
+     * @return 
+     */
     private String getAdaptiveIndex(String word) {
         String dictResult = (String) memoryDict.get(word.toLowerCase());
         if (dictResult != null) {
