@@ -231,6 +231,7 @@ public class SendEmail extends RecursiveTask {
         //   add it
         multipart.addBodyPart(messageBodyPart);
 
+        if(imageURL!=null & (!imageURL.isEmpty()) ){
         //   second part (the image)
         messageBodyPart = new MimeBodyPart();
         DataSource fds = new FileDataSource(
@@ -242,6 +243,7 @@ public class SendEmail extends RecursiveTask {
         messageBodyPart.setDescription("Photo from mobile device.");
         //   add image to the multipart
         multipart.addBodyPart(messageBodyPart);
+        }
 
         return multipart;
     }

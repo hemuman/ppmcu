@@ -37,8 +37,6 @@ public class StringGeneHandler  extends CustomHandler  {
         }
     }
 
-    
-
     @Override
     public void handle(HttpExchange he) throws IOException {
         
