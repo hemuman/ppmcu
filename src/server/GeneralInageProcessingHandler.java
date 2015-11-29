@@ -51,7 +51,7 @@ public class GeneralInageProcessingHandler  extends CustomHandler {
                     _uuids.remove(imageUUIDs.getString(i));//Also purge Key.
                 }
                 String gifName=GenericUploadHandler.defaultSave+ queryMap.get("gifmakerName").toString()+".gif";
-                ImageProcessingHelper.generateGIF(imageURLs, gifName , 500);
+                ImageProcessingHelper.generateGIF(imageURLs, gifName , 200);
                  String[] emails;
                 if(email.contains(",")){
                 emails=email.split(",");

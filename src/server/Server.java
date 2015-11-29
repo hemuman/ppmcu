@@ -23,7 +23,7 @@ public class Server {
         server.createContext("/SendEmail/", new GenericUploadHandler("png"));
         server.createContext("/GenerateGIF/", new GeneralInageProcessingHandler("png"));
         server.createContext("/StringGene/", new StringGeneHandler());
-       server.createContext("/FeedBackHandler/", new FeedBackHandler());
+        server.createContext("/FeedBackHandler/", new FeedBackHandler());
  
         server.setExecutor(null); // creates a default executor
         server.start();

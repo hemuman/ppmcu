@@ -7,15 +7,19 @@ package server;
 
 import com.sun.net.httpserver.HttpExchange;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.math.BigInteger;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import json.JSONObject;
@@ -25,13 +29,18 @@ import json.JSONObject;
  * @author Manoj
  */
 public class StringGeneHandler  extends CustomHandler  {
-    HashMap memoryDict;
+    LinkedHashMap<String, String> memoryDict,memoryDictReverse;
+    String fileExt=".txt";
+    String filename="wordsEn";
+    String dictFullame="c:/";
 
     public StringGeneHandler() {
         
         try {
             //Load from text file
-            memoryDict=readFile("c:/wordsEn.txt");
+            readFile(dictFullame+filename+fileExt);
+            
+            //Load to redis 
         } catch (IOException ex) {
             Logger.getLogger(StringGeneHandler.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -46,9 +55,7 @@ public class StringGeneHandler  extends CustomHandler  {
          if (queryMap.containsKey("codify")) {
              inputStream = he.getRequestBody();
              int binaryData = -1;
-                boolean allowWrite = false;
-                int counter = 0;
-                StringBuilder seqMatch = new StringBuilder();
+             StringBuilder seqMatch = new StringBuilder();
                 while ((binaryData = inputStream.read()) != -1) {
                     seqMatch.append((char) binaryData);
                 }
@@ -78,7 +85,12 @@ public class StringGeneHandler  extends CustomHandler  {
                 
                 result=codedString.toString().getBytes();
         
-        } 
+        } else if (queryMap.containsKey("save")) {
+            writeFileWithVersion(dictFullame+filename+fileExt,  memoryDict);
+        } else if (queryMap.containsKey("memDict")) {
+             JSONObject resp=new JSONObject(memoryDictReverse);
+             result=resp.toString().getBytes();
+        }
         
         //Send out the message
         he.sendResponseHeaders(200, result.length);
@@ -98,26 +110,62 @@ public class StringGeneHandler  extends CustomHandler  {
             return dictResult;
         } else {
             memoryDict.put(word, Integer.toString(memoryDict.size(), Character.MAX_RADIX) + " ");
+            memoryDictReverse.put(Integer.toString(memoryDict.size(), Character.MAX_RADIX) + " ",word);
             return getAdaptiveIndex(word);
         }
     }
     
-    private static HashMap<String,String> readFile(String fileName) throws IOException {
+    private  LinkedHashMap<String,String> readFile(String fileName) throws IOException {
 	FileInputStream fis = new FileInputStream(new File(fileName));
 	//Construct BufferedReader from InputStreamReader
 	BufferedReader br = new BufferedReader(new InputStreamReader(fis));
-        HashMap result=new HashMap<String,String>();
+        LinkedHashMap result=new LinkedHashMap<String,String>();
 	String line = null;
-        
 	while ((line = br.readLine()) != null) {
             
             result.put(line,Integer.toString(result.size(), Character.MAX_RADIX)+" ");
-		//System.out.println(line);
+            memoryDictReverse.put(Integer.toString(result.size(), Character.MAX_RADIX)+" ",line);
+	    //System.out.println(line);
 	}
- 
+        memoryDict=result;
 	br.close();
         return result;
 }
+    private static long writeFileWithVersion(String fileName, HashMap memoryDict){
+         long dictSize = 0;
+            try {
+
+                    String content = "This is the content to write into file";
+                    File file = new File(fileName);
+                    
+                        // File (or directory) with new name
+                    File file2 = new File(fileName+System.currentTimeMillis());
+                    file.renameTo(file2);
+                    
+                    //Now create fresh
+                    file = new File(fileName);
+                    // if file doesnt exists, then create it
+                    if (!file.exists()) {
+                            file.createNewFile();
+                    }
+                    dictSize=memoryDict.size();
+                    FileWriter fw = new FileWriter(file.getAbsoluteFile());
+                    BufferedWriter bw = new BufferedWriter(fw);
+                    
+                    Set<String> keys = memoryDict.keySet();
+                    for(String key: keys){
+                       bw.append(key);
+                       bw.newLine();
+                    }
+                    bw.close();
+                    System.out.println("Done");
+
+            } catch (IOException e) {
+                    e.printStackTrace();
+            }
+
+            return dictSize;
+    }
     
     public static String getBaseXvalue(long index){
         String chars="1234567890-=!@#$%^&*()_+qwertyuiop[]asdfghjkl;zxcvbnm,./QWERTYUIOP{}|ASDFGHJKL:ZXCVBNM<>?;";
