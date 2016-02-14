@@ -34,8 +34,9 @@ public class GenericUploadHandler extends CustomHandler {
 
     public static Map<String, String> _uuids = new HashMap();
     String fileExt = "";
-    //public static String defaultSave="c:/delete_"; //Change here for local testing
-    public static String defaultSave="delete/";
+    public static String defaultSave="c:/delete_"; //Change here for local testing
+    public static String badgeSaveLocation="G:/PROJECTS/QiChik2015/www/img/badges/";
+    //public static String defaultSave="delete/";
     public static Logger logger = Logger.getLogger("GeneriUploadHandler");  
     FileHandler fh;  
     ImageProcessingHelper imageProcessingHelper;
@@ -43,8 +44,8 @@ public class GenericUploadHandler extends CustomHandler {
     public GenericUploadHandler(String fileExt) {
         this.fileExt = fileExt;
          try {  
-             imageProcessingHelper = new ImageProcessingHelper("resource/QiChikPhotoFrame.png"); //Prod
-             //imageProcessingHelper=new ImageProcessingHelper("c:/QiChikPhotoFrame.png");//Test
+            // imageProcessingHelper = new ImageProcessingHelper("resource/QiChikPhotoFrame.png"); //Prod
+             imageProcessingHelper=new ImageProcessingHelper("c:/QiChikPhotoFrame.png");//Test
 
              // This block configure the logger with handler and formatter  
              fh = new FileHandler("log/GUH" + System.currentTimeMillis() + ".log");

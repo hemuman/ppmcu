@@ -5,7 +5,9 @@
  */
 package server;
 
+import java.awt.AlphaComposite;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -44,8 +46,29 @@ public class ImageProcessingHelper {
         //Math.abs(StampImageBG.getHeight()-ImageToStamp.getHeight())/2
         g.drawImage(StampImage, xPos,yPos, null);
         g.dispose();
-        return StampImageBG;
+        return StampImageBG; 
+    }
+    
+    public static BufferedImage getStampedImage(String ImageToStamp,String badgePath,float opacity ,int xPos,int yPos){
         
+        try {
+            BufferedImage theMainImage = ImageIO.read(new File(ImageToStamp));
+            BufferedImage theBadgeImage = ImageIO.read(new File(badgePath));
+            BufferedImage StampImageBG=new BufferedImage(theMainImage.getWidth(), theMainImage.getHeight(), BufferedImage.TYPE_INT_ARGB);
+            Graphics2D g = StampImageBG.createGraphics();
+            g.drawImage(theMainImage, Math.abs(StampImageBG.getWidth()-theMainImage.getWidth())/2,
+                    0, null);
+            //Math.abs(StampImageBG.getHeight()-ImageToStamp.getHeight())/2
+            g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, opacity));
+            g.drawImage(theBadgeImage, xPos,yPos, null);
+            g.dispose();
+            return StampImageBG; 
+            
+        } catch (IOException ex) {
+            Logger.getLogger(ImageProcessingHelper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return null;
     }
     
     

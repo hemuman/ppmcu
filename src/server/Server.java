@@ -21,8 +21,8 @@ public class Server {
         server.createContext("/", new HealthCheck());
         server.createContext("/GetCommKey/", new GenericUploadHandler(""));
         server.createContext("/SendEmail/", new GenericUploadHandler("png"));
-        server.createContext("/GenerateGIF/", new GeneralInageProcessingHandler("png"));
-        server.createContext("/StringGene/", new StringGeneHandler());
+        server.createContext("/GenerateGIF/", new GeneralImageProcessingHandler("png"));
+//        server.createContext("/StringGene/", new StringGeneHandler());
         server.createContext("/FeedBackHandler/", new FeedBackHandler());
  
         server.setExecutor(null); // creates a default executor

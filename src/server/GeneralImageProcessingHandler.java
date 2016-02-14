@@ -6,6 +6,7 @@
 package server;
 
 import com.sun.net.httpserver.HttpExchange;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -13,6 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import json.JSONArray;
 import json.JSONException;
 import json.JSONObject;
@@ -24,12 +26,12 @@ import static server.GenericUploadHandler._uuids;
  *
  * @author Manoj
  */
-public class GeneralInageProcessingHandler  extends CustomHandler {
+public class GeneralImageProcessingHandler  extends CustomHandler {
     
     //static String baseDir="delete/";
     String fileExt = "";
     
-    public GeneralInageProcessingHandler(String fileExt) {
+    public GeneralImageProcessingHandler(String fileExt) {
         this.fileExt = fileExt;}
 
     @Override
@@ -71,9 +73,51 @@ public class GeneralInageProcessingHandler  extends CustomHandler {
                     result = jsob.toString().getBytes();
                 
             } catch (JSONException ex) {
-                Logger.getLogger(GeneralInageProcessingHandler.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(GeneralImageProcessingHandler.class.getName()).log(Level.SEVERE, null, ex);
             }
                 
+        }else if (queryMap.containsKey("badgeMaker")) {
+            
+            String email ="azmechatech@gmail.com";
+            String theMainfile=queryMap.get("badgeMakerImage").toString();
+            String theBadgeFile=queryMap.get("badgeMakerBadge").toString();
+            float opacity=(float) queryMap.get("opacity");
+            int xPos=(int) queryMap.get("xPos");
+            int yPos=(int) queryMap.get("yPos");
+            email= _uuids.get(theMainfile);
+            _uuids.remove(theMainfile);//Also purge Key.
+            _uuids.remove(theBadgeFile);//Also purge Key.
+            theMainfile=GenericUploadHandler.defaultSave+ theMainfile + "." + fileExt;
+            theBadgeFile=GenericUploadHandler.badgeSaveLocation+ theBadgeFile + "." + fileExt;
+            
+            BufferedImage bi=ImageProcessingHelper.getStampedImage(theMainfile, theBadgeFile, opacity, xPos, yPos);
+            File outputfile = new File(theMainfile);
+            ImageIO.write(bi, "png", outputfile);
+            
+            try {
+                
+                String[] emails;
+                if(email.contains(",")){
+                emails=email.split(",");
+                }else{ emails=new String[]{email};}
+                //logger.info(email+"");  
+                //Send array of images.
+                SendEmail.sendAsyncEmail("QiChik | Badged Image" , emails, "Hello There!", new String[]{theMainfile});
+                String bas64Thumbnail=ImageProcessingHelper.encodeToString(bi, fileExt);
+                 JSONObject jsob=new JSONObject();
+                    jsob.put("result", "success");
+                    jsob.put("imgURL", "qichik/preview");
+                    jsob.put("colorTheme", "#FFF");
+                    jsob.put("thumbnail", bas64Thumbnail);
+                    jsob.put("fileName", System.currentTimeMillis()+"."+fileExt);
+                    jsob.put("comment", "Real nice badged QiChik!");
+                    //jsob.put("thumbnailSize",500);
+                    result = jsob.toString().getBytes();
+                
+            } catch (JSONException ex) {
+                Logger.getLogger(GeneralImageProcessingHandler.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
         }
         
         //Send out the message

@@ -43,8 +43,8 @@ public class StofHelper {
                  pageCount++;
                    s = new String(dctuh.compute());
                    jsob=new JSONObject(s);
-                   
-                   mkJSON.mergeJSONArray(allList, jsob.getJSONArray("items"));
+                   //Broken functionality
+                   //mkJSON.mergeJSONArray(allList, jsob.getJSONArray("items"));
                    System.out.println(allList.length());
                    Thread.sleep((long) (3000+5000*Math.random()));
                    
@@ -124,7 +124,8 @@ public class StofHelper {
                    s = new String(dctuh.compute());
                    jsob=new JSONObject(s);
                    
-                   mkJSON.mergeJSONArray(allList, jsob.getJSONArray("items"));
+                   //Broken functionality
+                   //mkJSON.mergeJSONArray(allList, jsob.getJSONArray("items"));
                    System.out.println(allList.length());
                    
                    Thread.sleep((long) (1000+3000*Math.random()));
@@ -185,7 +186,8 @@ public class StofHelper {
                    s = new String(dctuh.compute());
                    jsob=new JSONObject(s);
                    
-                   mkJSON.mergeJSONArray(allList, jsob.getJSONArray("items"));
+                   //Broken functionality
+                   //mkJSON.mergeJSONArray(allList, jsob.getJSONArray("items"));
                    System.out.println(allList.length());
                    
                    Thread.sleep((long) (1000+3000*Math.random()));
