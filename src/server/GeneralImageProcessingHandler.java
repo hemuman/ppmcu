@@ -81,9 +81,9 @@ public class GeneralImageProcessingHandler  extends CustomHandler {
             String email ="azmechatech@gmail.com";
             String theMainfile=queryMap.get("badgeMakerImage").toString();
             String theBadgeFile=queryMap.get("badgeMakerBadge").toString();
-            float opacity=(float) queryMap.get("opacity");
-            int xPos=(int) queryMap.get("xPos");
-            int yPos=(int) queryMap.get("yPos");
+            float opacity=Float.parseFloat(queryMap.get("opacity").toString());
+            int xPos=Integer.parseInt(queryMap.get("xPos").toString());
+            int yPos=Integer.parseInt(queryMap.get("yPos").toString());
             email= _uuids.get(theMainfile);
             _uuids.remove(theMainfile);//Also purge Key.
             _uuids.remove(theBadgeFile);//Also purge Key.
