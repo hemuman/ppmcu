@@ -14,4 +14,5 @@
 "A0010":{"ClassName":"net.mk.dcApps.UD_DCApps","AppName":"User Developed Apps","Load":"true","icon":"default","Jared":"true","JARPATH":"this"},
 "A0011":{"ClassName":"net.mk.dcApps.DevelopDCApp","AppName":"Create Apps","Load":"true","icon":"default","Jared":"true","JARPATH":"this"},
 "A0012":{"ClassName":"net.mk.dcApps.FSExplorer","AppName":"Simple Explore","Load":"true","icon":"default","Jared":"true","JARPATH":"this"},
+"A0014a":{"ClassName":"pinionV2.PininonVisual","AppName":"Pinion Visual V2","Load":"true","icon":"default","Jared":"true","JARPATH":"this"},
 }

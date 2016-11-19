@@ -431,7 +431,7 @@ public class WSTFrame2 extends JFrame{
             {
                 new preloadSigar(System.getProperty("user.home") + "\\ppmcu\\");
             }
-
+    
             if (!MCWConfClass.isACTIVATE_SSC_SCREEN()) {
                 wSTFrame2 = new WSTFrame2(MCWConfClass.MCWAppVars.getString(MCWConfClass.AccInfo), "Evaluate");///All Evaluate now Free only for web
             }

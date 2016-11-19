@@ -62,8 +62,8 @@ public void setMXpC(Double[] x1y1,Double[] x2y2 ){
  * @param m
  */
 public void setMC(double x1,double y1,double m){
-    this.m=m;
-    System.out.println("The Slope Angle"+Math.toDegrees(Math.atan(m)));
+    this.m=m;this.x=x1;this.y=y1;
+   // System.out.println("The Slope Angle"+Math.toDegrees(Math.atan(m)));
     if(Math.atan(m)==0){ System.out.println("#parallelToX y= "+y1);parallelToX=true; Y_const=y1; }
     if(Math.atan(m)==Math.PI/2){System.out.println("#parallelToY x= "+x1);parallelToY=true; X_const=x1;}
     c=y1-m*x1;
@@ -86,8 +86,8 @@ public void setMC(double[] x1y1,double m){
 public void setThetaC(double x1,double y1,double Theta){
     //this.m=m;
     //System.out.println("The Slope Angle"+Theta);
-    if(Theta==0){ System.out.println("#parallelToX y= "+y1);parallelToX=true; Y_const=y1;  m=0;}else
-    if(Theta==Math.PI/2){System.out.println("#parallelToY x= "+x1);parallelToY=true; X_const=x1;}else
+    if(Theta==0){ System.err.println("#parallelToX y= "+y1);parallelToX=true; Y_const=y1;  m=0;}else
+    if(Theta==Math.PI/2){System.err.println("#parallelToY x= "+x1);parallelToY=true; X_const=x1;}else
         m=Math.tan(Theta);
     
     c=y1-m*x1;
@@ -111,7 +111,7 @@ public double getX(double y){
 
         return (y-c)/m;
     }
-    System.out.println("Equation not set, call setMxpC()");
+    //System.out.println("Equation not set, call setMxpC()");
     return 0;
 }
 /**
@@ -124,7 +124,7 @@ public double getY(double x){
         if(parallelToX){return Y_const; }
         return m*x+c;
     }
-    System.out.println("Equation not set, call setMxpC()");
+    //System.out.println("Equation not set, call setMxpC()");
     return 0;
 }
 /**
@@ -168,8 +168,8 @@ public double[] getPointsOnLine(double x1,double y1,double atDistance){
         result[1] = getY(result[0]);
         result[2] = eqs.smallRoot;
         result[3] = getY(result[2]);
-        System.out.println("Big Root Length"+getLength(x1,y1,result[0],result[1]));
-        System.out.println("Small Root Length"+getLength(x1,y1,result[2],result[3]));
+        //System.out.println("Big Root Length"+getLength(x1,y1,result[0],result[1]));
+        //System.out.println("Small Root Length"+getLength(x1,y1,result[2],result[3]));
     }
         return result;
 }
@@ -205,9 +205,9 @@ public double[][] getPointsOnLine(double[] x1y1,double atDistance){
         result[1][1] = x1y1[1]-atDistance;
     }
     
-        System.out.println("result["+result[0][0]+","+result[0][1]+","+result[1][0]+","+result[1][1]+"]");
-        System.out.println("Big Root Length "+getLength(x1y1[0],x1y1[1],result[0][0],result[0][1]));
-        System.out.println("Small Root Length "+getLength(x1y1[0],x1y1[1],result[1][0],result[1][1]));
+        //System.out.println("result["+result[0][0]+","+result[0][1]+","+result[1][0]+","+result[1][1]+"]");
+        //System.out.println("Big Root Length "+getLength(x1y1[0],x1y1[1],result[0][0],result[0][1]));
+        //System.out.println("Small Root Length "+getLength(x1y1[0],x1y1[1],result[1][0],result[1][1]));
     
         return result;
 }
@@ -422,9 +422,9 @@ public static double[] Transform(double [] Points,double[] TransformPoints){
 
 public static double[] Transform(double [] Points,double TransformPoints){
     for(int i=0;i<Points.length;i++){
-        System.out.print("#Transform Pre="+Points[i]);
+        //System.out.print("#Transform Pre="+Points[i]);
         Points[i]=Points[i]+TransformPoints;
-        System.out.println("\tPost="+Points[i]);
+        //System.out.println("\tPost="+Points[i]);
     }
     return Points;
 }
@@ -432,9 +432,9 @@ public static double[] Transform(double [] Points,double TransformPoints){
 public static double[][] Transform(double [][] Points,double[] TransformPoints){
     for(int i=0;i<Points.length;i++){
         for(int j=0;j<Points[0].length;j++){
-            System.out.print("#Transform Pre="+Points[i][j]);
+           // System.out.print("#Transform Pre="+Points[i][j]);
             Points[i][j]=Points[i][j]+TransformPoints[j];
-            System.out.println("Post="+Points[i][j]);
+           // System.out.println("Post="+Points[i][j]);
         }
     }
     return Points;
