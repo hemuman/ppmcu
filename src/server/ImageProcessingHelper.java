@@ -9,6 +9,9 @@ import java.awt.AlphaComposite;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.awt.image.BufferedImageOp;
+import java.awt.image.ConvolveOp;
+import java.awt.image.Kernel;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -112,6 +115,17 @@ public class ImageProcessingHelper {
         return image;
     }
     
+    public static BufferedImage ConvolveOpFilter(String imagePath) throws IOException {
+        float[] matrix = {
+            0.111f, 0.111f, 0.111f,
+            0.111f, 0.111f, 0.111f,
+            0.111f, 0.111f, 0.111f,};
+        BufferedImageOp op = new ConvolveOp(new Kernel(3, 3, matrix));
+        BufferedImage theMainImage = ImageIO.read(new File(imagePath));
+        BufferedImage StampImageBG = new BufferedImage(theMainImage.getWidth(), theMainImage.getHeight(), BufferedImage.TYPE_INT_ARGB);
+        return op.filter(theMainImage, StampImageBG);
+    }
+    
      /**
      * Encode image to string
      * @param image The image to encode
@@ -143,5 +157,9 @@ public class ImageProcessingHelper {
         imageString = encoder.encode(imageBytes);
 
         return imageString;
+    }
+    
+    public static void main(String... args){
+        
     }
 }

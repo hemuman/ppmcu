@@ -118,6 +118,51 @@ public class GeneralImageProcessingHandler  extends CustomHandler {
                 Logger.getLogger(GeneralImageProcessingHandler.class.getName()).log(Level.SEVERE, null, ex);
             }
         
+        }else if (queryMap.containsKey("unlimited")) {
+            /**
+             * Generate URLs for multiple thumbnail processing
+             * This can be done by:
+             * 1. Scale image to 200x200 thumbnail,
+             * 2. Internally create filter maker,
+             * 3. Prepare URL such that it points to pre-generated filter configurations
+             * 4. These URLs upon hitting should look for data in disk 
+             * 5. If not found then generate and cache to disc.
+             */
+            
+             String email ="azmechatech@gmail.com";
+            String theMainfile=queryMap.get("makerImage").toString();
+            
+            email= _uuids.get(theMainfile);
+            _uuids.remove(theMainfile);//Also purge Key.
+           
+            theMainfile=GenericUploadHandler.defaultSave+ theMainfile + "." + fileExt;
+           
+            
+            BufferedImage bi=ImageProcessingHelper.ConvolveOpFilter(theMainfile);
+            File outputfile = new File(theMainfile);
+            ImageIO.write(bi, "png", outputfile);
+            
+            try {
+                
+                String[] emails;
+                if(email.contains(",")){
+                emails=email.split(",");
+                }else{ emails=new String[]{email};}
+          String bas64Thumbnail=ImageProcessingHelper.encodeToString(bi, fileExt);
+                 JSONObject jsob=new JSONObject();
+                    jsob.put("result", "success");
+                    jsob.put("imgURL", "qichik/preview");
+                    jsob.put("colorTheme", "#FFF");
+                    jsob.put("thumbnail", bas64Thumbnail);
+                    jsob.put("fileName", System.currentTimeMillis()+"."+fileExt);
+                    jsob.put("comment", "Real nice badged QiChik!");
+                    //jsob.put("thumbnailSize",500);
+                    result = jsob.toString().getBytes();
+                
+            } catch (JSONException ex) {
+                Logger.getLogger(GeneralImageProcessingHandler.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
         }
         
         //Send out the message
