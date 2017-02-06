@@ -34,9 +34,9 @@ public class GenericUploadHandler extends CustomHandler {
 
     public static Map<String, String> _uuids = new HashMap();
     String fileExt = "";
-    public static String defaultSave="c:/delete_"; //Change here for local testing
+    //public static String defaultSave="c:/delete_"; //Change here for local testing
     public static String badgeSaveLocation="G:/PROJECTS/QiChik2015/www/img/badges/";
-    //public static String defaultSave="delete/";
+    public static String defaultSave="delete/";
     public static Logger logger = Logger.getLogger("GeneriUploadHandler");  
     FileHandler fh;  
     ImageProcessingHelper imageProcessingHelper;
@@ -44,8 +44,8 @@ public class GenericUploadHandler extends CustomHandler {
     public GenericUploadHandler(String fileExt) {
         this.fileExt = fileExt;
          try {  
-            // imageProcessingHelper = new ImageProcessingHelper("resource/QiChikPhotoFrame.png"); //Prod
-             imageProcessingHelper=new ImageProcessingHelper("c:/QiChikPhotoFrame.png");//Test
+             imageProcessingHelper = new ImageProcessingHelper("resource/QiChikPhotoFrame.png"); //Prod
+             //imageProcessingHelper=new ImageProcessingHelper("c:/QiChikPhotoFrame.png");//Test
 
              // This block configure the logger with handler and formatter  
              fh = new FileHandler("log/GUH" + System.currentTimeMillis() + ".log");
@@ -169,7 +169,7 @@ public class GenericUploadHandler extends CustomHandler {
 
                 }
                 //Prepare to send thumbnail
-                image =imageProcessingHelper.getStampedImage(UIToolKit.scaleImage(image, 600, 600),0,0);
+                image =imageProcessingHelper.getStampedImage(UIToolKit.scaleImage(image, 200, 200),0,0);
                 String bas64Thumbnail=ImageProcessingHelper.encodeToString(image, "png");
                 boolean sendEmailFlag=true;
                 if(queryMap.containsKey("doSendEmail")) 
@@ -193,6 +193,16 @@ public class GenericUploadHandler extends CustomHandler {
                     jsob.put("fileName", queryMap.get("commKey") + "." + fileExt);
                     jsob.put("comment", "Real nice QiChik!");
                     jsob.put("thumbnailSize",500);
+                    result = jsob.toString().getBytes();
+                }else{
+                    JSONObject jsob=new JSONObject();
+                    jsob.put("result", "success");
+                    jsob.put("imgURL", "qichik/preview");
+                    jsob.put("colorTheme", "#FFF");
+                    //jsob.put("thumbnail", bas64Thumbnail);
+                    jsob.put("fileName", queryMap.get("commKey") + "." + fileExt);
+                    jsob.put("comment", "Real nice QiChik!");
+                    //jsob.put("thumbnailSize",500);
                     result = jsob.toString().getBytes();
                 }
 

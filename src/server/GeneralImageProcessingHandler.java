@@ -136,11 +136,13 @@ public class GeneralImageProcessingHandler  extends CustomHandler {
             _uuids.remove(theMainfile);//Also purge Key.
            
             theMainfile=GenericUploadHandler.defaultSave+ theMainfile + "." + fileExt;
+            String _theMainfile=GenericUploadHandler.defaultSave+ queryMap.get("makerImage").toString() + "_." + fileExt;
            
             
-            BufferedImage bi=ImageProcessingHelper.ConvolveOpFilter(theMainfile);
-            File outputfile = new File(theMainfile);
-            ImageIO.write(bi, "png", outputfile);
+            BufferedImage bi=ImageIO.read(new File(theMainfile));
+            //BufferedImage bi=ImageProcessingHelper.EdgeFilter(theMainfile);
+            //File outputfile = new File(_theMainfile);
+            //ImageIO.write(bi, "png", outputfile);
             
             try {
                 
@@ -148,12 +150,12 @@ public class GeneralImageProcessingHandler  extends CustomHandler {
                 if(email.contains(",")){
                 emails=email.split(",");
                 }else{ emails=new String[]{email};}
-          String bas64Thumbnail=ImageProcessingHelper.encodeToString(bi, fileExt);
+          //String bas64Thumbnail=ImageProcessingHelper.encodeToString(bi, fileExt);
                  JSONObject jsob=new JSONObject();
                     jsob.put("result", "success");
-                    jsob.put("imgURL", "qichik/preview");
+                    jsob.put("imgURL", "/unlimited/"+queryMap.get("makerImage").toString()+"?filter="+UnlimitedImageFilterHandler.callTypes.firstCall);
                     jsob.put("colorTheme", "#FFF");
-                    jsob.put("thumbnail", bas64Thumbnail);
+                   // jsob.put("thumbnail", bas64Thumbnail);
                     jsob.put("fileName", System.currentTimeMillis()+"."+fileExt);
                     jsob.put("comment", "Real nice badged QiChik!");
                     //jsob.put("thumbnailSize",500);
