@@ -5,8 +5,6 @@
  */
 package server;
 
-import org.bytedeco.javacpp.opencv_core.Mat;
-import org.bytedeco.javacpp.opencv_objdetect.CascadeClassifier;
 
 /**
  *

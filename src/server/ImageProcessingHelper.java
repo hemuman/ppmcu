@@ -73,9 +73,21 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import jjil.algorithm.Gray8Rgb;
+import jjil.algorithm.RgbAvgGray;
+import jjil.core.Error;
+import jjil.core.Image;
+import jjil.core.Rect;
+import jjil.core.RgbImage;
+import jjil.j2se.RgbImageJ2se;
+import net.mk.JJIL.Gray8DetectHaarMultiScale;
+import net.mk.JJIL.Main;
+import net.mk.ppmcu2D.UIToolKit;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
@@ -98,6 +110,62 @@ public class ImageProcessingHelper {
         }
     }
 
+    /**
+     * 
+     * @param bi
+     * @param minScale
+     * @param maxScale
+     * @return 
+     */
+    public static List<Rect> findFaces(BufferedImage bi, int minScale, int maxScale) {
+        try {
+            InputStream is  = Main.class.getResourceAsStream("/net/mk/JJIL/HCSB.txt");
+            Gray8DetectHaarMultiScale detectHaar = new Gray8DetectHaarMultiScale(is, minScale, maxScale);
+            RgbImage im = RgbImageJ2se.toRgbImage(bi);
+            RgbAvgGray toGray = new RgbAvgGray();
+            toGray.push(im);
+            List<Rect> results = detectHaar.pushAndReturn(toGray.getFront());
+            for(Rect rect:results){
+                System.out.println(rect.getTopLeft().getX()+","+rect.getTopLeft().getY()+","+rect.getBottomRight().getX()+","+rect.getBottomRight().getY());
+            }
+            System.out.println("Found "+results.size()+" faces");
+            
+            return results;
+//            Image i = detectHaar.getFront();
+//            Gray8Rgb g2rgb = new Gray8Rgb();
+//            g2rgb.push(i);
+//            RgbImageJ2se conv = new RgbImageJ2se();
+//            conv.toFile((RgbImage)g2rgb.getFront(), output.getCanonicalPath());
+        } catch (Exception e) {
+            throw new IllegalStateException(e);
+        } catch (Error ex) {
+            Logger.getLogger(ImageProcessingHelper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return null;
+    }
+    
+    /**
+     * 
+     * @param results
+     * @return 
+     */
+    public static double[] getBBXCenterAndRadius(List<Rect> results) {
+        double[] result = new double[3];
+        double maxX = 0, maxY = 0, minX = Double.MAX_VALUE, minY = Double.MAX_VALUE;
+        for (Rect rect : results) {
+            maxX = rect.getBottomRight().getX() > maxX ? rect.getBottomRight().getX() : maxX;
+            maxY = rect.getBottomRight().getY() > maxX ? rect.getBottomRight().getY() : maxY;
+            minX = rect.getTopLeft().getX() < minX ? rect.getTopLeft().getX() : minX;
+            minY = rect.getTopLeft().getY() < minY ? rect.getTopLeft().getY() : minY;
+        }
+
+        result[0] = minX + (maxX - minX) / 2;
+        result[1] = minY + (maxY - minY) / 2;
+        result[2] = Math.sqrt(((maxX - minX) / 2) * ((maxX - minX) / 2) + ((maxY - minY) / 2) * ((maxY - minY) / 2));
+        return result;
+    }
+    
     public BufferedImage getStampedImage(BufferedImage ImageToStamp, int xPos, int yPos) {
         BufferedImage StampImageBG = new BufferedImage(StampImage.getWidth(), StampImage.getHeight(), BufferedImage.TYPE_INT_ARGB);
         Graphics g = StampImageBG.getGraphics();
@@ -341,7 +409,16 @@ public class ImageProcessingHelper {
     }
 
     public static BufferedImage SphereFilter(BufferedImage theMainImage) throws IOException {
-        BufferedImageOp op = new SphereFilter();
+        SphereFilter sf=new SphereFilter();
+        List<Rect> faces=findFaces(theMainImage, 1, 50);
+        if (faces.size() > 0) {
+            double[] dataXYC = getBBXCenterAndRadius(faces);
+            sf.setCentreX((float) dataXYC[0]);
+            sf.setCentreY((float) dataXYC[1]);
+            sf.setRadius((float) dataXYC[2]*1.5f);
+        }
+
+        BufferedImageOp op = sf;
 
         //BufferedImage theMainImage = ImageIO.read(new File(imagePath));
         BufferedImage StampImageBG = new BufferedImage(theMainImage.getWidth(), theMainImage.getHeight(), BufferedImage.TYPE_INT_ARGB);
@@ -477,8 +554,17 @@ public class ImageProcessingHelper {
 
     public static BufferedImage PinchFilter(BufferedImage theMainImage) throws IOException {
         PinchFilter cf = new PinchFilter();
-        cf.setRadius((float) (theMainImage.getHeight() / 1.5));
+        List<Rect> faces=findFaces(theMainImage, 1, 50);
+        if (faces!=null && faces.size() > 0) {
+            double[] dataXYC = getBBXCenterAndRadius(faces);
+            cf.setCentreX((float) dataXYC[0]);
+            cf.setCentreY((float) dataXYC[1]);
+            cf.setRadius((float) dataXYC[2]*1.5f);
+        }
 
+        
+        //cf.setRadius((float) (theMainImage.getHeight() / 1.5));
+       // cf.setCentreX(0);
         BufferedImageOp op = cf;
 
         //BufferedImage theMainImage = ImageIO.read(new File(imagePath));
@@ -915,7 +1001,53 @@ public class ImageProcessingHelper {
         op.filter(theMainImage, StampImageBG);
         return StampImageBG;
     }
+    
+    public static BufferedImage ParamCurveFilter(BufferedImage theMainImage) throws IOException {
+        
+        BufferedImage curves=UIToolKit.getParametricCurve(theMainImage.getWidth(), theMainImage.getHeight(), .1f, false);
+        ////BufferedImage theMainImage = ImageIO.read(new File(imagePath));
+        BufferedImage curveBlur=GaussianFilter(curves);
+        BufferedImage StampImagefg=UIToolKit.overlayImages( curves,curveBlur);
+        BufferedImage StampImageBG = UIToolKit.overlayImages(theMainImage, StampImagefg);
 
+        return StampImageBG;
+    }
+
+    public static BufferedImage RandomCurveFilter(BufferedImage theMainImage) throws IOException {
+        
+        BufferedImage curves=UIToolKit.getRandomCurve(theMainImage.getWidth(), theMainImage.getHeight(),100, .5f, false);
+        ////BufferedImage theMainImage = ImageIO.read(new File(imagePath));
+        BufferedImage StampImageBG = UIToolKit.overlayImages(theMainImage, curves);
+
+        return StampImageBG;
+    }
+    
+    public static BufferedImage Win7StyleRectNewsInkFilter(BufferedImage theMainImage) throws IOException {
+        
+        BufferedImage curves=UIToolKit.getWin7StyleRectNewsInk(theMainImage.getWidth(), theMainImage.getHeight(), .2f, false);
+        ////BufferedImage theMainImage = ImageIO.read(new File(imagePath));
+        BufferedImage StampImageBG = UIToolKit.overlayImages(theMainImage, curves);
+
+        return StampImageBG;
+    }
+    
+    
+    public static BufferedImage ParticleEffectsFilter(BufferedImage theMainImage) throws IOException {
+        
+//        BufferedImage particles=UIToolKit.toBufferedImage(
+//                UIToolKit.TransformColorToTransparency(
+//                        UIToolKit.particleEffects(theMainImage.getWidth(), theMainImage.getHeight(),.3f),0x00000000));
+        BufferedImage particles=
+                        UIToolKit.particleEffects(theMainImage.getWidth(), theMainImage.getHeight()/8,.3f);
+        
+        ////BufferedImage theMainImage = ImageIO.read(new File(imagePath));
+        BufferedImage StampImageBG = UIToolKit.overlayImages(theMainImage, particles);
+
+        return StampImageBG;
+    }
+    
+    
+    
     /**
      * Encode image to string
      *

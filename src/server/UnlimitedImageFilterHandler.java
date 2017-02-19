@@ -31,12 +31,13 @@ public class UnlimitedImageFilterHandler extends CustomHandler {
     String fileExt = "";
     static String[] FILTERS= {"Edge Filter","Convolve Op Filter","Rays Filter","Oil Filter","Smart Blur Filter","Marble Filter",
         "Noise Filter","Polar Filter","Water Filter","Variable Blur Filter","Unsharp Filter","Twirl Filter","Tile Image Filter",
-        "Stamp Filter","Sphere Filter","Glow Filter","Curl Filter","Crystallize Filter","Diffusion Filter","Dither Filter",
+        "Random Filters","Sphere Filter","Glow Filter","Curl Filter","Crystallize Filter","Diffusion Filter","Dither Filter",
         "Invert Filter","Lookup Filter","Kaleidoscope Filter","Chrome Filter","Emboss Filter","Circle Filter","Pinch Filter",
         "Swim Filter","Halftone Filter","Light Filter","Pointillize Filter","Weave Filter","Cellular Filter","LensBlur Filter",
         "Maximum Filter","Minimum Filter","Median Filter","ChannelMix Filter","Contrast Filter","Gain Filter","Grayscale Filter",
         "Solarize Filter","Threshold Filter","Displace Filter","Dissolve Filter","Mirror Filter","Block Filter","Feedback Filter",
-        "Gaussian Filter","MotionBlur Filter","RotationBlur Filter","ZoomBlur Filter","Smear Filter","Sparkle Filter","Rescale Filter"};
+        "Gaussian Filter","MotionBlur Filter","RotationBlur Filter","ZoomBlur Filter","Smear Filter","Sparkle Filter",
+        "ParamCurve Filter","RandomCurve Filter","Win7StyleRectNewsInk Filter","ParticleEffects Filter"};
     
     public static enum callTypes {
         firstCall, secondCall,thirdCall
@@ -66,6 +67,7 @@ public class UnlimitedImageFilterHandler extends CustomHandler {
                             resultObject.put("name", getFilterName(number));
                             resultObject.put("imgURL", "/unlimited/" + theMainfile + "?filter="
                                     + UnlimitedImageFilterHandler.callTypes.secondCall + "&id=" + number);
+                            resultObject.put("photographyQuote",getPhotographyQuote((int) (QUOTES.length * Math.random())));
                             result = resultObject.toString().getBytes();
                         } catch (JSONException ex) {
                             Logger.getLogger(UnlimitedImageFilterHandler.class.getName()).log(Level.SEVERE, null, ex);
@@ -177,7 +179,8 @@ public class UnlimitedImageFilterHandler extends CustomHandler {
                 bi = ImageProcessingHelper.TileImageFilter(theMainImage);
                 break;
             case 13:
-                bi = ImageProcessingHelper.StampFilter(theMainImage);
+               // bi = ImageProcessingHelper.StampFilter(theMainImage);
+                bi = getFilteredImage( (int) (Math.random()*54), getFilteredImage((int) (Math.random()*54), theMainImage));
                 break;
             case 14:
                 bi = ImageProcessingHelper.SphereFilter(theMainImage);
@@ -342,10 +345,28 @@ public class UnlimitedImageFilterHandler extends CustomHandler {
             bi = ImageProcessingHelper.SparkleFilter(theMainImage);
             break;
             
-            
             case 54:
-            bi = ImageProcessingHelper.RescaleFilter(theMainImage);
+            bi = ImageProcessingHelper.ParamCurveFilter(theMainImage);
             break;
+            
+            case 55:
+            bi = ImageProcessingHelper.RandomCurveFilter(theMainImage);
+            break;
+            
+            case 56:
+            bi = ImageProcessingHelper.Win7StyleRectNewsInkFilter(theMainImage);
+            break;
+            
+            
+            case 57:
+            bi = ImageProcessingHelper.ParticleEffectsFilter(theMainImage);
+            break;
+            
+            
+             
+            default:
+               bi = getFilteredImage( (int) (Math.random()*54), getFilteredImage((int) (Math.random()*54), theMainImage));
+            break; 
             
             
             
@@ -355,7 +376,7 @@ public class UnlimitedImageFilterHandler extends CustomHandler {
     }
 
     public static String getFilterName(int number) throws IOException {
-        if(number<FILTERS.length) return FILTERS[number]; else return  "None";
+        if(number<FILTERS.length) return FILTERS[number]; else return  "Random";
         // System.out.println("#1 :: "+number);
 //        switch (number) {
 //            case 0:
@@ -580,4 +601,9 @@ public class UnlimitedImageFilterHandler extends CustomHandler {
 //        return result;
     }
 
+    static String QUOTES[]={"Photography is the story I fail to put into words. - Destin Sparks","When words become unclear, I shall focus with photographs. When images become inadequate, I shall be content with silence. - Ansel Adams","In photography there is a reality so subtle that it becomes more real than reality. - Alfred Stieglitz","There is one thing the photograph must contain, the humanity of the moment. - Robert Frank","Taking an image, freezing a moment, reveals how rich reality truly is. - Anonymous","Photography is a way of feeling, of touching, of loving. What you have caught on film is captured forever… It remembers little things, long after you have forgotten everything. - Aaron Siskind","We are making photographs to understand what our lives mean to us. - Ralph Hattersley","A thing that you see in my pictures is that I was not afraid to fall in love with these people. - Annie Leibovitz","You don’t take a photograph. You ask quietly to borrow it. - Unknown","Photography for me is not looking, it’s feeling. If you can’t feel what you’re looking at, then you’re never going to get others to feel anything when they look at your pictures. - Don McCullin","A portrait is not made in the camera but on either side of it. - Edward Steichen","It’s one thing to make a picture of what a person looks like, it’s another thing to make a portrait of who they are. - Paul Caponigro","The best thing about a picture is that it never changes, even when the people in it do. - Andy Warhol","Taking pictures is like tiptoeing into the kitchen late at night and stealing Oreo cookies. - Diane Arbus","To me, photography is an art of observation. It’s about finding something interesting in an ordinary place… I’ve found it has little to do with the things you see and everything to do with the way you see them. - Elliott Erwitt","The picture that you took with your camera is the imagination you want to create with reality. - Scott Lorenzo","If the photographer is interested in the people in front of his lens, and if he is compassionate, it’s already a lot. The instrument is not the camera but the photographer. - Eve Arnold","A tear contains an ocean. A photographer is aware of the tiny moments in a persons life that reveal greater truths. - Anonymous","The camera is an instrument that teaches people how to see without a camera. - Dorothea Lange","Essentially what photography is is life lit up. - Sam Abell","I don’t trust words. I trust pictures. - Gilles Peress","I really believe there are things nobody would see if I didn’t photograph them. - Diane Arbus","Taking pictures is savoring life intensely, every hundredth of a second. - Marc Riboud","Once you learn to care, you can record images with your mind or on film. There is no difference between the two. - Anonymous","Photograph: a picture painted by the sun without instruction in art. - Ambrose Bierce","Photography is truth. - Jean-Luc Godard","The camera makes you forget you’re there. It’s not like you are hiding but you forget, you are just looking so much. - Annie Leibovitz","If you see something that moves you, and then snap it, you keep a moment. - Linda McCartney","There are always two people in every picture: the photographer and the viewer. - Ansel Adams","A photograph is a secret about a secret. The more it tells you the less you know. - Diane Arbus","The whole point of taking pictures is so that you don’t have to explain things with words. - Elliott Erwitt","One doesn’t stop seeing. One doesn’t stop framing. It doesn’t turn off and turn on. It’s on all the time. - Annie Leibovitz","What I like about photographs is that they capture a moment that’s gone forever, impossible to reproduce. - Karl Lagerfeld","A good photograph is one that communicates a fact, touches the heart and leaves the viewer a changed person for having seen it. It is, in a word, effective. - Irving Penn","Beauty can be seen in all things, seeing and composing the beauty is what separates the snapshot from the photograph. - Matt Hardy","To me, photography is an art of observation. It’s about finding something interesting an ordinary place… I’ve found it has little to do with the things you see and everything to do with the way you see them. - Elliott Erwitt","You don’t take a photograph, you make it. - Ansel Adams","When people ask me what equipment I use – I tell them my eyes. - Anonymous","I wish that all of nature’s magnificence, the emotion of the land, the living energy of place could be photographed. - Annie Leibovitz","I never have taken a picture I’ve intended. They’re always better or worse. - Diane Arbus","All photographs are accurate. None of them is the truth. - Richard Avedon","Today everything exists to end in a photograph. - Susan Sontag","I think good dreaming is what leads to good photographs. - Wayne Miller","I love the people I photograph. I mean, they’re my friends. I’ve never met most of them or I don’t know them at all, yet through my images I live with them. - Bruce Gilden","If you want to be a better photographer, stand in front of more interesting stuff. - Jim Richardson","When I say I want to photograph someone, what it really means is that I’d like to know them. Anyone I know I photograph. - Annie Leibovitz","My life is shaped by the urgent need to wander and observe, and my camera is my passport. - Steve McCurry","Look and think before opening the shutter. The heart and mind are the true lens of the camera. - Yousuf Karsh","The camera is an excuse to be someplace you otherwise don’t belong. It gives me both a point of connection and a point of separation. - Susan Meiselas","Most things in life are moments of pleasure and a lifetime of embarrassment; photography is a moment of embarrassment and a lifetime of pleasure. - Tony Benn","It is more important to click with people than to click the shutter. - Alfred Eisenstaedt","I like to photograph anyone before they know what their best angles are. - Ellen Von Unwerth","Great photography is about depth of feeling, not depth of field. - Peter Adams","Life is like a camera. Just focus on what’s important and capture the good times, develop from the negatives and if things don’t work out, just take another shot. - Unknown","Only photograph what you love. - Tim Walker","In photography there are no shadows that cannot be illuminated. - August Sander","When I photograph, what I’m really doing is seeking answers to things. - Wynn Bullock","Character, like a photograph, develops in darkness. - Yousuf Karsh","It’s weird that photographers spend years or even a whole lifetime, trying to capture moments that added together, don’t even amount to a couple of hours. - James Lalropui Keivom","Once photography enters your bloodstream, it is like a disease. - Anonymous","Which of my photographs is my favorite? The one I’m going to take tomorrow. - Imogen Cunningham"}; 
+    public static String getPhotographyQuote(int number){
+        if(number <QUOTES.length) return QUOTES[number];
+        else return QUOTES[1];
+    }
 }

@@ -16,7 +16,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import java.awt.*;
 import java.awt.image.DataBufferInt;
+import java.awt.image.FilteredImageSource;
+import java.awt.image.ImageFilter;
 import java.awt.image.ImageObserver;
+import java.awt.image.ImageProducer;
+import java.awt.image.RGBImageFilter;
+import java.util.Random;
 import java.util.Vector;
 import mkMath.GeometryOperations;
 import mkMath.ParametricCurve;
@@ -46,7 +51,7 @@ public class UIToolKit {
         JOptionPane.showMessageDialog(null, icon);
         
         //getRandomCurve
-        icon.setImage(getRandomCurve(800, 600,1.0f, true));
+        icon.setImage(getRandomCurve(800, 600,8,1.0f, true));
         JOptionPane.showMessageDialog(null, icon);
         
         icon.setImage(getWithShadow(getWin7StyleRectWC(800, 600,1.0f, true),1.0f,false));
@@ -272,7 +277,7 @@ public class UIToolKit {
     
        
        
-      public static BufferedImage getRandomCurve(int Width, int Height,float Transparency, boolean debug) {
+      public static BufferedImage getRandomCurve(int Width, int Height,int numOfPoints,float Transparency, boolean debug) {
         Color blue4 = new Color(6,112,154);
         Color Khakee = new Color(242,242,142);
         // 14 16 93
@@ -281,7 +286,7 @@ public class UIToolKit {
         g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
         g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER,Transparency));
        // int result[][]=ParametricCurve.RandomClosedLoopCurve(10, 500);
-         int result[][]=ParametricCurve.RandomClosedLoopSmoothCurve(3,100);
+         int result[][]=ParametricCurve.RandomClosedLoopSmoothCurve(numOfPoints,Width<Height?Width:Height);
          
         //RandomClosedLoopSmoothCurve
         for(int i=0;i<result.length-1;i++){
@@ -821,5 +826,197 @@ public class UIToolKit {
 
         return resizedImage;
     }
+    
+      /**
+     * Method to overlay Images
+     *
+     * @param bgImage --> The background Image
+     * @param fgImage --> The foreground Image
+     * @return --> overlayed image (fgImage over bgImage)
+     */
+    public static BufferedImage overlayImages(BufferedImage bgImage,
+            BufferedImage fgImage) {
+ 
+        /**
+         * Doing some preliminary validations.
+         * Foreground image height cannot be greater than background image height.
+         * Foreground image width cannot be greater than background image width.
+         *
+         * returning a null value if such condition exists.
+         */
+        if (fgImage.getHeight() > bgImage.getHeight()
+                || fgImage.getWidth() > fgImage.getWidth()) {
+            JOptionPane.showMessageDialog(null,
+                    "Foreground Image Is Bigger In One or Both Dimensions"
+                            + "nCannot proceed with overlay."
+                            + "nn Please use smaller Image for foreground");
+            return null;
+        }
+ 
+        /**Create a Graphics  from the background image**/
+        Graphics2D g = bgImage.createGraphics();
+        /**Set Antialias Rendering**/
+        g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+                RenderingHints.VALUE_ANTIALIAS_ON);
+        /**
+         * Draw background image at location (0,0)
+         * You can change the (x,y) value as required
+         */
+        g.drawImage(bgImage, 0, 0, null);
+ 
+        /**
+         * Draw foreground image at location (0,0)
+         * Change (x,y) value as required.
+         */
+        g.drawImage(fgImage, 0, 0, null);
+ 
+        g.dispose();
+        return bgImage;
+    }
+
+
+    public static BufferedImage particleEffects(int WIDE,int HIGH,float Transparency){
+        //screen dimensions
+
+   //particles
+   int MAX_PARTICLES = 50;
+    int MAX_FRAMES = 2;
+
+    
+        BufferedImage screen = new BufferedImage(WIDE, HIGH,  1); //BufferedImage.
+         int[]  pixl = ((DataBufferInt) screen.getRaster().getDataBuffer()).getData();
+         Graphics2D g = screen.createGraphics();
+         g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
+        g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER,Transparency));
+        
+        g.setColor(new Color(0x00000000));
+        // Graphics gCanvas = getGraphics();
+
+         Random ran = new Random();
+
+         //prep particle lightarray
+         //x,y,fade-frames
+         int[][][] particleFrame = new int[10][10][MAX_FRAMES];
+
+         for (int i = 0; i < MAX_FRAMES; i++)
+         {
+
+            for (int x = 0; x < 10; x++)
+            {
+               for (int y = 0; y < 10; y++)
+               {
+                  double dist = Math.sqrt((x - 5d) * (x - 5d) + (y - 5d) * (y - 5d));
+
+                  dist = 255 - dist * 60 - i;
+
+                  dist = dist < 0 ? 0 : dist;
+                  dist = dist > 255 ? 255 : dist;
+
+                  particleFrame[x][y][i] = (int) dist;
+               }
+            }
+         }
+
+         int[] particlesFrame = new int[MAX_PARTICLES]; //frame
+         float[][] particlesBase = new float[MAX_PARTICLES][4]; //x,y , velocity x,y
+
+         for (int i = 0; i < MAX_PARTICLES; i++)
+         {
+            particlesBase[i][0] = ran.nextInt(WIDE);//WIDE/2+ ran.nextInt(WIDE/2) - WIDE/4;
+            particlesBase[i][1] = HIGH/2+ ran.nextInt(HIGH/2)- HIGH/4;
+
+            particlesBase[i][2] = ran.nextFloat()*2 - 1f;
+            particlesBase[i][3] = ran.nextFloat()*2 - 1f;
+
+            particlesFrame[i] = ran.nextInt(MAX_FRAMES);
+         }
+
+      
+
+            g.fillRect(0, 0, screen.getWidth(), screen.getHeight());
+
+            for (int i = 0; i < MAX_PARTICLES; i++)
+            {
+
+               particlesFrame[i]++;
+               if (particlesFrame[i] >= MAX_FRAMES) particlesFrame[i] = 0;
+
+               if (particlesBase[i][2] < 0d && particlesBase[i][0] < 10) particlesBase[i][2] = -particlesBase[i][2];
+               else if (particlesBase[i][2] > 0d && particlesBase[i][0] > WIDE - 15) particlesBase[i][2] = -particlesBase[i][2];
+
+               if (particlesBase[i][3] < 0d && particlesBase[i][1] < 10) particlesBase[i][3] = -particlesBase[i][3];
+               else if (particlesBase[i][3] > 0d && particlesBase[i][1] > HIGH - 15) particlesBase[i][3] = -particlesBase[i][3];
+
+               particlesBase[i][0] += particlesBase[i][2];
+               particlesBase[i][1] += particlesBase[i][3];
+
+               int px = (int) particlesBase[i][0];
+               int py = (int) particlesBase[i][1];
+
+               for (int x = 0; x < 10; x++)
+               {
+                  for (int y = 0; y < 10; y++)
+                  {
+
+                     int pc = (pixl[WIDE * (y + py) + x + px]) & 0xFF;
+                     pc += particleFrame[x][y][particlesFrame[i]];
+                     pc = pc > 255 ? 255 : pc;
+                     int pc2 = (pc > 230) ? pc : 0;
+
+                     pixl[WIDE * (y + py) + x + px] = pc | (pc << 8) | (pc2 << 16);
+
+                  }
+               }
+            }
+
+            //gCanvas.drawImage(screen, 0, 0, null);
+            return screen;
+    }
+    
+    /**
+     * 
+     * @param image
+     * @param Color 0xFF000000
+     * @return 
+     */
+     public static  Image TransformColorToTransparency(BufferedImage image, int Color)
+  {
+    ImageFilter filter = new RGBImageFilter()
+    {
+      @Override
+      public final int filterRGB(int x, int y, int rgb)
+      {
+        return (rgb << 8) & Color; //0xFF000000
+      }
+    };
+    
+    ImageProducer ip = new FilteredImageSource(image.getSource(), filter);
+    return Toolkit.getDefaultToolkit().createImage(ip);
+  }
+     
+     /**
+ * Converts a given Image into a BufferedImage
+ *
+ * @param img The Image to be converted
+ * @return The converted BufferedImage
+ */
+public static BufferedImage toBufferedImage(Image img)
+{
+    if (img instanceof BufferedImage)
+    {
+        return (BufferedImage) img;
+    }
+
+    // Create a buffered image with transparency
+    BufferedImage bimage = new BufferedImage(img.getWidth(null), img.getHeight(null), BufferedImage.TYPE_INT_ARGB);
+
+    // Draw the image on to the buffered image
+    Graphics2D bGr = bimage.createGraphics();
+    bGr.drawImage(img, 0, 0, null);
+    bGr.dispose();
+
+    // Return the buffered image
+    return bimage;
+}
 }
 

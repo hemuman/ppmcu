@@ -188,7 +188,7 @@ public class ParametricCurve {
 
                    result[i][0]=x;
                    result[i][1]=y;
-                   System.out.println("#Accepted "+ i);
+                  // System.out.println("#Accepted "+ i);
                    break;
                  }else {
                     // System.out.println("#Rejecting "+ Line.distanceBetween2Points(result[i-1][0], result[i-1][1],x,y));
