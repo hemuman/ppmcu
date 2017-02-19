@@ -118,7 +118,7 @@ public class UIToolKit {
         while(true){
             if(rows*columns>=BlocksToDisplay){
                 if(debug)
-                System.out.println("#getBestVisualArrangement BlocksToDisplay="+BlocksToDisplay+" rows="+rows+"\t columns="+columns +"\t scale= 1/"+Math.max(rows, columns));
+                //System.out.println("#getBestVisualArrangement BlocksToDisplay="+BlocksToDisplay+" rows="+rows+"\t columns="+columns +"\t scale= 1/"+Math.max(rows, columns));
                 return new int[]{rows,columns,Math.max(rows, columns)};
             }
             if(incrementRow) // Start with row increment
@@ -879,8 +879,8 @@ public class UIToolKit {
         //screen dimensions
 
    //particles
-   int MAX_PARTICLES = 50;
-    int MAX_FRAMES = 2;
+        int MAX_PARTICLES = 50;
+        int MAX_FRAMES = 2;
 
     
         BufferedImage screen = new BufferedImage(WIDE, HIGH,  1); //BufferedImage.
