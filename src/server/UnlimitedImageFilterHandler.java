@@ -37,7 +37,8 @@ public class UnlimitedImageFilterHandler extends CustomHandler {
         "Maximum Filter","Minimum Filter","Median Filter","ChannelMix Filter","Contrast Filter","Gain Filter","Grayscale Filter",
         "Solarize Filter","Threshold Filter","Displace Filter","Dissolve Filter","Mirror Filter","Block Filter","Feedback Filter",
         "Gaussian Filter","MotionBlur Filter","RotationBlur Filter","ZoomBlur Filter","Smear Filter","Sparkle Filter",
-        "ParamCurve Filter","RandomCurve Filter","Win7StyleRectNewsInk Filter","ParticleEffects Filter"};
+        "ParamCurve Filter","RandomCurve Filter","Win7StyleRectNewsInk Filter","ParticleEffects Filter",
+        "ConnectedCircles Filter","ConnectedRect Filter"};
     
     public static enum callTypes {
         firstCall, secondCall,thirdCall
@@ -362,6 +363,13 @@ public class UnlimitedImageFilterHandler extends CustomHandler {
             bi = ImageProcessingHelper.ParticleEffectsFilter(theMainImage);
             break;
             
+            case 58:
+            bi = ImageProcessingHelper.ConnectedCirclesFilter(theMainImage);
+            break;
+            
+            case 59:
+            bi = ImageProcessingHelper.ConnectedRectFilter(theMainImage);
+            break;
             
              
             default:

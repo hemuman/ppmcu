@@ -197,7 +197,7 @@ public class UIToolKit {
         return img;
     }
     
-       public static BufferedImage getRandomShape(int Width, int Height,float Transparency, boolean debug) {
+      public static BufferedImage getRandomShape(int Width, int Height,float Transparency, boolean debug) {
         Color blue4 = new Color(6,112,154);
         Color Khakee = new Color(242,242,142);
         // 14 16 93
@@ -220,6 +220,63 @@ public class UIToolKit {
         return img;
     }
     
+      public static BufferedImage getConnectedCircles(int [][] circles,int Width, int Height,float Transparency, boolean debug) {
+        Color blue4 = new Color(6,112,154);
+        Color Khakee = new Color(242,242,142);
+        // 14 16 93
+        BufferedImage img = new BufferedImage(Width, Height, BufferedImage.TYPE_4BYTE_ABGR_PRE);
+        Graphics2D g = img.createGraphics();
+        g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
+        g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER,Transparency));
+        g.setColor(blue4);
+        float dash1[] = {10.0f};
+        BasicStroke dashed =
+        new BasicStroke(1.0f,
+                        BasicStroke.CAP_BUTT,
+                        BasicStroke.JOIN_MITER,
+                        10.0f, dash1, 0.0f);
+        g.setStroke(dashed);
+        for(int[] circle:circles){
+            //if(circle.length>2)g.drawOval(circle[0]-circle[2], circle[1]+circle[2], circle[2], circle[2]);//+X and -Y as computers work in 4th Quadrant
+            if(circle.length>2)g.fillOval(circle[0], circle[1], 2*circle[2], 2*circle[2]);//+X and -Y as computers work in 4th Quadrant
+            
+            //g.fillOval(0,0, 100, 100);
+        }
+        
+         
+        return img;
+    }
+    
+      
+      public static BufferedImage getConnectedRects(int[][] rects,int Width, int Height,float Transparency, boolean debug) {
+        Color blue4 = new Color(6,112,154);
+        Color Khakee = new Color(242,242,142);
+        // 14 16 93
+        BufferedImage img = new BufferedImage(Width, Height, BufferedImage.TYPE_4BYTE_ABGR_PRE);
+        Graphics2D g = img.createGraphics();
+        g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
+        g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER,Transparency));
+        g.setColor(blue4);
+        float dash1[] = {10.0f};
+        BasicStroke dashed =
+        new BasicStroke(1.0f,
+                        BasicStroke.CAP_BUTT,
+                        BasicStroke.JOIN_MITER,
+                        10.0f, dash1, 0.0f);
+        g.setStroke(dashed);
+        for(int[] rect:rects){
+            //if(circle.length>2)g.drawOval(circle[0]-circle[2], circle[1]+circle[2], circle[2], circle[2]);//+X and -Y as computers work in 4th Quadrant
+            if(rect.length>3)
+                g.fillRect(rect[0], rect[1], rect[2], rect[3]);//+X and -Y as computers work in 4th Quadrant
+            
+        
+        }
+        
+         
+        return img;
+    }
+    
+      
        public static BufferedImage getRandomShape(Double[][] Points,Double Scale,float Transparency, boolean debug) {
            
         Double[][] bbx=GeometryOperations.getBoundingBox(Points);
