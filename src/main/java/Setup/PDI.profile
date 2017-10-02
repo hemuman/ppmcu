@@ -1,0 +1,1 @@
+{"ProjectName6":{"ProjectDirectory":"C:\\PDI/ProjectName6","PDIServerEmail":"PDI Server email adderess"}}
