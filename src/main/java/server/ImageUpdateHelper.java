@@ -11,6 +11,7 @@ import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -29,17 +30,18 @@ public class ImageUpdateHelper {
         return bi;
     }
     
-    public static BufferedImage drawString(BufferedImage img, Set<String> setOfTexts){
+    public static BufferedImage drawString(BufferedImage img, Map<String,Object> setOfTexts){
         Graphics2D g2d = img.createGraphics();
         //g2d.drawImage(old, 0, 0, w, h, this);
         g2d.setPaint(Color.red);
         g2d.setFont(new Font("Serif", Font.BOLD, 20));
         //String s = "Hello, world!";
         FontMetrics fm = g2d.getFontMetrics();
-        int counter=0;
-        for (String s : setOfTexts) {
+        int counter=1;
+        for (String s : setOfTexts.keySet()) {
+            s=s+" ->  "+setOfTexts.get(s).toString();
             int x = img.getWidth() - fm.stringWidth(s) - 5;
-            int y = 20*counter++;
+            int y = img.getHeight()-20*counter++;
             g2d.drawString(s, x, y);
         }
         

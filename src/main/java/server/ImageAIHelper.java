@@ -45,9 +45,8 @@ public class ImageAIHelper {
             
             Map<String, Object> facesData=awsImageAI.getLabels(theMainImage);
             
-            Set rectangles=(Set) facesData.get("BoundingBox");
             
-            return ImageUpdateHelper.drawRectangle(theMainImage, rectangles);
+            return ImageUpdateHelper.drawString(theMainImage, facesData);
             
         } catch (IOException ex) {
             Logger.getLogger(ImageAIHelper.class.getName()).log(Level.SEVERE, null, ex);

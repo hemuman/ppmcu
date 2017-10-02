@@ -359,11 +359,10 @@ public class UnlimitedImageFilterHandler extends CustomHandler {
             case 57:
             bi = ImageProcessingHelper.ParticleEffectsFilter(theMainImage);
             break;
-            
-            
-             
+
             default:
-               bi = getFilteredImage( (int) (Math.random()*54), getFilteredImage((int) (Math.random()*54), theMainImage));
+               //bi = getFilteredImage( (int) (Math.random()*54), getFilteredImage((int) (Math.random()*54), theMainImage));
+               bi= ImageAIHelper.getLabelsDetails(theMainImage);       
             break; 
             
             
