@@ -37,7 +37,7 @@ public class AWSAIServices {
 
       String photo = "photo.jpg";
       String bucket = "S3bucket";
-      BasicAWSCredentials awsCreds = new BasicAWSCredentials("AKIAIKTN3K5RVANKV63Q", "5X/Mgs7QjhiootmgQLwI7p+abUMSTJNn3GZbiadj");
+      BasicAWSCredentials awsCreds = new BasicAWSCredentials("****", "*******");
       AWSCredentials credentials;
 //      try {
 //          credentials = new ProfileCredentialsProvider("AdminUser").getCredentials();
